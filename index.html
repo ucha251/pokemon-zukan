@@ -11,7 +11,7 @@
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 80px; }
   .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); }
 
-  /* 🏠 画面の右下に常に浮いてついてくる「戻るボタン」 */
+  /* 🏠 画面右下のフローティング戻るボタン */
   .floating-back-btn {
     position: fixed;
     bottom: 24px;
@@ -36,8 +36,9 @@
     background: #b71c1c;
   }
 
-  .nav-bar { display: flex; gap: 8px; margin-bottom: 16px; }
-  .nav-btn { flex: 1; padding: 12px; font-size: 14px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; }
+  /* ナビゲーションメニュー（スマホでスクロール可能） */
+  .nav-bar { display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px; }
+  .nav-btn { flex: 0 0 auto; padding: 10px 12px; font-size: 13px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; white-space: nowrap; }
   .nav-btn.active { background: #d32f2f; color: white; box-shadow: 0 2px 6px rgba(211,47,47,0.3); }
   
   .filter-box { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -92,7 +93,14 @@
   .move-clickable { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
   .move-clickable:hover { color: #d32f2f; }
 
-  /* ポップアップモーダル */
+  /* マップ用ボタンカード（グリッド配置） */
+  .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 10px; }
+  .map-spot-card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.1s, background 0.1s; }
+  .map-spot-card:hover { background: #fff8f8; border-color: #d32f2f; transform: translateY(-2px); }
+  .spot-category { font-size: 10px; color: #666; background: #eee; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-bottom: 4px; }
+  .spot-name { font-size: 14px; font-weight: bold; color: #d32f2f; }
+
+  /* モーダル共通 */
   .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; padding: 16px; box-sizing: border-box; }
   .modal-content { background: white; padding: 20px; border-radius: 14px; width: 100%; max-width: 360px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
   .close-btn { background: #d32f2f; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; font-weight: bold; margin-top: 16px; cursor: pointer; }
@@ -109,8 +117,10 @@
 </div>
 
 <div class="nav-bar">
-  <button id="btnPokedex" class="nav-btn active" onclick="switchMode('pokedex')">📖 ポケモン図鑑</button>
-  <button id="btnMachines" class="nav-btn" onclick="switchMode('machines')">💿 技マシン・秘伝マシン</button>
+  <button id="btnPokedex" class="nav-btn active" onclick="switchMode('pokedex')">📖 図鑑</button>
+  <button id="btnMachines" class="nav-btn" onclick="switchMode('machines')">💿 技・秘伝</button>
+  <button id="btnJohto" class="nav-btn" onclick="switchMode('johto')">🗺️ ジョウト</button>
+  <button id="btnKanto" class="nav-btn" onclick="switchMode('kanto')">🗺️ カントー</button>
 </div>
 
 <!-- 図鑑ビュー -->
@@ -121,7 +131,8 @@
       <option value="">全タイプ</option>
       <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
       <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
-      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option><option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
+      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
+      <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
     </select>
   </div>
   <div id="pokedexList">読み込み中...</div>
@@ -150,8 +161,26 @@
   </div>
 </div>
 
+<!-- ジョウトマップビュー -->
+<div id="johtoView" style="display: none;">
+  <div class="card">
+    <div style="font-weight: bold; margin-bottom: 6px; font-size: 16px; border-left: 4px solid #d32f2f; padding-left: 8px;">🗺️ ジョウト地方 エリア一覧</div>
+    <div style="font-size: 12px; color: #666; margin-bottom: 12px;">町や道路、ダンジョンをタップすると詳細情報を確認できます。</div>
+    <div id="johtoGrid" class="map-grid"></div>
+  </div>
+</div>
+
+<!-- カントーマップビュー -->
+<div id="kantoView" style="display: none;">
+  <div class="card">
+    <div style="font-weight: bold; margin-bottom: 6px; font-size: 16px; border-left: 4px solid #1976d2; padding-left: 8px;">🗺️ カントー地方 エリア一覧</div>
+    <div style="font-size: 12px; color: #666; margin-bottom: 12px;">町や道路、ダンジョンをタップすると詳細情報を確認できます。</div>
+    <div id="kantoGrid" class="map-grid"></div>
+  </div>
+</div>
+
 <!-- 技詳細ポップアップモーダル -->
-<div id="moveModal" class="modal" onclick="closeModal(event)">
+<div id="moveModal" class="modal" onclick="closeModal(event, 'moveModal')">
   <div class="modal-content" onclick="event.stopPropagation()">
     <h3 id="modalMoveName" style="margin-top:0; color:#d32f2f; border-bottom:2px solid #eee; padding-bottom:8px;">技名</h3>
     <div id="modalMoveBody" style="font-size: 14px; line-height: 1.6;"></div>
@@ -159,8 +188,17 @@
   </div>
 </div>
 
+<!-- マップ詳細ポップアップモーダル -->
+<div id="mapModal" class="modal" onclick="closeModal(event, 'mapModal')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3 id="modalMapName" style="margin-top:0; color:#1976d2; border-bottom:2px solid #eee; padding-bottom:8px;">エリア名</h3>
+    <div id="modalMapBody" style="font-size: 14px; line-height: 1.6;"></div>
+    <button class="close-btn" onclick="document.getElementById('mapModal').style.display='none'">閉じる</button>
+  </div>
+</div>
+
 <script>
-let masterData = { tm: {}, hm: {}, moves: {} };
+let masterData = { tm: {}, hm: {}, maps: {}, moves: {} };
 let pokedex = [];
 let currentTabs = {};
 
@@ -176,11 +214,12 @@ async function init() {
     if (movesJson.moves) {
       masterData = movesJson;
     } else {
-      masterData = { tm: {}, hm: {}, moves: movesJson };
+      masterData = { tm: {}, hm: {}, maps: {}, moves: movesJson };
     }
     
     renderPokedex();
     renderMachines();
+    renderMaps();
   } catch (e) {
     document.getElementById("pokedexList").innerHTML = 
       `<div class="card" style="color:red;"><b>エラー：</b>JSONファイルが読み込めませんでした。</div>`;
@@ -190,13 +229,16 @@ async function init() {
 function switchMode(mode) {
   document.getElementById('btnPokedex').className = mode === 'pokedex' ? 'nav-btn active' : 'nav-btn';
   document.getElementById('btnMachines').className = mode === 'machines' ? 'nav-btn active' : 'nav-btn';
+  document.getElementById('btnJohto').className = mode === 'johto' ? 'nav-btn active' : 'nav-btn';
+  document.getElementById('btnKanto').className = mode === 'kanto' ? 'nav-btn active' : 'nav-btn';
   
   document.getElementById('pokedexView').style.display = mode === 'pokedex' ? 'block' : 'none';
   document.getElementById('machinesView').style.display = mode === 'machines' ? 'block' : 'none';
+  document.getElementById('johtoView').style.display = mode === 'johto' ? 'block' : 'none';
+  document.getElementById('kantoView').style.display = mode === 'kanto' ? 'block' : 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// 🏠 「戻る」ボタンが押されたとき（図鑑モードに戻り、検索もリセットしてトップへ）
 function goHome() {
   switchMode('pokedex');
   document.getElementById("search").value = "";
@@ -245,9 +287,18 @@ function showMoveDetail(moveName) {
   document.getElementById("moveModal").style.display = 'flex';
 }
 
-function closeModal(e) {
-  if (e.target.id === 'moveModal') {
-    document.getElementById("moveModal").style.display = 'none';
+function showMapDetail(spotName, category, desc) {
+  document.getElementById("modalMapName").innerText = spotName;
+  document.getElementById("modalMapBody").innerHTML = `
+    <div style="margin-bottom:8px;"><span class="spot-category">${category}</span></div>
+    <div style="line-height: 1.6; color:#444;">${desc}</div>
+  `;
+  document.getElementById("mapModal").style.display = 'flex';
+}
+
+function closeModal(e, modalId) {
+  if (e.target.id === modalId) {
+    document.getElementById(modalId).style.display = 'none';
   }
 }
 
@@ -363,6 +414,38 @@ function renderMachines() {
         <td style="font-size:12px; color:#555;">${place}</td>
       </tr>
     `;
+  }
+}
+
+function renderMaps() {
+  const maps = masterData.maps || MAP_DATA;
+  
+  // ジョウトのグリッド生成
+  const johtoGrid = document.getElementById("johtoGrid");
+  johtoGrid.innerHTML = "";
+  if (maps.johto && maps.johto.spots) {
+    maps.johto.spots.forEach(s => {
+      johtoGrid.innerHTML += `
+        <div class="map-spot-card" onclick="showMapDetail('${s.name}', '${s.category}', '${s.desc}')">
+          <div class="spot-category">${s.category}</div>
+          <div class="spot-name">${s.name}</div>
+        </div>
+      `;
+    });
+  }
+
+  // カントーのグリッド生成
+  const kantoGrid = document.getElementById("kantoGrid");
+  kantoGrid.innerHTML = "";
+  if (maps.kanto && maps.kanto.spots) {
+    maps.kanto.spots.forEach(s => {
+      kantoGrid.innerHTML += `
+        <div class="map-spot-card" onclick="showMapDetail('${s.name}', '${s.category}', '${s.desc}')">
+          <div class="spot-category">${s.category}</div>
+          <div class="spot-name">${s.name}</div>
+        </div>
+      `;
+    });
   }
 }
 
