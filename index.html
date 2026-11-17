@@ -1,455 +1,450 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="manifest" href="manifest.json">
-<title>ポケモン図鑑 金銀クリスタル</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 80px; }
-  .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ポケモン金銀クリスタル 完全図鑑＆攻略マップ</title>
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      margin: 0; padding: 0; background-color: #f4f6f9; color: #333; padding-bottom: 80px;
+    }
+    header {
+      background: linear-gradient(135deg, #d4af37, #b5952f);
+      color: #fff; text-align: center; padding: 14px 10px;
+      font-size: 18px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .tabs {
+      display: flex; background: #fff; border-bottom: 1px solid #ddd;
+      position: sticky; top: 50px; z-index: 99;
+    }
+    .tab-btn {
+      flex: 1; padding: 12px 5px; border: none; background: none;
+      font-size: 14px; font-weight: bold; color: #666; cursor: pointer;
+      border-bottom: 3px solid transparent; transition: 0.2s;
+    }
+    .tab-btn.active { color: #b5952f; border-bottom-color: #d4af37; background: #fffdf5; }
 
-  /* 🏠 画面右下のフローティング戻るボタン */
-  .floating-back-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #d32f2f;
-    color: white;
-    border: none;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    font-size: 22px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s, background 0.2s;
-  }
-  .floating-back-btn:active {
-    transform: scale(0.92);
-    background: #b71c1c;
-  }
+    .container { max-width: 800px; margin: 0 auto; padding: 12px; }
+    .search-box {
+      width: 100%; padding: 10px 14px; font-size: 15px;
+      border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px;
+      background: #fff; outline: none;
+    }
+    .search-box:focus { border-color: #d4af37; }
 
-  /* ナビゲーションメニュー（スマホでスクロール可能） */
-  .nav-bar { display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px; }
-  .nav-btn { flex: 0 0 auto; padding: 10px 12px; font-size: 13px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; white-space: nowrap; }
-  .nav-btn.active { background: #d32f2f; color: white; box-shadow: 0 2px 6px rgba(211,47,47,0.3); }
-  
-  .filter-box { display: flex; gap: 8px; margin-bottom: 16px; }
-  .search-box { flex: 1; padding: 12px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; box-sizing: border-box; background: white; }
-  .type-select { padding: 12px; font-size: 14px; border-radius: 10px; border: 1px solid #ccc; background: white; }
-  
-  .card { background: white; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-  .poke-title { font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .badge { padding: 4px 10px; border-radius: 12px; color: white; font-size: 11px; font-weight: bold; display: inline-block; }
-  
-  .type-ノーマル { background: #9e9e9e; }
-  .type-ほのお { background: #f44336; }
-  .type-みず { background: #2196f3; }
-  .type-でんき { background: #fbc02d; color: #333; }
-  .type-くさ { background: #4caf50; }
-  .type-こおり { background: #4dd0e1; color: #333; }
-  .type-かくとう { background: #d84315; }
-  .type-どく { background: #9c27b0; }
-  .type-じめん { background: #d7ccc8; color: #333; }
-  .type-ひこう { background: #90caf9; color: #333; }
-  .type-エスパー { background: #e91e63; }
-  .type-むし { background: #8bc34a; }
-  .type-いわ { background: #8d6e63; }
-  .type-ゴースト { background: #5e35b1; }
-  .type-ドラゴン { background: #3949ab; }
-  .type-あく { background: #424242; }
-  .type-はがね { background: #78909c; }
-  .type-\?\?\? { background: #689f38; }
+    /* ポケモン一覧カード */
+    .poke-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;
+    }
+    .poke-card {
+      background: #fff; border-radius: 10px; padding: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06); cursor: pointer;
+      transition: transform 0.15s; border: 1px solid #eee;
+    }
+    .poke-card:active { transform: scale(0.97); }
+    .poke-no { font-size: 11px; color: #888; font-weight: bold; }
+    .poke-name { font-size: 16px; font-weight: bold; margin: 4px 0 6px; }
+    .type-badge {
+      display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 4px;
+      color: #fff; font-weight: bold; margin-right: 4px; background: #777;
+    }
 
-  .cat-物理 { background: #e65100; }
-  .cat-特殊 { background: #1565c0; }
-  .cat-変化 { background: #757575; }
+    /* タイプ別カラー */
+    .type-ノーマル { background: #a8a878; } .type-ほのお { background: #f08030; }
+    .type-みず { background: #6890f0; } .type-でんき { background: #f8d030; color: #333; }
+    .type-くさ { background: #78c850; } .type-こおり { background: #98d8d8; color: #333; }
+    .type-かくとう { background: #c03028; } .type-どく { background: #a040a0; }
+    .type-じめん { background: #e0c068; color: #333; } .type-ひこう { background: #a890f0; }
+    .type-エスパー { background: #f85888; } .type-むし { background: #a8b820; }
+    .type-いわ { background: #b8a038; } .type-ゴースト { background: #705898; }
+    .type-ドラゴン { background: #7038f8; } .type-あく { background: #705848; }
+    .type-はがね { background: #b8b8d0; color: #333; }
 
-  .section-title { font-weight: bold; margin-top: 14px; margin-bottom: 6px; border-left: 4px solid #d32f2f; padding-left: 8px; font-size: 14px; }
-  .evo-box { background: #fff8e1; padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; font-size: 14px; }
-  .poke-link { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
-  .poke-link:hover { color: #d32f2f; }
-  
-  .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; min-width: 320px; }
-  th, td { border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left; }
-  th { background: #fafafa; color: #666; font-size: 12px; }
-  
-  .tabs { display: flex; gap: 6px; margin-top: 14px; }
-  .tab { flex: 1; text-align: center; padding: 8px 4px; border-radius: 8px; background: #eee; cursor: pointer; font-size: 13px; font-weight: bold; }
-  .tab.active { background: #d32f2f; color: white; }
-  
-  .crystal-tag { background: #00bcd4; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-left: 4px; }
-  .tm-badge { background: #ff9800; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
-  .hm-badge { background: #009688; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
-  
-  .move-clickable { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
-  .move-clickable:hover { color: #d32f2f; }
+    /* 詳細ビュー */
+    .detail-box {
+      background: #fff; border-radius: 12px; padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .section-title {
+      font-size: 15px; font-weight: bold; border-left: 4px solid #d4af37;
+      padding-left: 8px; margin: 18px 0 10px; color: #222;
+    }
+    .evo-chain {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+      background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px;
+    }
+    .evo-step { background: #fff; padding: 4px 8px; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
+    .evo-arrow { color: #b5952f; font-size: 12px; }
 
-  /* マップ用ボタンカード（グリッド配置） */
-  .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 10px; }
-  .map-spot-card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.1s, background 0.1s; }
-  .map-spot-card:hover { background: #fff8f8; border-color: #d32f2f; transform: translateY(-2px); }
-  .spot-category { font-size: 10px; color: #666; background: #eee; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-bottom: 4px; }
-  .spot-name { font-size: 14px; font-weight: bold; color: #d32f2f; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 10px; }
+    th, td { padding: 8px 6px; border-bottom: 1px solid #eee; text-align: left; }
+    th { background: #f8f8f8; color: #555; font-size: 12px; }
+    .move-link { color: #1a73e8; text-decoration: underline; cursor: pointer; font-weight: bold; }
 
-  /* モーダル共通 */
-  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; padding: 16px; box-sizing: border-box; }
-  .modal-content { background: white; padding: 20px; border-radius: 14px; width: 100%; max-width: 360px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-  .close-btn { background: #d32f2f; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; font-weight: bold; margin-top: 16px; cursor: pointer; }
-</style>
+    /* マップタブ */
+    .region-switch { display: flex; gap: 8px; margin-bottom: 12px; }
+    .region-btn {
+      flex: 1; padding: 10px; border: 1px solid #d4af37; background: #fff;
+      color: #b5952f; font-weight: bold; border-radius: 8px; cursor: pointer;
+    }
+    .region-btn.active { background: #d4af37; color: #fff; }
+    .map-image-container {
+      background: #fff; padding: 10px; border-radius: 10px; text-align: center;
+      margin-bottom: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    }
+    .map-image { width: 100%; max-width: 650px; border-radius: 6px; display: block; margin: 0 auto; }
+
+    .spot-group-title {
+      font-size: 14px; font-weight: bold; color: #555; margin: 16px 0 8px;
+      padding-bottom: 4px; border-bottom: 2px solid #e0e0e0;
+    }
+    .spot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+    .spot-item {
+      background: #fff; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e5e5;
+      font-size: 14px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    }
+    .spot-item:active { background: #fffdf5; border-color: #d4af37; }
+    .spot-has-img { font-size: 11px; color: #d4af37; }
+
+    /* モーダル */
+    .modal-overlay {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55); z-index: 999; justify-content: center; align-items: center; padding: 16px;
+    }
+    .modal-card {
+      background: #fff; width: 100%; max-width: 480px; border-radius: 12px;
+      padding: 18px; max-height: 85vh; overflow-y: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .modal-title { font-size: 18px; font-weight: bold; color: #222; }
+    .modal-close {
+      background: #eee; border: none; width: 30px; height: 30px; border-radius: 50%;
+      font-size: 16px; font-weight: bold; cursor: pointer; color: #555;
+    }
+    .spot-category {
+      display: inline-block; background: #f0e6c8; color: #7a6014;
+      font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px;
+    }
+
+    /* 戻るフローティングボタン */
+    .back-fab {
+      display: none; position: fixed; bottom: 20px; right: 20px;
+      background: #333; color: #fff; border: none; padding: 12px 18px;
+      border-radius: 30px; font-size: 14px; font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; z-index: 200;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 常に右下に浮く「戻る」ボタン -->
-<button class="floating-back-btn" onclick="goHome()" title="トップへ戻る">🏠</button>
+<header>ポケモン金銀クリスタル 攻略図鑑</header>
 
-<div class="header">
-  <h2 style="margin:0;">📱 ポケモン図鑑</h2>
-  <div style="font-size:11px; margin-top:2px;">金銀クリスタル 完全攻略</div>
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('pokedex', this)">ポケモン図鑑</button>
+  <button class="tab-btn" onclick="switchTab('tm', this)">わざ・ひでんマシン</button>
+  <button class="tab-btn" onclick="switchTab('map', this)">マップ攻略</button>
 </div>
 
-<div class="nav-bar">
-  <button id="btnPokedex" class="nav-btn active" onclick="switchMode('pokedex')">📖 図鑑</button>
-  <button id="btnMachines" class="nav-btn" onclick="switchMode('machines')">💿 技・秘伝</button>
-  <button id="btnJohto" class="nav-btn" onclick="switchMode('johto')">🗺️ ジョウト</button>
-  <button id="btnKanto" class="nav-btn" onclick="switchMode('kanto')">🗺️ カントー</button>
-</div>
-
-<!-- 図鑑ビュー -->
-<div id="pokedexView">
-  <div class="filter-box">
-    <input type="text" id="search" class="search-box" placeholder="名前・図鑑Noで検索" oninput="renderPokedex()">
-    <select id="typeFilter" class="type-select" onchange="renderPokedex()">
-      <option value="">全タイプ</option>
-      <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
-      <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
-      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
-      <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
-    </select>
-  </div>
-  <div id="pokedexList">読み込み中...</div>
-</div>
-
-<!-- 技マシンビュー -->
-<div id="machinesView" style="display: none;">
-  <div class="card">
-    <div style="font-weight: bold; margin-bottom: 10px; font-size: 16px; border-left: 4px solid #ff9800; padding-left: 8px;">💿 技マシン一覧 (TM01〜TM50)</div>
-    <div class="table-wrap">
-      <table>
-        <tr><th>番号</th><th>技名</th><th>入手場所</th></tr>
-        <tbody id="tmTableBody"></tbody>
-      </table>
+<div class="container">
+  <!-- 図鑑タブ -->
+  <div id="tab-pokedex">
+    <div id="pokedex-list-view">
+      <input type="text" id="pokeSearch" class="search-box" placeholder="ポケモン名・図鑑Noで検索（例: チコリータ, 152）" oninput="filterPokemon()">
+      <div id="pokeGrid" class="poke-grid">読み込み中...</div>
     </div>
+    <div id="pokedex-detail-view" style="display:none;"></div>
   </div>
 
-  <div class="card">
-    <div style="font-weight: bold; margin-bottom: 10px; font-size: 16px; border-left: 4px solid #009688; padding-left: 8px;">🌊 秘伝マシン一覧 (HM01〜HM07)</div>
-    <div class="table-wrap">
-      <table>
-        <tr><th>番号</th><th>技名</th><th>入手場所</th></tr>
-        <tbody id="hmTableBody"></tbody>
-      </table>
+  <!-- わざマシンタブ -->
+  <div id="tab-tm" style="display:none;">
+    <input type="text" id="tmSearch" class="search-box" placeholder="わざ名・マシン番号・入手場所で検索..." oninput="renderTMList()">
+    <div id="tmListContainer"></div>
+  </div>
+
+  <!-- マップタブ -->
+  <div id="tab-map" style="display:none;">
+    <div class="region-switch">
+      <button class="region-btn active" id="btn-johto" onclick="switchRegion('johto')">ジョウト地方</button>
+      <button class="region-btn" id="btn-kanto" onclick="switchRegion('kanto')">カントー地方</button>
     </div>
+    <div id="mapContent"></div>
   </div>
 </div>
 
-<!-- ジョウトマップビュー -->
-<div id="johtoView" style="display: none;">
-  <div class="card">
-    <div style="font-weight: bold; margin-bottom: 6px; font-size: 16px; border-left: 4px solid #d32f2f; padding-left: 8px;">🗺️ ジョウト地方 エリア一覧</div>
-    <div style="font-size: 12px; color: #666; margin-bottom: 12px;">町や道路、ダンジョンをタップすると詳細情報を確認できます。</div>
-    <div id="johtoGrid" class="map-grid"></div>
+<button id="backFab" class="back-fab" onclick="closePokeDetail()">← 一覧へ戻る</button>
+
+<!-- 技詳細モーダル -->
+<div id="moveModal" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title" id="modalMoveName">技名</div>
+      <button class="modal-close" onclick="document.getElementById('moveModal').style.display='none'">×</button>
+    </div>
+    <div id="modalMoveBody"></div>
   </div>
 </div>
 
-<!-- カントーマップビュー -->
-<div id="kantoView" style="display: none;">
-  <div class="card">
-    <div style="font-weight: bold; margin-bottom: 6px; font-size: 16px; border-left: 4px solid #1976d2; padding-left: 8px;">🗺️ カントー地方 エリア一覧</div>
-    <div style="font-size: 12px; color: #666; margin-bottom: 12px;">町や道路、ダンジョンをタップすると詳細情報を確認できます。</div>
-    <div id="kantoGrid" class="map-grid"></div>
-  </div>
-</div>
-
-<!-- 技詳細ポップアップモーダル -->
-<div id="moveModal" class="modal" onclick="closeModal(event, 'moveModal')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h3 id="modalMoveName" style="margin-top:0; color:#d32f2f; border-bottom:2px solid #eee; padding-bottom:8px;">技名</h3>
-    <div id="modalMoveBody" style="font-size: 14px; line-height: 1.6;"></div>
-    <button class="close-btn" onclick="document.getElementById('moveModal').style.display='none'">閉じる</button>
-  </div>
-</div>
-
-<!-- マップ詳細ポップアップモーダル -->
-<div id="mapModal" class="modal" onclick="closeModal(event, 'mapModal')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h3 id="modalMapName" style="margin-top:0; color:#1976d2; border-bottom:2px solid #eee; padding-bottom:8px;">エリア名</h3>
-    <div id="modalMapBody" style="font-size: 14px; line-height: 1.6;"></div>
-    <button class="close-btn" onclick="document.getElementById('mapModal').style.display='none'">閉じる</button>
+<!-- マップ詳細モーダル -->
+<div id="mapModal" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title" id="modalMapName">場所名</div>
+      <button class="modal-close" onclick="document.getElementById('mapModal').style.display='none'">×</button>
+    </div>
+    <div id="modalMapBody"></div>
   </div>
 </div>
 
 <script>
-let masterData = { tm: {}, hm: {}, maps: {}, moves: {} };
-let pokedex = [];
-let currentTabs = {};
+  let pokedexData = [];
+  let movesData = {};
+  let currentRegion = 'johto';
 
-async function init() {
-  try {
-    const [movesRes, pokeRes] = await Promise.all([
-      fetch('./moves.json'),
-      fetch('./pokedex.json')
-    ]);
-    const movesJson = await movesRes.json();
-    pokedex = await pokeRes.json();
+  async function init() {
+    try {
+      const [pokeRes, movesRes] = await Promise.all([
+        fetch('pokedex.json'),
+        fetch('moves.json')
+      ]);
+      pokedexData = await pokeRes.json();
+      movesData = await movesRes.json();
 
-    if (movesJson.moves) {
-      masterData = movesJson;
-    } else {
-      masterData = { tm: {}, hm: {}, maps: {}, moves: movesJson };
-    }
-    
-    renderPokedex();
-    renderMachines();
-    renderMaps();
-  } catch (e) {
-    document.getElementById("pokedexList").innerHTML = 
-      `<div class="card" style="color:red;"><b>エラー：</b>JSONファイルが読み込めませんでした。</div>`;
-  }
-}
-
-function switchMode(mode) {
-  document.getElementById('btnPokedex').className = mode === 'pokedex' ? 'nav-btn active' : 'nav-btn';
-  document.getElementById('btnMachines').className = mode === 'machines' ? 'nav-btn active' : 'nav-btn';
-  document.getElementById('btnJohto').className = mode === 'johto' ? 'nav-btn active' : 'nav-btn';
-  document.getElementById('btnKanto').className = mode === 'kanto' ? 'nav-btn active' : 'nav-btn';
-  
-  document.getElementById('pokedexView').style.display = mode === 'pokedex' ? 'block' : 'none';
-  document.getElementById('machinesView').style.display = mode === 'machines' ? 'block' : 'none';
-  document.getElementById('johtoView').style.display = mode === 'johto' ? 'block' : 'none';
-  document.getElementById('kantoView').style.display = mode === 'kanto' ? 'block' : 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goHome() {
-  switchMode('pokedex');
-  document.getElementById("search").value = "";
-  document.getElementById("typeFilter").value = "";
-  renderPokedex();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function setTab(no, tabName) {
-  currentTabs[no] = tabName;
-  renderPokedex();
-}
-
-function searchPokemon(name) {
-  switchMode('pokedex');
-  document.getElementById("search").value = name;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  renderPokedex();
-}
-
-function showMoveDetail(moveName) {
-  const movesDB = masterData.moves || masterData;
-  const m = movesDB[moveName] || { type: "???", category: "変化", power: "-", accuracy: "-", pp: "-" };
-  
-  let place = "不明・イベント等";
-  if (masterData.tm) {
-    for (let info of Object.values(masterData.tm)) {
-      if (info.name === moveName) { place = info.place; break; }
-    }
-  }
-  if (masterData.hm) {
-    for (let info of Object.values(masterData.hm)) {
-      if (info.name === moveName) { place = info.place; break; }
+      renderPokemonGrid(pokedexData);
+      renderTMList();
+      renderMap('johto');
+    } catch (e) {
+      document.getElementById('pokeGrid').innerHTML = "<p>データの読み込みに失敗しました。moves.json と pokedex.json が同じフォルダにあるか確認してください。</p>";
+      console.error(e);
     }
   }
 
-  document.getElementById("modalMoveName").innerText = moveName;
-  document.getElementById("modalMoveBody").innerHTML = `
-    <div style="margin-bottom:6px;"><b>タイプ：</b> <span class="badge type-${m.type}">${m.type}</span></div>
-    <div style="margin-bottom:6px;"><b>分類：</b> <span class="badge cat-${m.category}">${m.category}</span></div>
-    <div style="margin-bottom:6px;"><b>威力：</b> ${m.power}</div>
-    <div style="margin-bottom:6px;"><b>命中：</b> ${m.accuracy}</div>
-    <div style="margin-bottom:6px;"><b>PP：</b> ${m.pp}</div>
-    <div style="margin-top:10px; background:#f9f9f9; padding:8px; border-radius:6px; font-size:13px;">📍 <b>入手場所：</b><br>${place}</div>
-  `;
-  document.getElementById("moveModal").style.display = 'flex';
-}
-
-function showMapDetail(spotName, category, desc) {
-  document.getElementById("modalMapName").innerText = spotName;
-  document.getElementById("modalMapBody").innerHTML = `
-    <div style="margin-bottom:8px;"><span class="spot-category">${category}</span></div>
-    <div style="line-height: 1.6; color:#444;">${desc}</div>
-  `;
-  document.getElementById("mapModal").style.display = 'flex';
-}
-
-function closeModal(e, modalId) {
-  if (e.target.id === modalId) {
-    document.getElementById(modalId).style.display = 'none';
-  }
-}
-
-function renderMoveRow(moveName, badgeHtml = "", levelText = "-") {
-  const movesDB = masterData.moves || masterData;
-  const m = movesDB[moveName] || { type: "???", category: "変化", power: "?", accuracy: "?", pp: "?" };
-  return `<tr>
-    <td>${levelText}</td>
-    <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span>${badgeHtml}</td>
-    <td><span class="badge type-${m.type}">${m.type}</span></td>
-    <td><span class="badge cat-${m.category}">${m.category}</span></td>
-    <td>${m.power}</td>
-    <td>${m.accuracy}</td>
-    <td>${m.pp}</td>
-  </tr>`;
-}
-
-function renderPokedex() {
-  const q = document.getElementById("search").value.trim();
-  const typeF = document.getElementById("typeFilter").value;
-  const list = document.getElementById("pokedexList");
-  list.innerHTML = "";
-
-  const filtered = pokedex.filter(p => {
-    const matchText = p.name.includes(q) || String(p.no).includes(q);
-    const matchType = typeF === "" || p.types.includes(typeF);
-    return matchText && matchType;
-  });
-
-  if (filtered.length === 0) {
-    list.innerHTML = `<div class="card">該当するポケモンが見つかりません。</div>`;
-    return;
+  function switchTab(tabName, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-pokedex').style.display = tabName === 'pokedex' ? 'block' : 'none';
+    document.getElementById('tab-tm').style.display = tabName === 'tm' ? 'block' : 'none';
+    document.getElementById('tab-map').style.display = tabName === 'map' ? 'block' : 'none';
+    document.getElementById('backFab').style.display = (tabName === 'pokedex' && document.getElementById('pokedex-detail-view').style.display === 'block') ? 'block' : 'none';
   }
 
-  filtered.forEach(p => {
-    const activeTab = currentTabs[p.no] || "level";
-    const typesHtml = p.types.map(t => `<span class="badge type-${t}">${t}</span>`).join("");
-    
-    let evoHtml = `<div class="evo-box">進化なし</div>`;
+  function renderPokemonGrid(list) {
+    const grid = document.getElementById('pokeGrid');
+    if (!list.length) {
+      grid.innerHTML = "<p>該当するポケモンが見つかりません。</p>";
+      return;
+    }
+    grid.innerHTML = list.map(p => `
+      <div class="poke-card" onclick="openPokeDetail(${p.no})">
+        <div class="poke-no">No.${String(p.no).padStart(3, '0')}</div>
+        <div class="poke-name">${p.name}</div>
+        <div>${p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}</div>
+      </div>
+    `).join('');
+  }
+
+  function filterPokemon() {
+    const q = document.getElementById('pokeSearch').value.trim();
+    if (!q) {
+      renderPokemonGrid(pokedexData);
+      return;
+    }
+    const filtered = pokedexData.filter(p => p.name.includes(q) || String(p.no) === q || String(p.no).padStart(3, '0').includes(q));
+    renderPokemonGrid(filtered);
+  }
+
+  function openPokeDetail(no) {
+    const p = pokedexData.find(x => x.no === no);
+    if (!p) return;
+
+    document.getElementById('pokedex-list-view').style.display = 'none';
+    const detailView = document.getElementById('pokedex-detail-view');
+    detailView.style.display = 'block';
+    document.getElementById('backFab').style.display = 'block';
+    window.scrollTo(0, 0);
+
+    let evoHtml = "<div style='font-size:13px; color:#666;'>進化なし</div>";
     if (p.evolution_family && p.evolution_family.length > 0) {
-      evoHtml = p.evolution_family.map(e => {
-        return `<div class="evo-box">🔄 <span class="poke-link" onclick="searchPokemon('${e.from}')">${e.from}</span> (${e.method} : ${e.condition}) ➡ <span class="poke-link" onclick="searchPokemon('${e.to}')">${e.to}</span></div>`;
-      }).join("");
+      evoHtml = `<div class="evo-chain">` + p.evolution_family.map(e =>
+        `<span class="evo-step">${e.from}</span> <span class="evo-arrow">→ (${e.method}: ${e.condition}) →</span> <span class="evo-step">${e.to}</span>`
+      ).join('<br>') + `</div>`;
     }
 
-    let movesHtml = "";
-    if (activeTab === "level") {
-      movesHtml = (p.level_up_moves || []).map(item => {
-        const ver = item.version === "クリスタル" ? `<span class="crystal-tag">クリスタル</span>` : "";
-        return renderMoveRow(item.move, ver, "Lv." + item.level);
-      }).join("");
-    } else if (activeTab === "tm") {
-      movesHtml = (p.tm_moves || []).map(item => {
-        const tmBadge = `<span class="tm-badge">${item.code}</span>`;
-        return renderMoveRow(item.name, "", tmBadge);
-      }).join("");
-    } else if (activeTab === "hm") {
-      movesHtml = (p.hm_moves || []).map(item => {
-        const hmBadge = `<span class="hm-badge">${item.code}</span>`;
-        return renderMoveRow(item.name, "", hmBadge);
-      }).join("");
-    }
+    const levelMovesHtml = p.level_up_moves.map(m => `
+      <tr>
+        <td>Lv.${m.level === 0 ? '基本' : m.level}</td>
+        <td><span class="move-link" onclick="showMoveModal('${m.move}')">${m.move}</span></td>
+        <td>${m.version}</td>
+      </tr>
+    `).join('');
 
-    list.innerHTML += `
-      <div class="card">
-        <div class="poke-title">No.${String(p.no).padStart(3, '0')} ${p.name} ${typesHtml}</div>
-        <div class="section-title">進化の流れ</div>
+    const tmHtml = p.tm_moves.map(m => `
+      <tr>
+        <td><b>${m.code}</b></td>
+        <td><span class="move-link" onclick="showMoveModal('${m.name}')">${m.name}</span></td>
+      </tr>
+    `).join('');
+
+    const hmHtml = p.hm_moves.map(m => `
+      <tr>
+        <td><b>${m.code}</b></td>
+        <td><span class="move-link" onclick="showMoveModal('${m.name}')">${m.name}</span></td>
+      </tr>
+    `).join('');
+
+    detailView.innerHTML = `
+      <div class="detail-box">
+        <div class="poke-no">No.${String(p.no).padStart(3, '0')}</div>
+        <h2 style="margin:4px 0 8px;">${p.name}</h2>
+        <div>${p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}</div>
+
+        <div class="section-title">進化ルート</div>
         ${evoHtml}
-        <div class="tabs">
-          <div class="tab ${activeTab==='level'?'active':''}" onclick="setTab(${p.no},'level')">レベルアップ</div>
-          <div class="tab ${activeTab==='tm'?'active':''}" onclick="setTab(${p.no},'tm')">技マシン</div>
-          <div class="tab ${activeTab==='hm'?'active':''}" onclick="setTab(${p.no},'hm')">秘伝マシン</div>
+
+        <div class="section-title">レベルアップで覚える技</div>
+        <table>
+          <thead><tr><th>Lv</th><th>技名</th><th>備考</th></tr></thead>
+          <tbody>${levelMovesHtml || '<tr><td colspan="3">なし</td></tr>'}</tbody>
+        </table>
+
+        <div class="section-title">わざマシン</div>
+        <table>
+          <thead><tr><th>番号</th><th>技名</th></tr></thead>
+          <tbody>${tmHtml || '<tr><td colspan="2">なし</td></tr>'}</tbody>
+        </table>
+
+        <div class="section-title">ひでんマシン</div>
+        <table>
+          <thead><tr><th>番号</th><th>技名</th></tr></thead>
+          <tbody>${hmHtml || '<tr><td colspan="2">なし</td></tr>'}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function closePokeDetail() {
+    document.getElementById('pokedex-detail-view').style.display = 'none';
+    document.getElementById('pokedex-list-view').style.display = 'block';
+    document.getElementById('backFab').style.display = 'none';
+  }
+
+  function showMoveModal(moveName) {
+    const info = movesData.moves ? movesData.moves[moveName] : null;
+    document.getElementById('modalMoveName').innerText = moveName;
+    if (info) {
+      document.getElementById('modalMoveBody').innerHTML = `
+        <div style="margin-bottom:10px;">
+          <span class="type-badge type-${info.type}">${info.type}</span>
+          <span style="font-size:12px; background:#eee; padding:2px 8px; border-radius:4px; font-weight:bold;">${info.category}</span>
         </div>
-        <div class="table-wrap">
-          <table>
-            <tr><th>条件</th><th>技名</th><th>タイプ</th><th>分類</th><th>威力</th><th>命中</th><th>PP</th></tr>
-            ${movesHtml || '<tr><td colspan="7">なし</td></tr>'}
-          </table>
+        <table>
+          <tr><th>威力</th><td>${info.power}</td></tr>
+          <tr><th>命中</th><td>${info.accuracy}</td></tr>
+          <tr><th>PP</th><td>${info.pp}</td></tr>
+        </table>
+      `;
+    } else {
+      document.getElementById('modalMoveBody').innerHTML = `<p>詳細データが見つかりませんでした。</p>`;
+    }
+    document.getElementById('moveModal').style.display = 'flex';
+  }
+
+  function renderTMList() {
+    const q = document.getElementById('tmSearch').value.trim();
+    const container = document.getElementById('tmListContainer');
+    if (!movesData.tm || !movesData.hm) return;
+
+    let html = `<div class="detail-box"><div class="section-title" style="margin-top:0;">ひでんマシン一覧</div><table><thead><tr><th>No</th><th>技名</th><th>入手場所</th></tr></thead><tbody>`;
+    for (const [code, info] of Object.entries(movesData.hm)) {
+      if (!q || code.includes(q.toUpperCase()) || info.name.includes(q) || info.place.includes(q)) {
+        html += `<tr><td><b>${code}</b></td><td><span class="move-link" onclick="showMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+      }
+    }
+    html += `</tbody></table><div class="section-title">わざマシン一覧</div><table><thead><tr><th>No</th><th>技名</th><th>入手場所</th></tr></thead><tbody>`;
+    for (const [code, info] of Object.entries(movesData.tm)) {
+      if (!q || code.includes(q.toUpperCase()) || info.name.includes(q) || info.place.includes(q)) {
+        html += `<tr><td><b>${code}</b></td><td><span class="move-link" onclick="showMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+      }
+    }
+    html += `</tbody></table></div>`;
+    container.innerHTML = html;
+  }
+
+  function switchRegion(region) {
+    currentRegion = region;
+    document.getElementById('btn-johto').classList.toggle('active', region === 'johto');
+    document.getElementById('btn-kanto').classList.toggle('active', region === 'kanto');
+    renderMap(region);
+  }
+
+  function renderMap(region) {
+    const regionData = movesData.maps ? movesData.maps[region] : null;
+    const container = document.getElementById('mapContent');
+    if (!regionData) {
+      container.innerHTML = "<p>マップデータがありません。</p>";
+      return;
+    }
+
+    const defaultImg = region === 'johto' ? 'johto-allmap.jpg' : 'kanto-allmap.jpg';
+    const allMapSrc = regionData.allMapImg || defaultImg;
+
+    let html = `
+      <div class="map-image-container">
+        <img src="${allMapSrc}" alt="${regionData.title}" class="map-image"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; color:#999; font-size:12px; padding:18px;">
+          ※ 全体マップ画像（<b>${allMapSrc}</b>）をフォルダ直下に配置すると表示されます
         </div>
       </div>
     `;
-  });
-}
 
-function renderMachines() {
-  const tmBody = document.getElementById("tmTableBody");
-  tmBody.innerHTML = "";
-  for (let i = 1; i <= 50; i++) {
-    const code = "TM" + String(i).padStart(2, '0');
-    const data = masterData.tm ? masterData.tm[code] : { name: "-", place: "-" };
-    const moveName = data ? data.name : "-";
-    const place = data ? data.place : "-";
-    tmBody.innerHTML += `
-      <tr>
-        <td><span class="tm-badge">${code}</span></td>
-        <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span></td>
-        <td style="font-size:12px; color:#555;">${place}</td>
-      </tr>
-    `;
+    const categories = ["町・都市", "ダンジョン・施設", "道路", "水道"];
+    categories.forEach(cat => {
+      const spots = regionData.spots.filter(s => s.category === cat);
+      if (spots.length > 0) {
+        html += `<div class="spot-group-title">${cat}</div><div class="spot-list">`;
+        spots.forEach(spot => {
+          const spotJson = encodeURIComponent(JSON.stringify(spot));
+          const hasImgBadge = spot.mapImg ? `<span class="spot-has-img">🗺️</span>` : '';
+          html += `<div class="spot-item" onclick="showMapDetail('${spotJson}')"><span>${spot.name}</span>${hasImgBadge}</div>`;
+        });
+        html += `</div>`;
+      }
+    });
+
+    container.innerHTML = html;
   }
 
-  const hmBody = document.getElementById("hmTableBody");
-  hmBody.innerHTML = "";
-  for (let i = 1; i <= 7; i++) {
-    const code = "HM0" + i;
-    const data = masterData.hm ? masterData.hm[code] : { name: "-", place: "-" };
-    const moveName = data ? data.name : "-";
-    const place = data ? data.place : "-";
-    hmBody.innerHTML += `
-      <tr>
-        <td><span class="hm-badge">${code}</span></td>
-        <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span></td>
-        <td style="font-size:12px; color:#555;">${place}</td>
-      </tr>
-    `;
-  }
-}
+  function showMapDetail(spotEncoded) {
+    const spot = JSON.parse(decodeURIComponent(spotEncoded));
+    document.getElementById('modalMapName').innerText = spot.name;
 
-function renderMaps() {
-  const maps = masterData.maps || MAP_DATA;
-  
-  // ジョウトのグリッド生成
-  const johtoGrid = document.getElementById("johtoGrid");
-  johtoGrid.innerHTML = "";
-  if (maps.johto && maps.johto.spots) {
-    maps.johto.spots.forEach(s => {
-      johtoGrid.innerHTML += `
-        <div class="map-spot-card" onclick="showMapDetail('${s.name}', '${s.category}', '${s.desc}')">
-          <div class="spot-category">${s.category}</div>
-          <div class="spot-name">${s.name}</div>
+    let imgHtml = "";
+    if (spot.mapImg) {
+      imgHtml = `
+        <div style="text-align:center; background:#222; padding:8px; border-radius:8px; margin-bottom:12px;">
+          <img src="${spot.mapImg}" alt="${spot.name}マップ"
+               style="width:100%; max-height:260px; object-fit:contain; border-radius:6px;"
+               onerror="this.parentElement.style.display='none';">
         </div>
       `;
-    });
+    }
+
+    document.getElementById('modalMapBody').innerHTML = `
+      ${imgHtml}
+      <div style="margin-bottom:8px;"><span class="spot-category">${spot.category}</span></div>
+      <div style="line-height:1.6; color:#444; margin-bottom:10px; font-size:14px;">${spot.desc}</div>
+      <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+      <div style="font-size:13px; margin-bottom:8px;">🏢 <b>主な施設：</b><br>${spot.facilities || "特になし"}</div>
+      <div style="font-size:13px;">🎁 <b>入手できるアイテム：</b><br>${spot.items || "特になし"}</div>
+    `;
+    document.getElementById('mapModal').style.display = 'flex';
   }
 
-  // カントーのグリッド生成
-  const kantoGrid = document.getElementById("kantoGrid");
-  kantoGrid.innerHTML = "";
-  if (maps.kanto && maps.kanto.spots) {
-    maps.kanto.spots.forEach(s => {
-      kantoGrid.innerHTML += `
-        <div class="map-spot-card" onclick="showMapDetail('${s.name}', '${s.category}', '${s.desc}')">
-          <div class="spot-category">${s.category}</div>
-          <div class="spot-name">${s.name}</div>
-        </div>
-      `;
-    });
-  }
-}
-
-init();
+  init();
 </script>
+
 </body>
 </html>
