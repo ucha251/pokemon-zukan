@@ -9,7 +9,10 @@
 <title>ポケモン図鑑 金銀クリスタル</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 60px; }
-  .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); }
+  .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); position: relative; }
+  .back-home-btn { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 6px 10px; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; }
+  .back-home-btn:hover { background: rgba(255,255,255,0.3); }
+
   .nav-bar { display: flex; gap: 8px; margin-bottom: 16px; }
   .nav-btn { flex: 1; padding: 12px; font-size: 14px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; }
   .nav-btn.active { background: #d32f2f; color: white; box-shadow: 0 2px 6px rgba(211,47,47,0.3); }
@@ -75,8 +78,9 @@
 <body>
 
 <div class="header">
-  <h2 style="margin:0;">📱 ポケモン図鑑 (金銀クリスタル)</h2>
-  <div style="font-size:12px; margin-top:4px;">第2世代 完全攻略アプリ</div>
+  <button class="back-home-btn" onclick="goHome()">🏠 戻る</button>
+  <h2 style="margin:0;">📱 ポケモン図鑑</h2>
+  <div style="font-size:11px; margin-top:2px;">金銀クリスタル 完全攻略</div>
 </div>
 
 <div class="nav-bar">
@@ -145,7 +149,6 @@ async function init() {
     const movesJson = await movesRes.json();
     pokedex = await pokeRes.json();
 
-    // データの構造を判定して安全にセット
     if (movesJson.moves) {
       masterData = movesJson;
     } else {
@@ -166,6 +169,15 @@ function switchMode(mode) {
   
   document.getElementById('pokedexView').style.display = mode === 'pokedex' ? 'block' : 'none';
   document.getElementById('machinesView').style.display = mode === 'machines' ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 🏠 「戻る」ボタンが押されたときの動き（図鑑モードに戻り、検索もリセット）
+function goHome() {
+  switchMode('pokedex');
+  document.getElementById("search").value = "";
+  document.getElementById("typeFilter").value = "";
+  renderPokedex();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -253,7 +265,7 @@ function renderPokedex() {
     let evoHtml = `<div class="evo-box">進化なし</div>`;
     if (p.evolution_family && p.evolution_family.length > 0) {
       evoHtml = p.evolution_family.map(e => {
-        return `<div class="evo-box">🔄 <span class="poke-link" onclick="searchPokemon('${e.from}')">${e.from}</span> (${e.method}：${e.condition}) ➡ <span class="poke-link" onclick="searchPokemon('${e.to}')">${e.to}</span></div>`;
+        return `<div class="evo-box">🔄 <span class="poke-link" onclick="searchPokemon('${e.from}')">${e.from}</span> (${e.method} : ${e.condition}) ➡ <span class="poke-link" onclick="searchPokemon('${e.to}')">${e.to}</span></div>`;
       }).join("");
     }
 
