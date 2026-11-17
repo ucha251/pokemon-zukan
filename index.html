@@ -8,10 +8,33 @@
 <link rel="manifest" href="manifest.json">
 <title>ポケモン図鑑 金銀クリスタル</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 60px; }
-  .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); position: relative; }
-  .back-home-btn { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 6px 10px; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; }
-  .back-home-btn:hover { background: rgba(255,255,255,0.3); }
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 80px; }
+  .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); }
+
+  /* 🏠 画面の右下に常に浮いてついてくる「戻るボタン」 */
+  .floating-back-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .floating-back-btn:active {
+    transform: scale(0.92);
+    background: #b71c1c;
+  }
 
   .nav-bar { display: flex; gap: 8px; margin-bottom: 16px; }
   .nav-btn { flex: 1; padding: 12px; font-size: 14px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; }
@@ -77,8 +100,10 @@
 </head>
 <body>
 
+<!-- 常に右下に浮く「戻る」ボタン -->
+<button class="floating-back-btn" onclick="goHome()" title="トップへ戻る">🏠</button>
+
 <div class="header">
-  <button class="back-home-btn" onclick="goHome()">🏠 戻る</button>
   <h2 style="margin:0;">📱 ポケモン図鑑</h2>
   <div style="font-size:11px; margin-top:2px;">金銀クリスタル 完全攻略</div>
 </div>
@@ -96,8 +121,7 @@
       <option value="">全タイプ</option>
       <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
       <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
-      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
-      <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
+      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option><option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
     </select>
   </div>
   <div id="pokedexList">読み込み中...</div>
@@ -172,7 +196,7 @@ function switchMode(mode) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// 🏠 「戻る」ボタンが押されたときの動き（図鑑モードに戻り、検索もリセット）
+// 🏠 「戻る」ボタンが押されたとき（図鑑モードに戻り、検索もリセットしてトップへ）
 function goHome() {
   switchMode('pokedex');
   document.getElementById("search").value = "";
