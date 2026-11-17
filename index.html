@@ -8,11 +8,16 @@
 <link rel="manifest" href="manifest.json">
 <title>ポケモン図鑑 金銀クリスタル</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 40px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f2f5; margin: 0; padding: 16px; color: #333; padding-bottom: 60px; }
   .header { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(211,47,47,0.3); }
+  .nav-bar { display: flex; gap: 8px; margin-bottom: 16px; }
+  .nav-btn { flex: 1; padding: 12px; font-size: 14px; font-weight: bold; border-radius: 10px; border: none; background: #e0e0e0; color: #333; cursor: pointer; text-align: center; }
+  .nav-btn.active { background: #d32f2f; color: white; box-shadow: 0 2px 6px rgba(211,47,47,0.3); }
+  
   .filter-box { display: flex; gap: 8px; margin-bottom: 16px; }
-  .search-box { flex: 1; padding: 12px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; box-sizing: border-box; }
+  .search-box { flex: 1; padding: 12px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; box-sizing: border-box; background: white; }
   .type-select { padding: 12px; font-size: 14px; border-radius: 10px; border: 1px solid #ccc; background: white; }
+  
   .card { background: white; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .poke-title { font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { padding: 4px 10px; border-radius: 12px; color: white; font-size: 11px; font-weight: bold; display: inline-block; }
@@ -44,68 +49,90 @@
   .evo-box { background: #fff8e1; padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; font-size: 14px; }
   .poke-link { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
   .poke-link:hover { color: #d32f2f; }
+  
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; min-width: 320px; }
   th, td { border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left; }
   th { background: #fafafa; color: #666; font-size: 12px; }
+  
   .tabs { display: flex; gap: 6px; margin-top: 14px; }
   .tab { flex: 1; text-align: center; padding: 8px 4px; border-radius: 8px; background: #eee; cursor: pointer; font-size: 13px; font-weight: bold; }
   .tab.active { background: #d32f2f; color: white; }
+  
   .crystal-tag { background: #00bcd4; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-left: 4px; }
-  .tm-badge { background: #ff9800; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
-  .hm-badge { background: #009688; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
+  .tm-badge { background: #ff9800; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
+  .hm-badge { background: #009688; color: white; font-size: 10px; padding: 3px 6px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
+  
+  .move-clickable { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
+  .move-clickable:hover { color: #d32f2f; }
+
+  /* ポップアップモーダル */
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; padding: 16px; box-sizing: border-box; }
+  .modal-content { background: white; padding: 20px; border-radius: 14px; width: 100%; max-width: 360px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+  .close-btn { background: #d32f2f; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; font-weight: bold; margin-top: 16px; cursor: pointer; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h2 style="margin:0;">📱 ポケモン図鑑 (No.1〜251)</h2>
-  <div style="font-size:12px; margin-top:4px;">金・銀・クリスタル 完全対応版</div>
+  <h2 style="margin:0;">📱 ポケモン図鑑 (金銀クリスタル)</h2>
+  <div style="font-size:12px; margin-top:4px;">第2世代 完全攻略アプリ</div>
 </div>
 
-<div class="filter-box">
-  <input type="text" id="search" class="search-box" placeholder="名前・図鑑Noで検索" oninput="render()">
-  <select id="typeFilter" class="type-select" onchange="render()">
-    <option value="">全タイプ</option>
-    <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
-    <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
-    <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
-    <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
-  </select>
+<div class="nav-bar">
+  <button id="btnPokedex" class="nav-btn active" onclick="switchMode('pokedex')">📖 ポケモン図鑑</button>
+  <button id="btnMachines" class="nav-btn" onclick="switchMode('machines')">💿 技マシン・秘伝マシン</button>
 </div>
 
-<div id="list">データを読み込み中...</div>
+<!-- 図鑑ビュー -->
+<div id="pokedexView">
+  <div class="filter-box">
+    <input type="text" id="search" class="search-box" placeholder="名前・図鑑Noで検索" oninput="renderPokedex()">
+    <select id="typeFilter" class="type-select" onchange="renderPokedex()">
+      <option value="">全タイプ</option>
+      <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
+      <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
+      <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
+      <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
+    </select>
+  </div>
+  <div id="pokedexList">読み込み中...</div>
+</div>
+
+<!-- 技マシンビュー -->
+<div id="machinesView" style="display: none;">
+  <div class="card">
+    <div style="font-weight: bold; margin-bottom: 10px; font-size: 16px; border-left: 4px solid #ff9800; padding-left: 8px;">💿 技マシン一覧 (TM01〜TM50)</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>番号</th><th>技名</th><th>入手場所</th></tr>
+        <tbody id="tmTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight: bold; margin-bottom: 10px; font-size: 16px; border-left: 4px solid #009688; padding-left: 8px;">🌊 秘伝マシン一覧 (HM01〜HM07)</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>番号</th><th>技名</th><th>入手場所</th></tr>
+        <tbody id="hmTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 技詳細ポップアップモーダル -->
+<div id="moveModal" class="modal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3 id="modalMoveName" style="margin-top:0; color:#d32f2f; border-bottom:2px solid #eee; padding-bottom:8px;">技名</h3>
+    <div id="modalMoveBody" style="font-size: 14px; line-height: 1.6;"></div>
+    <button class="close-btn" onclick="document.getElementById('moveModal').style.display='none'">閉じる</button>
+  </div>
+</div>
 
 <script>
-const TM_NUMBERS = {
-  "すだれ": "TM01", "ドラゴンクロー": "TM02", "サイコキネシス": "TM03", "めいそう": "TM04", "ほえる": "TM05",
-  "どくどく": "TM06", "でんじは": "TM07", "いわくだき": "TM08", "タネマシンガン": "TM09", "めざめるパワー": "TM10",
-  "にほんばれ": "TM11", "ちょうはつ": "TM12", "れいとうビーム": "TM13", "ふぶき": "TM14", "はかいこうせん": "TM15",
-  "ひかりのかべ": "TM16", "まもる": "TM17", "あまごい": "TM18", "ギガドレイン": "TM19", "しんぴのまもり": "TM20",
-  "やつ当たり": "TM21", "ソーラービーム": "TM22", "アイアンテール": "TM23", "１０まんボルト": "TM24", "かみなり": "TM25",
-  "じしん": "TM26", "おんがえし": "TM27", "あなをほる": "TM28", "サイコキネシス": "TM29", "シャドーボール": "TM30",
-  "かわらわり": "TM31", "かげぶんしん": "TM32", "リフレクター": "TM33", "でんげきは": "TM34", "かえんほうしゃ": "TM35",
-  "ヘドロばくだん": "TM36", "すなわれ": "TM37", "だいもんじ": "TM38", "がんせきふうじ": "TM39", "つばめがえし": "TM40",
-  "いばる": "TM41", "からげんき": "TM42", "ひみつのちから": "TM43", "ねむる": "TM44", "メロメロ": "TM45",
-  "ど泥棒": "TM46", "はがねのつばさ": "TM47", "スキルスワップ": "TM48", "よこどり": "TM49", "オーバーヒート": "TM50",
-  "ダイナミックパンチ": "TM01", "ずつき": "TM02", "のりこえる": "TM03", "ロールアウト": "TM04", "すなかけ": "TM05",
-  "とおせんぼう": "TM06", "でんじは": "TM07", "いわくだき": "TM08", "テレポート": "TM09", "めざめるパワー": "TM10",
-  "にほんばれ": "TM11", "あまいかおり": "TM12", "いびき": "TM13", "ふぶき": "TM14", "こわいかお": "TM15",
-  "ひかりのかべ": "TM16", "まもる": "TM17", "あまごい": "TM18", "ギガドレイン": "TM19", "こらえる": "TM20",
-  "やつあたり": "TM21", "ソーラービーム": "TM22", "アイアンテール": "TM23", "１０まんボルト": "TM24", "かみなり": "TM25",
-  "じしん": "TM26", "おんがえし": "TM27", "あなをほる": "TM28", "サイコキネシス": "TM29", "シャドーボール": "TM30",
-  "どろかけ": "TM31", "かげぶんしん": "TM32", "リフレクター": "TM33", "れいとうパンチ": "TM34", "かえんほうしゃ": "TM35",
-  "ヘドロばくだん": "TM36", "すなわれ": "TM37", "だいもんじ": "TM38", "スピードスター": "TM39", "いなずま": "TM40",
-  "いばる": "TM41", "でんきちくでん": "TM42", "さわぐ": "TM43", "ねむる": "TM44", "メロメロ": "TM45",
-  "ど泥棒": "TM46", "はがねのつばさ": "TM47", "のりおこし": "TM48", "いわおとし": "TM49", "アクアテール": "TM50"
-};
-
-const HM_NUMBERS = {
-  "いあいぎり": "HM01", "そらをとぶ": "HM02", "なみのり": "HM03", "かいりき": "HM04",
-  "フラッシュ": "HM05", "うずしお": "HM06", "たきのぼり": "HM07"
-};
-
-let movesDB = {};
+let masterData = { tm: {}, hm: {}, moves: {} };
 let pokedex = [];
 let currentTabs = {};
 
@@ -115,31 +142,85 @@ async function init() {
       fetch('./moves.json'),
       fetch('./pokedex.json')
     ]);
-    movesDB = await movesRes.json();
+    const movesJson = await movesRes.json();
     pokedex = await pokeRes.json();
-    render();
+
+    // データの構造を判定して安全にセット
+    if (movesJson.moves) {
+      masterData = movesJson;
+    } else {
+      masterData = { tm: {}, hm: {}, moves: movesJson };
+    }
+    
+    renderPokedex();
+    renderMachines();
   } catch (e) {
-    document.getElementById("list").innerHTML = 
+    document.getElementById("pokedexList").innerHTML = 
       `<div class="card" style="color:red;"><b>エラー：</b>JSONファイルが読み込めませんでした。</div>`;
   }
 }
 
+function switchMode(mode) {
+  document.getElementById('btnPokedex').className = mode === 'pokedex' ? 'nav-btn active' : 'nav-btn';
+  document.getElementById('btnMachines').className = mode === 'machines' ? 'nav-btn active' : 'nav-btn';
+  
+  document.getElementById('pokedexView').style.display = mode === 'pokedex' ? 'block' : 'none';
+  document.getElementById('machinesView').style.display = mode === 'machines' ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function setTab(no, tabName) {
   currentTabs[no] = tabName;
-  render();
+  renderPokedex();
 }
 
 function searchPokemon(name) {
+  switchMode('pokedex');
   document.getElementById("search").value = name;
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  render();
+  renderPokedex();
+}
+
+function showMoveDetail(moveName) {
+  const movesDB = masterData.moves || masterData;
+  const m = movesDB[moveName] || { type: "???", category: "変化", power: "-", accuracy: "-", pp: "-" };
+  
+  let place = "不明・イベント等";
+  if (masterData.tm) {
+    for (let info of Object.values(masterData.tm)) {
+      if (info.name === moveName) { place = info.place; break; }
+    }
+  }
+  if (masterData.hm) {
+    for (let info of Object.values(masterData.hm)) {
+      if (info.name === moveName) { place = info.place; break; }
+    }
+  }
+
+  document.getElementById("modalMoveName").innerText = moveName;
+  document.getElementById("modalMoveBody").innerHTML = `
+    <div style="margin-bottom:6px;"><b>タイプ：</b> <span class="badge type-${m.type}">${m.type}</span></div>
+    <div style="margin-bottom:6px;"><b>分類：</b> <span class="badge cat-${m.category}">${m.category}</span></div>
+    <div style="margin-bottom:6px;"><b>威力：</b> ${m.power}</div>
+    <div style="margin-bottom:6px;"><b>命中：</b> ${m.accuracy}</div>
+    <div style="margin-bottom:6px;"><b>PP：</b> ${m.pp}</div>
+    <div style="margin-top:10px; background:#f9f9f9; padding:8px; border-radius:6px; font-size:13px;">📍 <b>入手場所：</b><br>${place}</div>
+  `;
+  document.getElementById("moveModal").style.display = 'flex';
+}
+
+function closeModal(e) {
+  if (e.target.id === 'moveModal') {
+    document.getElementById("moveModal").style.display = 'none';
+  }
 }
 
 function renderMoveRow(moveName, badgeHtml = "", levelText = "-") {
+  const movesDB = masterData.moves || masterData;
   const m = movesDB[moveName] || { type: "???", category: "変化", power: "?", accuracy: "?", pp: "?" };
   return `<tr>
     <td>${levelText}</td>
-    <td><b>${moveName}</b>${badgeHtml}</td>
+    <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span>${badgeHtml}</td>
     <td><span class="badge type-${m.type}">${m.type}</span></td>
     <td><span class="badge cat-${m.category}">${m.category}</span></td>
     <td>${m.power}</td>
@@ -148,10 +229,10 @@ function renderMoveRow(moveName, badgeHtml = "", levelText = "-") {
   </tr>`;
 }
 
-function render() {
+function renderPokedex() {
   const q = document.getElementById("search").value.trim();
   const typeF = document.getElementById("typeFilter").value;
-  const list = document.getElementById("list");
+  const list = document.getElementById("pokedexList");
   list.innerHTML = "";
 
   const filtered = pokedex.filter(p => {
@@ -183,16 +264,14 @@ function render() {
         return renderMoveRow(item.move, ver, "Lv." + item.level);
       }).join("");
     } else if (activeTab === "tm") {
-      movesHtml = (p.tm_moves || []).map(m => {
-        const tmCode = TM_NUMBERS[m] || "TM";
-        const tmBadge = `<span class="tm-badge">${tmCode}</span>`;
-        return renderMoveRow(m, "", tmBadge);
+      movesHtml = (p.tm_moves || []).map(item => {
+        const tmBadge = `<span class="tm-badge">${item.code}</span>`;
+        return renderMoveRow(item.name, "", tmBadge);
       }).join("");
     } else if (activeTab === "hm") {
-      movesHtml = (p.hm_moves || []).map(m => {
-        const hmCode = HM_NUMBERS[m] || "HM";
-        const hmBadge = `<span class="hm-badge">${hmCode}</span>`;
-        return renderMoveRow(m, "", hmBadge);
+      movesHtml = (p.hm_moves || []).map(item => {
+        const hmBadge = `<span class="hm-badge">${item.code}</span>`;
+        return renderMoveRow(item.name, "", hmBadge);
       }).join("");
     }
 
@@ -215,6 +294,40 @@ function render() {
       </div>
     `;
   });
+}
+
+function renderMachines() {
+  const tmBody = document.getElementById("tmTableBody");
+  tmBody.innerHTML = "";
+  for (let i = 1; i <= 50; i++) {
+    const code = "TM" + String(i).padStart(2, '0');
+    const data = masterData.tm ? masterData.tm[code] : { name: "-", place: "-" };
+    const moveName = data ? data.name : "-";
+    const place = data ? data.place : "-";
+    tmBody.innerHTML += `
+      <tr>
+        <td><span class="tm-badge">${code}</span></td>
+        <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span></td>
+        <td style="font-size:12px; color:#555;">${place}</td>
+      </tr>
+    `;
+  }
+
+  const hmBody = document.getElementById("hmTableBody");
+  hmBody.innerHTML = "";
+  for (let i = 1; i <= 7; i++) {
+    const code = "HM0" + i;
+    const data = masterData.hm ? masterData.hm[code] : { name: "-", place: "-" };
+    const moveName = data ? data.name : "-";
+    const place = data ? data.place : "-";
+    hmBody.innerHTML += `
+      <tr>
+        <td><span class="hm-badge">${code}</span></td>
+        <td><span class="move-clickable" onclick="showMoveDetail('${moveName}')">${moveName}</span></td>
+        <td style="font-size:12px; color:#555;">${place}</td>
+      </tr>
+    `;
+  }
 }
 
 init();
