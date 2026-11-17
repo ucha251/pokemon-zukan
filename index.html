@@ -52,7 +52,8 @@
   .tab { flex: 1; text-align: center; padding: 8px 4px; border-radius: 8px; background: #eee; cursor: pointer; font-size: 13px; font-weight: bold; }
   .tab.active { background: #d32f2f; color: white; }
   .crystal-tag { background: #00bcd4; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-left: 4px; }
-  .extra-box { background: #f5f7fa; padding: 8px 12px; border-radius: 8px; font-size: 13px; margin-top: 6px; }
+  .tm-badge { background: #ff9800; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
+  .hm-badge { background: #009688; color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; margin-right: 4px; font-weight: bold; }
 </style>
 </head>
 <body>
@@ -76,6 +77,34 @@
 <div id="list">データを読み込み中...</div>
 
 <script>
+const TM_NUMBERS = {
+  "すだれ": "TM01", "ドラゴンクロー": "TM02", "サイコキネシス": "TM03", "めいそう": "TM04", "ほえる": "TM05",
+  "どくどく": "TM06", "でんじは": "TM07", "いわくだき": "TM08", "タネマシンガン": "TM09", "めざめるパワー": "TM10",
+  "にほんばれ": "TM11", "ちょうはつ": "TM12", "れいとうビーム": "TM13", "ふぶき": "TM14", "はかいこうせん": "TM15",
+  "ひかりのかべ": "TM16", "まもる": "TM17", "あまごい": "TM18", "ギガドレイン": "TM19", "しんぴのまもり": "TM20",
+  "やつ当たり": "TM21", "ソーラービーム": "TM22", "アイアンテール": "TM23", "１０まんボルト": "TM24", "かみなり": "TM25",
+  "じしん": "TM26", "おんがえし": "TM27", "あなをほる": "TM28", "サイコキネシス": "TM29", "シャドーボール": "TM30",
+  "かわらわり": "TM31", "かげぶんしん": "TM32", "リフレクター": "TM33", "でんげきは": "TM34", "かえんほうしゃ": "TM35",
+  "ヘドロばくだん": "TM36", "すなわれ": "TM37", "だいもんじ": "TM38", "がんせきふうじ": "TM39", "つばめがえし": "TM40",
+  "いばる": "TM41", "からげんき": "TM42", "ひみつのちから": "TM43", "ねむる": "TM44", "メロメロ": "TM45",
+  "ど泥棒": "TM46", "はがねのつばさ": "TM47", "スキルスワップ": "TM48", "よこどり": "TM49", "オーバーヒート": "TM50",
+  "ダイナミックパンチ": "TM01", "ずつき": "TM02", "のりこえる": "TM03", "ロールアウト": "TM04", "すなかけ": "TM05",
+  "とおせんぼう": "TM06", "でんじは": "TM07", "いわくだき": "TM08", "テレポート": "TM09", "めざめるパワー": "TM10",
+  "にほんばれ": "TM11", "あまいかおり": "TM12", "いびき": "TM13", "ふぶき": "TM14", "こわいかお": "TM15",
+  "ひかりのかべ": "TM16", "まもる": "TM17", "あまごい": "TM18", "ギガドレイン": "TM19", "こらえる": "TM20",
+  "やつあたり": "TM21", "ソーラービーム": "TM22", "アイアンテール": "TM23", "１０まんボルト": "TM24", "かみなり": "TM25",
+  "じしん": "TM26", "おんがえし": "TM27", "あなをほる": "TM28", "サイコキネシス": "TM29", "シャドーボール": "TM30",
+  "どろかけ": "TM31", "かげぶんしん": "TM32", "リフレクター": "TM33", "れいとうパンチ": "TM34", "かえんほうしゃ": "TM35",
+  "ヘドロばくだん": "TM36", "すなわれ": "TM37", "だいもんじ": "TM38", "スピードスター": "TM39", "いなずま": "TM40",
+  "いばる": "TM41", "でんきちくでん": "TM42", "さわぐ": "TM43", "ねむる": "TM44", "メロメロ": "TM45",
+  "ど泥棒": "TM46", "はがねのつばさ": "TM47", "のりおこし": "TM48", "いわおとし": "TM49", "アクアテール": "TM50"
+};
+
+const HM_NUMBERS = {
+  "いあいぎり": "HM01", "そらをとぶ": "HM02", "なみのり": "HM03", "かいりき": "HM04",
+  "フラッシュ": "HM05", "うずしお": "HM06", "たきのぼり": "HM07"
+};
+
 let movesDB = {};
 let pokedex = [];
 let currentTabs = {};
@@ -154,15 +183,17 @@ function render() {
         return renderMoveRow(item.move, ver, "Lv." + item.level);
       }).join("");
     } else if (activeTab === "tm") {
-      movesHtml = (p.tm_moves || []).map(m => renderMoveRow(m, "", "技マシン")).join("");
+      movesHtml = (p.tm_moves || []).map(m => {
+        const tmCode = TM_NUMBERS[m] || "TM";
+        const tmBadge = `<span class="tm-badge">${tmCode}</span>`;
+        return renderMoveRow(m, "", tmBadge);
+      }).join("");
     } else if (activeTab === "hm") {
-      movesHtml = (p.hm_moves || []).map(m => renderMoveRow(m, "", "秘伝")).join("");
-    }
-
-    let extraHtml = "";
-    if (p.extra && Object.keys(p.extra).length > 0) {
-      extraHtml = `<div class="section-title">追加データ</div><div class="extra-box">` +
-        Object.entries(p.extra).map(([k, v]) => `<div><b>${k}：</b>${v}</div>`).join("") + `</div>`;
+      movesHtml = (p.hm_moves || []).map(m => {
+        const hmCode = HM_NUMBERS[m] || "HM";
+        const hmBadge = `<span class="hm-badge">${hmCode}</span>`;
+        return renderMoveRow(m, "", hmBadge);
+      }).join("");
     }
 
     list.innerHTML += `
@@ -181,7 +212,6 @@ function render() {
             ${movesHtml || '<tr><td colspan="7">なし</td></tr>'}
           </table>
         </div>
-        ${extraHtml}
       </div>
     `;
   });
