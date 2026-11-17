@@ -6,11 +6,18 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "フシギダネ",
         "to": "フシギソウ",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "フシギソウ",
+        "to": "フシギバナ",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
       }
     ],
     "level_up_moves": [
@@ -104,8 +111,15 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "フシギダネ",
+        "to": "フシギソウ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "フシギソウ",
         "to": "フシギバナ",
         "method": "レベルアップ",
         "condition": "Lv.32"
@@ -202,7 +216,20 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "フシギダネ",
+        "to": "フシギソウ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "フシギソウ",
+        "to": "フシギバナ",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -295,11 +322,18 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒトカゲ",
         "to": "リザード",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "リザード",
+        "to": "リザードン",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
       }
     ],
     "level_up_moves": [
@@ -394,8 +428,15 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒトカゲ",
+        "to": "リザード",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "リザード",
         "to": "リザードン",
         "method": "レベルアップ",
         "condition": "Lv.36"
@@ -494,7 +535,20 @@
       "ほのお",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヒトカゲ",
+        "to": "リザード",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "リザード",
+        "to": "リザードン",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -598,11 +652,18 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ゼニガメ",
         "to": "カメール",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "カメール",
+        "to": "カメックス",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
       }
     ],
     "level_up_moves": [
@@ -701,8 +762,15 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ゼニガメ",
+        "to": "カメール",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "カメール",
         "to": "カメックス",
         "method": "レベルアップ",
         "condition": "Lv.36"
@@ -804,7 +872,20 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ゼニガメ",
+        "to": "カメール",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "カメール",
+        "to": "カメックス",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -904,11 +985,18 @@
     "types": [
       "むし"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "キャタピー",
         "to": "トランセル",
         "method": "レベルアップ",
         "condition": "Lv.7"
+      },
+      {
+        "from": "トランセル",
+        "to": "バタフリー",
+        "method": "レベルアップ",
+        "condition": "Lv.10"
       }
     ],
     "level_up_moves": [
@@ -933,8 +1021,15 @@
     "types": [
       "むし"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "キャタピー",
+        "to": "トランセル",
+        "method": "レベルアップ",
+        "condition": "Lv.7"
+      },
+      {
+        "from": "トランセル",
         "to": "バタフリー",
         "method": "レベルアップ",
         "condition": "Lv.10"
@@ -958,7 +1053,20 @@
       "むし",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "キャタピー",
+        "to": "トランセル",
+        "method": "レベルアップ",
+        "condition": "Lv.7"
+      },
+      {
+        "from": "トランセル",
+        "to": "バタフリー",
+        "method": "レベルアップ",
+        "condition": "Lv.10"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1041,11 +1149,18 @@
       "むし",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ビードル",
         "to": "コクーン",
         "method": "レベルアップ",
         "condition": "Lv.7"
+      },
+      {
+        "from": "コクーン",
+        "to": "スピアー",
+        "method": "レベルアップ",
+        "condition": "Lv.10"
       }
     ],
     "level_up_moves": [
@@ -1071,8 +1186,15 @@
       "むし",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ビードル",
+        "to": "コクーン",
+        "method": "レベルアップ",
+        "condition": "Lv.7"
+      },
+      {
+        "from": "コクーン",
         "to": "スピアー",
         "method": "レベルアップ",
         "condition": "Lv.10"
@@ -1096,7 +1218,20 @@
       "むし",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ビードル",
+        "to": "コクーン",
+        "method": "レベルアップ",
+        "condition": "Lv.7"
+      },
+      {
+        "from": "コクーン",
+        "to": "スピアー",
+        "method": "レベルアップ",
+        "condition": "Lv.10"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1168,11 +1303,18 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ポッポ",
         "to": "ピジョン",
         "method": "レベルアップ",
         "condition": "Lv.18"
+      },
+      {
+        "from": "ピジョン",
+        "to": "ピジョット",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
       }
     ],
     "level_up_moves": [
@@ -1249,8 +1391,15 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ポッポ",
+        "to": "ピジョン",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "ピジョン",
         "to": "ピジョット",
         "method": "レベルアップ",
         "condition": "Lv.36"
@@ -1331,7 +1480,20 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ポッポ",
+        "to": "ピジョン",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "ピジョン",
+        "to": "ピジョット",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1407,8 +1569,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "コラッタ",
         "to": "ラッタ",
         "method": "レベルアップ",
         "condition": "Lv.20"
@@ -1488,7 +1651,14 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "コラッタ",
+        "to": "ラッタ",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1569,8 +1739,9 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "オニスズメ",
         "to": "オニドリル",
         "method": "レベルアップ",
         "condition": "Lv.20"
@@ -1651,7 +1822,14 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "オニスズメ",
+        "to": "オニドリル",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1727,8 +1905,9 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "アーボ",
         "to": "アーボック",
         "method": "レベルアップ",
         "condition": "Lv.22"
@@ -1809,7 +1988,14 @@
     "types": [
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "アーボ",
+        "to": "アーボック",
+        "method": "レベルアップ",
+        "condition": "Lv.22"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -1886,8 +2072,15 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ピチュー",
+        "to": "ピカチュウ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピカチュウ",
         "to": "ライチュウ",
         "method": "進化の石・道具",
         "condition": "thunder-stone"
@@ -1987,7 +2180,20 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ピチュー",
+        "to": "ピカチュウ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピカチュウ",
+        "to": "ライチュウ",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -2051,8 +2257,9 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "サンド",
         "to": "サンドパン",
         "method": "レベルアップ",
         "condition": "Lv.22"
@@ -2139,7 +2346,14 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "サンド",
+        "to": "サンドパン",
+        "method": "レベルアップ",
+        "condition": "Lv.22"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -2222,11 +2436,18 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニドラン♀",
         "to": "ニドリーナ",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーナ",
+        "to": "ニドクイン",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
       }
     ],
     "level_up_moves": [
@@ -2305,8 +2526,15 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニドラン♀",
+        "to": "ニドリーナ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーナ",
         "to": "ニドクイン",
         "method": "進化の石・道具",
         "condition": "moon-stone"
@@ -2392,7 +2620,20 @@
       "どく",
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ニドラン♀",
+        "to": "ニドリーナ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーナ",
+        "to": "ニドクイン",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -2470,11 +2711,18 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニドラン♂",
         "to": "ニドリーノ",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーノ",
+        "to": "ニドキング",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
       }
     ],
     "level_up_moves": [
@@ -2553,8 +2801,15 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニドラン♂",
+        "to": "ニドリーノ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーノ",
         "to": "ニドキング",
         "method": "進化の石・道具",
         "condition": "moon-stone"
@@ -2640,7 +2895,20 @@
       "どく",
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ニドラン♂",
+        "to": "ニドリーノ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ニドリーノ",
+        "to": "ニドキング",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -2718,8 +2986,15 @@
     "types": [
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ピィ",
+        "to": "ピッピ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピッピ",
         "to": "ピクシー",
         "method": "進化の石・道具",
         "condition": "moon-stone"
@@ -2825,7 +3100,20 @@
     "types": [
       null
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ピィ",
+        "to": "ピッピ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピッピ",
+        "to": "ピクシー",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -2898,8 +3186,9 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ロコン",
         "to": "キュウコン",
         "method": "進化の石・道具",
         "condition": "fire-stone"
@@ -2977,7 +3266,14 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ロコン",
+        "to": "キュウコン",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -3038,8 +3334,15 @@
       "ノーマル",
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ププリン",
+        "to": "プリン",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "プリン",
         "to": "プクリン",
         "method": "進化の石・道具",
         "condition": "moon-stone"
@@ -3138,7 +3441,20 @@
       "ノーマル",
       null
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ププリン",
+        "to": "プリン",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "プリン",
+        "to": "プクリン",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -3210,11 +3526,18 @@
       "どく",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ズバット",
         "to": "ゴルバット",
         "method": "レベルアップ",
         "condition": "Lv.22"
+      },
+      {
+        "from": "ゴルバット",
+        "to": "クロバット",
+        "method": "なつき",
+        "condition": "なつき度MAX"
       }
     ],
     "level_up_moves": [
@@ -3285,8 +3608,15 @@
       "どく",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ズバット",
+        "to": "ゴルバット",
+        "method": "レベルアップ",
+        "condition": "Lv.22"
+      },
+      {
+        "from": "ゴルバット",
         "to": "クロバット",
         "method": "なつき",
         "condition": "なつき度MAX"
@@ -3366,11 +3696,24 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ナゾノクサ",
         "to": "クサイハナ",
         "method": "レベルアップ",
         "condition": "Lv.21"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "ラフレシア",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "キレイハナ",
+        "method": "進化の石・道具",
+        "condition": "sun-stone"
       }
     ],
     "level_up_moves": [
@@ -3447,13 +3790,21 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ナゾノクサ",
+        "to": "クサイハナ",
+        "method": "レベルアップ",
+        "condition": "Lv.21"
+      },
+      {
+        "from": "クサイハナ",
         "to": "ラフレシア",
         "method": "進化の石・道具",
         "condition": "leaf-stone"
       },
       {
+        "from": "クサイハナ",
         "to": "キレイハナ",
         "method": "進化の石・道具",
         "condition": "sun-stone"
@@ -3533,7 +3884,26 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ナゾノクサ",
+        "to": "クサイハナ",
+        "method": "レベルアップ",
+        "condition": "Lv.21"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "ラフレシア",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "キレイハナ",
+        "method": "進化の石・道具",
+        "condition": "sun-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -3589,8 +3959,9 @@
       "むし",
       "くさ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "パラス",
         "to": "パラセクト",
         "method": "レベルアップ",
         "condition": "Lv.24"
@@ -3673,7 +4044,14 @@
       "むし",
       "くさ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "パラス",
+        "to": "パラセクト",
+        "method": "レベルアップ",
+        "condition": "Lv.24"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -3753,8 +4131,9 @@
       "むし",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "コンパン",
         "to": "モルフォン",
         "method": "レベルアップ",
         "condition": "Lv.31"
@@ -3848,7 +4227,14 @@
       "むし",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "コンパン",
+        "to": "モルフォン",
+        "method": "レベルアップ",
+        "condition": "Lv.31"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -3945,8 +4331,9 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ディグダ",
         "to": "ダグトリオ",
         "method": "レベルアップ",
         "condition": "Lv.26"
@@ -4025,7 +4412,14 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ディグダ",
+        "to": "ダグトリオ",
+        "method": "レベルアップ",
+        "condition": "Lv.26"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -4105,14 +4499,15 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニャース",
         "to": "ペルシアン",
         "method": "レベルアップ",
         "condition": "Lv.28"
       },
       {
-        "to": "ニャイキング",
+        "from": "ニャース",
         "method": "レベルアップ",
         "condition": "Lv.28"
       }
@@ -4198,7 +4593,19 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ニャース",
+        "to": "ペルシアン",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      },
+      {
+        "from": "ニャース",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -4282,8 +4689,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "コダック",
         "to": "ゴルダック",
         "method": "レベルアップ",
         "condition": "Lv.33"
@@ -4372,7 +4780,14 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "コダック",
+        "to": "ゴルダック",
+        "method": "レベルアップ",
+        "condition": "Lv.33"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -4458,11 +4873,17 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "マンキー",
         "to": "オコリザル",
         "method": "レベルアップ",
         "condition": "Lv.28"
+      },
+      {
+        "from": "オコリザル",
+        "method": "特殊",
+        "condition": "条件あり"
       }
     ],
     "level_up_moves": [
@@ -4559,9 +4980,15 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "コノヨザル",
+        "from": "マンキー",
+        "to": "オコリザル",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      },
+      {
+        "from": "オコリザル",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -4666,8 +5093,9 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ガーディ",
         "to": "ウインディ",
         "method": "進化の石・道具",
         "condition": "fire-stone"
@@ -4747,7 +5175,14 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ガーディ",
+        "to": "ウインディ",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -4808,11 +5243,24 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニョロモ",
         "to": "ニョロゾ",
         "method": "レベルアップ",
         "condition": "Lv.25"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロボン",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロトノ",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -4891,16 +5339,24 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ニョロモ",
+        "to": "ニョロゾ",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ニョロゾ",
         "to": "ニョロボン",
         "method": "進化の石・道具",
         "condition": "water-stone"
       },
       {
+        "from": "ニョロゾ",
         "to": "ニョロトノ",
         "method": "通信交換",
-        "condition": "持ち物(kings-rock)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -4986,7 +5442,26 @@
       "みず",
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ニョロモ",
+        "to": "ニョロゾ",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロボン",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロトノ",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -5057,11 +5532,18 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ケーシィ",
         "to": "ユンゲラー",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "ユンゲラー",
+        "to": "フーディン",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -5111,8 +5593,15 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ケーシィ",
+        "to": "ユンゲラー",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ユンゲラー",
         "to": "フーディン",
         "method": "通信交換",
         "condition": "通信"
@@ -5205,7 +5694,20 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ケーシィ",
+        "to": "ユンゲラー",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ユンゲラー",
+        "to": "フーディン",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -5294,11 +5796,18 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ワンリキー",
         "to": "ゴーリキー",
         "method": "レベルアップ",
         "condition": "Lv.28"
+      },
+      {
+        "from": "ゴーリキー",
+        "to": "カイリキー",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -5392,8 +5901,15 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ワンリキー",
+        "to": "ゴーリキー",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      },
+      {
+        "from": "ゴーリキー",
         "to": "カイリキー",
         "method": "通信交換",
         "condition": "通信"
@@ -5490,7 +6006,20 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ワンリキー",
+        "to": "ゴーリキー",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      },
+      {
+        "from": "ゴーリキー",
+        "to": "カイリキー",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -5584,11 +6113,18 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "マダツボミ",
         "to": "ウツドン",
         "method": "レベルアップ",
         "condition": "Lv.21"
+      },
+      {
+        "from": "ウツドン",
+        "to": "ウツボット",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
       }
     ],
     "level_up_moves": [
@@ -5675,8 +6211,15 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "マダツボミ",
+        "to": "ウツドン",
+        "method": "レベルアップ",
+        "condition": "Lv.21"
+      },
+      {
+        "from": "ウツドン",
         "to": "ウツボット",
         "method": "進化の石・道具",
         "condition": "leaf-stone"
@@ -5766,7 +6309,20 @@
       "くさ",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "マダツボミ",
+        "to": "ウツドン",
+        "method": "レベルアップ",
+        "condition": "Lv.21"
+      },
+      {
+        "from": "ウツドン",
+        "to": "ウツボット",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -5822,8 +6378,9 @@
       "みず",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "メノクラゲ",
         "to": "ドククラゲ",
         "method": "レベルアップ",
         "condition": "Lv.30"
@@ -5910,7 +6467,14 @@
       "みず",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "メノクラゲ",
+        "to": "ドククラゲ",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -5993,11 +6557,18 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "イシツブテ",
         "to": "ゴローン",
         "method": "レベルアップ",
         "condition": "Lv.25"
+      },
+      {
+        "from": "ゴローン",
+        "to": "ゴローニャ",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -6083,8 +6654,15 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "イシツブテ",
+        "to": "ゴローン",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ゴローン",
         "to": "ゴローニャ",
         "method": "通信交換",
         "condition": "通信"
@@ -6173,7 +6751,20 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イシツブテ",
+        "to": "ゴローン",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ゴローン",
+        "to": "ゴローニャ",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -6259,8 +6850,9 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ポニータ",
         "to": "ギャロップ",
         "method": "レベルアップ",
         "condition": "Lv.40"
@@ -6341,7 +6933,14 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ポニータ",
+        "to": "ギャロップ",
+        "method": "レベルアップ",
+        "condition": "Lv.40"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -6424,16 +7023,18 @@
       "みず",
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヤドン",
         "to": "ヤドラン",
         "method": "レベルアップ",
         "condition": "Lv.37"
       },
       {
+        "from": "ヤドン",
         "to": "ヤドキング",
         "method": "通信交換",
-        "condition": "持ち物(kings-rock)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -6526,7 +7127,20 @@
       "みず",
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヤドン",
+        "to": "ヤドラン",
+        "method": "レベルアップ",
+        "condition": "Lv.37"
+      },
+      {
+        "from": "ヤドン",
+        "to": "ヤドキング",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -6627,11 +7241,17 @@
       "でんき",
       "はがね"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "コイル",
         "to": "レアコイル",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "レアコイル",
+        "method": "特殊",
+        "condition": "条件あり"
       }
     ],
     "level_up_moves": [
@@ -6710,9 +7330,15 @@
       "でんき",
       "はがね"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ジバコイル",
+        "from": "コイル",
+        "to": "レアコイル",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "レアコイル",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -6799,9 +7425,9 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ネギガナイト",
+        "from": "カモネギ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -6884,8 +7510,9 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ドードー",
         "to": "ドードリオ",
         "method": "レベルアップ",
         "condition": "Lv.31"
@@ -6965,7 +7592,14 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ドードー",
+        "to": "ドードリオ",
+        "method": "レベルアップ",
+        "condition": "Lv.31"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -7040,8 +7674,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "パウワウ",
         "to": "ジュゴン",
         "method": "レベルアップ",
         "condition": "Lv.34"
@@ -7115,7 +7750,14 @@
       "みず",
       "こおり"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "パウワウ",
+        "to": "ジュゴン",
+        "method": "レベルアップ",
+        "condition": "Lv.34"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -7184,8 +7826,9 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ベトベター",
         "to": "ベトベトン",
         "method": "レベルアップ",
         "condition": "Lv.38"
@@ -7273,7 +7916,14 @@
     "types": [
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ベトベター",
+        "to": "ベトベトン",
+        "method": "レベルアップ",
+        "condition": "Lv.38"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -7357,8 +8007,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "シェルダー",
         "to": "パルシェン",
         "method": "進化の石・道具",
         "condition": "water-stone"
@@ -7437,7 +8088,14 @@
       "みず",
       "こおり"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "シェルダー",
+        "to": "パルシェン",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -7502,11 +8160,18 @@
       "ゴースト",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ゴース",
         "to": "ゴースト",
         "method": "レベルアップ",
         "condition": "Lv.25"
+      },
+      {
+        "from": "ゴースト",
+        "to": "ゲンガー",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -7590,8 +8255,15 @@
       "ゴースト",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ゴース",
+        "to": "ゴースト",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ゴースト",
         "to": "ゲンガー",
         "method": "通信交換",
         "condition": "通信"
@@ -7678,7 +8350,20 @@
       "ゴースト",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ゴース",
+        "to": "ゴースト",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ゴースト",
+        "to": "ゲンガー",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -7769,11 +8454,12 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "イワーク",
         "to": "ハガネール",
         "method": "通信交換",
-        "condition": "持ち物(metal-coat)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -7852,8 +8538,9 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "スリープ",
         "to": "スリーパー",
         "method": "レベルアップ",
         "condition": "Lv.26"
@@ -7947,7 +8634,14 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "スリープ",
+        "to": "スリーパー",
+        "method": "レベルアップ",
+        "condition": "Lv.26"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8037,8 +8731,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "クラブ",
         "to": "キングラー",
         "method": "レベルアップ",
         "condition": "Lv.28"
@@ -8121,7 +8816,14 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "クラブ",
+        "to": "キングラー",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8200,8 +8902,9 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ビリリダマ",
         "to": "マルマイン",
         "method": "レベルアップ",
         "condition": "Lv.30"
@@ -8283,7 +8986,14 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ビリリダマ",
+        "to": "マルマイン",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8362,8 +9072,9 @@
       "くさ",
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "タマタマ",
         "to": "ナッシー",
         "method": "進化の石・道具",
         "condition": "leaf-stone"
@@ -8453,7 +9164,14 @@
       "くさ",
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "タマタマ",
+        "to": "ナッシー",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8520,8 +9238,9 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "カラカラ",
         "to": "ガラガラ",
         "method": "レベルアップ",
         "condition": "Lv.28"
@@ -8625,7 +9344,14 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "カラカラ",
+        "to": "ガラガラ",
+        "method": "レベルアップ",
+        "condition": "Lv.28"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8725,7 +9451,26 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "バルキー",
+        "to": "サワムラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "エビワラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "カポエラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8816,7 +9561,26 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "バルキー",
+        "to": "サワムラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "エビワラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "カポエラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -8902,9 +9666,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ベロベルト",
+        "from": "ベロリンガ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -9002,8 +9766,9 @@
     "types": [
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ドガース",
         "to": "マタドガス",
         "method": "レベルアップ",
         "condition": "Lv.35"
@@ -9087,7 +9852,14 @@
     "types": [
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ドガース",
+        "to": "マタドガス",
+        "method": "レベルアップ",
+        "condition": "Lv.35"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -9168,11 +9940,17 @@
       "じめん",
       "いわ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "サイホーン",
         "to": "サイドン",
         "method": "レベルアップ",
         "condition": "Lv.42"
+      },
+      {
+        "from": "サイドン",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -9258,11 +10036,17 @@
       "じめん",
       "いわ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ドサイドン",
+        "from": "サイホーン",
+        "to": "サイドン",
+        "method": "レベルアップ",
+        "condition": "Lv.42"
+      },
+      {
+        "from": "サイドン",
         "method": "通信交換",
-        "condition": "持ち物(protector)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -9353,8 +10137,14 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "to": "ラッキー",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "ラッキー",
         "to": "ハピナス",
         "method": "なつき",
         "condition": "なつき度MAX"
@@ -9464,9 +10254,9 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "モジャンボ",
+        "from": "モンジャラ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -9559,7 +10349,7 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -9654,11 +10444,18 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "タッツー",
         "to": "シードラ",
         "method": "レベルアップ",
         "condition": "Lv.32"
+      },
+      {
+        "from": "シードラ",
+        "to": "キングドラ",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -9732,11 +10529,18 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "タッツー",
+        "to": "シードラ",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
+      },
+      {
+        "from": "シードラ",
         "to": "キングドラ",
         "method": "通信交換",
-        "condition": "持ち物(dragon-scale)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -9811,8 +10615,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "トサキント",
         "to": "アズマオウ",
         "method": "レベルアップ",
         "condition": "Lv.33"
@@ -9895,7 +10700,14 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "トサキント",
+        "to": "アズマオウ",
+        "method": "レベルアップ",
+        "condition": "Lv.33"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -9974,8 +10786,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒトデマン",
         "to": "スターミー",
         "method": "進化の石・道具",
         "condition": "water-stone"
@@ -10070,7 +10883,14 @@
       "みず",
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヒトデマン",
+        "to": "スターミー",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -10139,9 +10959,14 @@
       "エスパー",
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "バリコオル",
+        "to": "バリヤード",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "バリヤード",
         "method": "レベルアップ",
         "condition": "Lv.42"
       }
@@ -10247,14 +11072,15 @@
       "むし",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ストライク",
         "to": "ハッサム",
         "method": "通信交換",
-        "condition": "持ち物(metal-coat)"
+        "condition": "通信"
       },
       {
-        "to": "バサギリ",
+        "from": "ストライク",
         "method": "進化の石・道具",
         "condition": "black-augurite"
       }
@@ -10346,7 +11172,14 @@
       "こおり",
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ムチュール",
+        "to": "ルージュラ",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -10436,11 +11269,17 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "エレキブル",
+        "from": "エレキッド",
+        "to": "エレブー",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "エレブー",
         "method": "通信交換",
-        "condition": "持ち物(electirizer)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -10525,11 +11364,17 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ブーバーン",
+        "from": "ブビィ",
+        "to": "ブーバー",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "ブーバー",
         "method": "通信交換",
-        "condition": "持ち物(magmarizer)"
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -10615,7 +11460,7 @@
     "types": [
       "むし"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -10691,7 +11536,7 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -10776,8 +11621,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "コイキング",
         "to": "ギャラドス",
         "method": "レベルアップ",
         "condition": "Lv.20"
@@ -10811,7 +11657,14 @@
       "みず",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "コイキング",
+        "to": "ギャラドス",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -10894,7 +11747,7 @@
       "みず",
       "こおり"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -10992,7 +11845,7 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -11010,44 +11863,49 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "イーブイ",
         "to": "シャワーズ",
         "method": "進化の石・道具",
         "condition": "water-stone"
       },
       {
+        "from": "イーブイ",
         "to": "サンダース",
         "method": "進化の石・道具",
         "condition": "thunder-stone"
       },
       {
+        "from": "イーブイ",
         "to": "ブースター",
         "method": "進化の石・道具",
         "condition": "fire-stone"
       },
       {
+        "from": "イーブイ",
         "to": "エーフィ",
         "method": "なつき",
-        "condition": "dayになつきMAX"
+        "condition": "なつき度MAX"
       },
       {
+        "from": "イーブイ",
         "to": "ブラッキー",
         "method": "なつき",
-        "condition": "nightになつきMAX"
+        "condition": "なつき度MAX"
       },
       {
-        "to": "リーフィア",
+        "from": "イーブイ",
         "method": "特殊",
         "condition": "条件あり"
       },
       {
-        "to": "グレイシア",
+        "from": "イーブイ",
         "method": "特殊",
         "condition": "条件あり"
       },
       {
-        "to": "ニンフィア",
+        "from": "イーブイ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -11131,7 +11989,53 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イーブイ",
+        "to": "シャワーズ",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "サンダース",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブースター",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "エーフィ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブラッキー",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -11224,7 +12128,53 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イーブイ",
+        "to": "シャワーズ",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "サンダース",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブースター",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "エーフィ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブラッキー",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -11314,7 +12264,53 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イーブイ",
+        "to": "シャワーズ",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "サンダース",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブースター",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "エーフィ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブラッキー",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -11403,11 +12399,17 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ポリゴン",
         "to": "ポリゴン２",
         "method": "通信交換",
-        "condition": "持ち物(up-grade)"
+        "condition": "通信"
+      },
+      {
+        "from": "ポリゴン２",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -11501,8 +12503,9 @@
       "いわ",
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "オムナイト",
         "to": "オムスター",
         "method": "レベルアップ",
         "condition": "Lv.40"
@@ -11585,7 +12588,14 @@
       "いわ",
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "オムナイト",
+        "to": "オムスター",
+        "method": "レベルアップ",
+        "condition": "Lv.40"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -11669,8 +12679,9 @@
       "いわ",
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "カブト",
         "to": "カブトプス",
         "method": "レベルアップ",
         "condition": "Lv.40"
@@ -11750,7 +12761,14 @@
       "いわ",
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "カブト",
+        "to": "カブトプス",
+        "method": "レベルアップ",
+        "condition": "Lv.40"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -11837,7 +12855,7 @@
       "いわ",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -11917,7 +12935,13 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "カビゴン",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -12015,7 +13039,7 @@
       "こおり",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -12095,7 +13119,7 @@
       "でんき",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -12175,7 +13199,7 @@
       "ほのお",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -12253,11 +13277,18 @@
     "types": [
       "ドラゴン"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ミニリュウ",
         "to": "ハクリュー",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "ハクリュー",
+        "to": "カイリュー",
+        "method": "レベルアップ",
+        "condition": "Lv.55"
       }
     ],
     "level_up_moves": [
@@ -12350,8 +13381,15 @@
     "types": [
       "ドラゴン"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ミニリュウ",
+        "to": "ハクリュー",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "ハクリュー",
         "to": "カイリュー",
         "method": "レベルアップ",
         "condition": "Lv.55"
@@ -12448,7 +13486,20 @@
       "ドラゴン",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ミニリュウ",
+        "to": "ハクリュー",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "ハクリュー",
+        "to": "カイリュー",
+        "method": "レベルアップ",
+        "condition": "Lv.55"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -12556,7 +13607,7 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -12661,7 +13712,7 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -12762,11 +13813,18 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "チコリータ",
         "to": "ベイリーフ",
         "method": "レベルアップ",
         "condition": "Lv.16"
+      },
+      {
+        "from": "ベイリーフ",
+        "to": "メガニウム",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
       }
     ],
     "level_up_moves": [
@@ -12855,8 +13913,15 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "チコリータ",
+        "to": "ベイリーフ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ベイリーフ",
         "to": "メガニウム",
         "method": "レベルアップ",
         "condition": "Lv.32"
@@ -12951,7 +14016,20 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "チコリータ",
+        "to": "ベイリーフ",
+        "method": "レベルアップ",
+        "condition": "Lv.16"
+      },
+      {
+        "from": "ベイリーフ",
+        "to": "メガニウム",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -13043,11 +14121,18 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒノアラシ",
         "to": "マグマラシ",
         "method": "レベルアップ",
         "condition": "Lv.14"
+      },
+      {
+        "from": "マグマラシ",
+        "to": "バクフーン",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
       }
     ],
     "level_up_moves": [
@@ -13127,8 +14212,15 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒノアラシ",
+        "to": "マグマラシ",
+        "method": "レベルアップ",
+        "condition": "Lv.14"
+      },
+      {
+        "from": "マグマラシ",
         "to": "バクフーン",
         "method": "レベルアップ",
         "condition": "Lv.36"
@@ -13215,7 +14307,20 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヒノアラシ",
+        "to": "マグマラシ",
+        "method": "レベルアップ",
+        "condition": "Lv.14"
+      },
+      {
+        "from": "マグマラシ",
+        "to": "バクフーン",
+        "method": "レベルアップ",
+        "condition": "Lv.36"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -13302,11 +14407,18 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ワニノコ",
         "to": "アリゲイツ",
         "method": "レベルアップ",
         "condition": "Lv.18"
+      },
+      {
+        "from": "アリゲイツ",
+        "to": "オーダイル",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
       }
     ],
     "level_up_moves": [
@@ -13394,8 +14506,15 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ワニノコ",
+        "to": "アリゲイツ",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "アリゲイツ",
         "to": "オーダイル",
         "method": "レベルアップ",
         "condition": "Lv.30"
@@ -13490,7 +14609,20 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ワニノコ",
+        "to": "アリゲイツ",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "アリゲイツ",
+        "to": "オーダイル",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -13582,8 +14714,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "オタチ",
         "to": "オオタチ",
         "method": "レベルアップ",
         "condition": "Lv.15"
@@ -13667,7 +14800,14 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "オタチ",
+        "to": "オオタチ",
+        "method": "レベルアップ",
+        "condition": "Lv.15"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -13749,8 +14889,9 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ホーホー",
         "to": "ヨルノズク",
         "method": "レベルアップ",
         "condition": "Lv.20"
@@ -13838,7 +14979,14 @@
       "ノーマル",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ホーホー",
+        "to": "ヨルノズク",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -13922,8 +15070,9 @@
       "むし",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "レディバ",
         "to": "レディアン",
         "method": "レベルアップ",
         "condition": "Lv.18"
@@ -14019,7 +15168,14 @@
       "むし",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "レディバ",
+        "to": "レディアン",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -14111,8 +15267,9 @@
       "むし",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "イトマル",
         "to": "アリアドス",
         "method": "レベルアップ",
         "condition": "Lv.22"
@@ -14208,7 +15365,14 @@
       "むし",
       "どく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イトマル",
+        "to": "アリアドス",
+        "method": "レベルアップ",
+        "condition": "Lv.22"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -14300,7 +15464,20 @@
       "どく",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ズバット",
+        "to": "ゴルバット",
+        "method": "レベルアップ",
+        "condition": "Lv.22"
+      },
+      {
+        "from": "ゴルバット",
+        "to": "クロバット",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -14377,8 +15554,9 @@
       "みず",
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "チョンチー",
         "to": "ランターン",
         "method": "レベルアップ",
         "condition": "Lv.27"
@@ -14464,7 +15642,14 @@
       "みず",
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "チョンチー",
+        "to": "ランターン",
+        "method": "レベルアップ",
+        "condition": "Lv.27"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -14545,11 +15730,18 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ピチュー",
         "to": "ピカチュウ",
         "method": "なつき",
         "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピカチュウ",
+        "to": "ライチュウ",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
       }
     ],
     "level_up_moves": [
@@ -14615,11 +15807,18 @@
     "types": [
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ピィ",
         "to": "ピッピ",
         "method": "なつき",
         "condition": "なつき度MAX"
+      },
+      {
+        "from": "ピッピ",
+        "to": "ピクシー",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
       }
     ],
     "level_up_moves": [
@@ -14693,11 +15892,18 @@
       "ノーマル",
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ププリン",
         "to": "プリン",
         "method": "なつき",
         "condition": "なつき度MAX"
+      },
+      {
+        "from": "プリン",
+        "to": "プクリン",
+        "method": "進化の石・道具",
+        "condition": "moon-stone"
       }
     ],
     "level_up_moves": [
@@ -14768,11 +15974,17 @@
     "types": [
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "トゲピー",
         "to": "トゲチック",
         "method": "なつき",
         "condition": "なつき度MAX"
+      },
+      {
+        "from": "トゲチック",
+        "method": "進化の石・道具",
+        "condition": "shiny-stone"
       }
     ],
     "level_up_moves": [
@@ -14855,9 +16067,15 @@
       null,
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "トゲキッス",
+        "from": "トゲピー",
+        "to": "トゲチック",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "トゲチック",
         "method": "進化の石・道具",
         "condition": "shiny-stone"
       }
@@ -14945,8 +16163,9 @@
       "エスパー",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ネイティ",
         "to": "ネイティオ",
         "method": "レベルアップ",
         "condition": "Lv.25"
@@ -15025,7 +16244,14 @@
       "エスパー",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ネイティ",
+        "to": "ネイティオ",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15100,11 +16326,18 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "メリープ",
         "to": "モココ",
         "method": "レベルアップ",
         "condition": "Lv.15"
+      },
+      {
+        "from": "モココ",
+        "to": "デンリュウ",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
       }
     ],
     "level_up_moves": [
@@ -15176,8 +16409,15 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "メリープ",
+        "to": "モココ",
+        "method": "レベルアップ",
+        "condition": "Lv.15"
+      },
+      {
+        "from": "モココ",
         "to": "デンリュウ",
         "method": "レベルアップ",
         "condition": "Lv.30"
@@ -15257,7 +16497,20 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "メリープ",
+        "to": "モココ",
+        "method": "レベルアップ",
+        "condition": "Lv.15"
+      },
+      {
+        "from": "モココ",
+        "to": "デンリュウ",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15337,7 +16590,26 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ナゾノクサ",
+        "to": "クサイハナ",
+        "method": "レベルアップ",
+        "condition": "Lv.21"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "ラフレシア",
+        "method": "進化の石・道具",
+        "condition": "leaf-stone"
+      },
+      {
+        "from": "クサイハナ",
+        "to": "キレイハナ",
+        "method": "進化の石・道具",
+        "condition": "sun-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15396,8 +16668,14 @@
       "みず",
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "to": "マリル",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "マリル",
         "to": "マリルリ",
         "method": "レベルアップ",
         "condition": "Lv.18"
@@ -15482,7 +16760,19 @@
       "みず",
       null
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "マリル",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "マリル",
+        "to": "マリルリ",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15564,7 +16854,13 @@
     "types": [
       "いわ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "ウソッキー",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15643,7 +16939,26 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ニョロモ",
+        "to": "ニョロゾ",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロボン",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "ニョロゾ",
+        "to": "ニョロトノ",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15714,11 +17029,18 @@
       "くさ",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ハネッコ",
         "to": "ポポッコ",
         "method": "レベルアップ",
         "condition": "Lv.18"
+      },
+      {
+        "from": "ポポッコ",
+        "to": "ワタッコ",
+        "method": "レベルアップ",
+        "condition": "Lv.27"
       }
     ],
     "level_up_moves": [
@@ -15806,8 +17128,15 @@
       "くさ",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ハネッコ",
+        "to": "ポポッコ",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "ポポッコ",
         "to": "ワタッコ",
         "method": "レベルアップ",
         "condition": "Lv.27"
@@ -15898,7 +17227,20 @@
       "くさ",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ハネッコ",
+        "to": "ポポッコ",
+        "method": "レベルアップ",
+        "condition": "Lv.18"
+      },
+      {
+        "from": "ポポッコ",
+        "to": "ワタッコ",
+        "method": "レベルアップ",
+        "condition": "Lv.27"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -15984,9 +17326,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "エテボース",
+        "from": "エイパム",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -16078,8 +17420,9 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒマナッツ",
         "to": "キマワリ",
         "method": "進化の石・道具",
         "condition": "sun-stone"
@@ -16147,7 +17490,14 @@
     "types": [
       "くさ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヒマナッツ",
+        "to": "キマワリ",
+        "method": "進化の石・道具",
+        "condition": "sun-stone"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16217,9 +17567,9 @@
       "むし",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "メガヤンマ",
+        "from": "ヤンヤンマ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -16307,14 +17657,15 @@
       "みず",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ウパー",
         "to": "ヌオー",
         "method": "レベルアップ",
         "condition": "Lv.20"
       },
       {
-        "to": "ドオー",
+        "from": "ウパー",
         "method": "レベルアップ",
         "condition": "Lv.20"
       }
@@ -16401,7 +17752,19 @@
       "みず",
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ウパー",
+        "to": "ヌオー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "ウパー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16485,7 +17848,53 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イーブイ",
+        "to": "シャワーズ",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "サンダース",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブースター",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "エーフィ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブラッキー",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16576,7 +17985,53 @@
     "types": [
       "あく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イーブイ",
+        "to": "シャワーズ",
+        "method": "進化の石・道具",
+        "condition": "water-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "サンダース",
+        "method": "進化の石・道具",
+        "condition": "thunder-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブースター",
+        "method": "進化の石・道具",
+        "condition": "fire-stone"
+      },
+      {
+        "from": "イーブイ",
+        "to": "エーフィ",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "to": "ブラッキー",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "イーブイ",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16671,9 +18126,9 @@
       "あく",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ドンカラス",
+        "from": "ヤミカラス",
         "method": "進化の石・道具",
         "condition": "dusk-stone"
       }
@@ -16748,7 +18203,20 @@
       "みず",
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヤドン",
+        "to": "ヤドラン",
+        "method": "レベルアップ",
+        "condition": "Lv.37"
+      },
+      {
+        "from": "ヤドン",
+        "to": "ヤドキング",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16843,9 +18311,9 @@
     "types": [
       "ゴースト"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ムウマージ",
+        "from": "ムウマ",
         "method": "進化の石・道具",
         "condition": "dusk-stone"
       }
@@ -16931,7 +18399,7 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -16949,7 +18417,13 @@
     "types": [
       "エスパー"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "ソーナンス",
+        "method": "レベルアップ",
+        "condition": "Lv.15"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -16983,9 +18457,9 @@
       "ノーマル",
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "リキキリン",
+        "from": "キリンリキ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -17073,8 +18547,9 @@
     "types": [
       "むし"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "クヌギダマ",
         "to": "フォレトス",
         "method": "レベルアップ",
         "condition": "Lv.31"
@@ -17161,7 +18636,14 @@
       "むし",
       "はがね"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "クヌギダマ",
+        "to": "フォレトス",
+        "method": "レベルアップ",
+        "condition": "Lv.31"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -17244,9 +18726,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ノココッチ",
+        "from": "ノコッチ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -17330,9 +18812,9 @@
       "じめん",
       "ひこう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "グライオン",
+        "from": "グライガー",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -17417,7 +18899,14 @@
       "はがね",
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "イワーク",
+        "to": "ハガネール",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -17504,8 +18993,9 @@
     "types": [
       null
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ブルー",
         "to": "グランブル",
         "method": "レベルアップ",
         "condition": "Lv.23"
@@ -17600,7 +19090,14 @@
     "types": [
       null
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ブルー",
+        "to": "グランブル",
+        "method": "レベルアップ",
+        "condition": "Lv.23"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -17692,9 +19189,9 @@
       "みず",
       "どく"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ハリーマン",
+        "from": "ハリーセン",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -17783,7 +19280,19 @@
       "むし",
       "はがね"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ストライク",
+        "to": "ハッサム",
+        "method": "通信交換",
+        "condition": "通信"
+      },
+      {
+        "from": "ストライク",
+        "method": "進化の石・道具",
+        "condition": "black-augurite"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -17873,7 +19382,7 @@
       "むし",
       "いわ"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -17948,7 +19457,7 @@
       "むし",
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -18030,14 +19539,14 @@
       "あく",
       "こおり"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "マニューラ",
+        "from": "ニューラ",
         "method": "特殊",
         "condition": "条件あり"
       },
       {
-        "to": "オオニューラ",
+        "from": "ニューラ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -18141,11 +19650,17 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヒメグマ",
         "to": "リングマ",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "リングマ",
+        "method": "進化の石・道具",
+        "condition": "peat-block"
       }
     ],
     "level_up_moves": [
@@ -18237,9 +19752,15 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ガチグマ",
+        "from": "ヒメグマ",
+        "to": "リングマ",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "リングマ",
         "method": "進化の石・道具",
         "condition": "peat-block"
       }
@@ -18334,8 +19855,9 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "マグマッグ",
         "to": "マグカルゴ",
         "method": "レベルアップ",
         "condition": "Lv.38"
@@ -18414,7 +19936,14 @@
       "ほのお",
       "いわ"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "マグマッグ",
+        "to": "マグカルゴ",
+        "method": "レベルアップ",
+        "condition": "Lv.38"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -18492,11 +20021,17 @@
       "こおり",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ウリムー",
         "to": "イノムー",
         "method": "レベルアップ",
         "condition": "Lv.33"
+      },
+      {
+        "from": "イノムー",
+        "method": "特殊",
+        "condition": "条件あり"
       }
     ],
     "level_up_moves": [
@@ -18571,9 +20106,15 @@
       "こおり",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "マンムー",
+        "from": "ウリムー",
+        "to": "イノムー",
+        "method": "レベルアップ",
+        "condition": "Lv.33"
+      },
+      {
+        "from": "イノムー",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -18656,9 +20197,9 @@
       "みず",
       "いわ"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "サニゴーン",
+        "from": "サニーゴ",
         "method": "レベルアップ",
         "condition": "Lv.38"
       }
@@ -18743,8 +20284,9 @@
     "types": [
       "みず"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "テッポウオ",
         "to": "オクタン",
         "method": "レベルアップ",
         "condition": "Lv.25"
@@ -18824,7 +20366,14 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "テッポウオ",
+        "to": "オクタン",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -18905,7 +20454,7 @@
       "こおり",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -18948,7 +20497,13 @@
       "みず",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "マンタイン",
+        "method": "特殊",
+        "condition": "条件あり"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -19026,7 +20581,7 @@
       "はがね",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -19097,8 +20652,9 @@
       "あく",
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "デルビル",
         "to": "ヘルガー",
         "method": "レベルアップ",
         "condition": "Lv.24"
@@ -19185,7 +20741,14 @@
       "あく",
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "デルビル",
+        "to": "ヘルガー",
+        "method": "レベルアップ",
+        "condition": "Lv.24"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -19270,7 +20833,20 @@
       "みず",
       "ドラゴン"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "タッツー",
+        "to": "シードラ",
+        "method": "レベルアップ",
+        "condition": "Lv.32"
+      },
+      {
+        "from": "シードラ",
+        "to": "キングドラ",
+        "method": "通信交換",
+        "condition": "通信"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -19343,8 +20919,9 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ゴマゾウ",
         "to": "ドンファン",
         "method": "レベルアップ",
         "condition": "Lv.25"
@@ -19424,7 +21001,14 @@
     "types": [
       "じめん"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ゴマゾウ",
+        "to": "ドンファン",
+        "method": "レベルアップ",
+        "condition": "Lv.25"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -19500,11 +21084,17 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "ポリゴンＺ",
+        "from": "ポリゴン",
+        "to": "ポリゴン２",
         "method": "通信交換",
-        "condition": "持ち物(dubious-disc)"
+        "condition": "通信"
+      },
+      {
+        "from": "ポリゴン２",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -19597,9 +21187,9 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
-        "to": "アヤシシ",
+        "from": "オドシシ",
         "method": "特殊",
         "condition": "条件あり"
       }
@@ -19680,7 +21270,7 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -19698,18 +21288,21 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "バルキー",
         "to": "サワムラー",
         "method": "レベルアップ",
         "condition": "Lv.20"
       },
       {
+        "from": "バルキー",
         "to": "エビワラー",
         "method": "レベルアップ",
         "condition": "Lv.20"
       },
       {
+        "from": "バルキー",
         "to": "カポエラー",
         "method": "レベルアップ",
         "condition": "Lv.20"
@@ -19755,7 +21348,26 @@
     "types": [
       "かくとう"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "バルキー",
+        "to": "サワムラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "エビワラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      },
+      {
+        "from": "バルキー",
+        "to": "カポエラー",
+        "method": "レベルアップ",
+        "condition": "Lv.20"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -19837,8 +21449,9 @@
       "こおり",
       "エスパー"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ムチュール",
         "to": "ルージュラ",
         "method": "レベルアップ",
         "condition": "Lv.30"
@@ -19931,11 +21544,17 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "エレキッド",
         "to": "エレブー",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "エレブー",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -20016,11 +21635,17 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ブビィ",
         "to": "ブーバー",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "ブーバー",
+        "method": "通信交換",
+        "condition": "通信"
       }
     ],
     "level_up_moves": [
@@ -20102,7 +21727,7 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -20197,7 +21822,19 @@
     "types": [
       "ノーマル"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "to": "ラッキー",
+        "method": "特殊",
+        "condition": "条件あり"
+      },
+      {
+        "from": "ラッキー",
+        "to": "ハピナス",
+        "method": "なつき",
+        "condition": "なつき度MAX"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -20300,7 +21937,7 @@
     "types": [
       "でんき"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -20388,7 +22025,7 @@
     "types": [
       "ほのお"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -20475,7 +22112,7 @@
     "types": [
       "みず"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -20571,11 +22208,18 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヨーギラス",
         "to": "サナギラス",
         "method": "レベルアップ",
         "condition": "Lv.30"
+      },
+      {
+        "from": "サナギラス",
+        "to": "バンギラス",
+        "method": "レベルアップ",
+        "condition": "Lv.55"
       }
     ],
     "level_up_moves": [
@@ -20661,8 +22305,15 @@
       "いわ",
       "じめん"
     ],
-    "evolutions": [
+    "evolution_family": [
       {
+        "from": "ヨーギラス",
+        "to": "サナギラス",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "サナギラス",
         "to": "バンギラス",
         "method": "レベルアップ",
         "condition": "Lv.55"
@@ -20751,7 +22402,20 @@
       "いわ",
       "あく"
     ],
-    "evolutions": [],
+    "evolution_family": [
+      {
+        "from": "ヨーギラス",
+        "to": "サナギラス",
+        "method": "レベルアップ",
+        "condition": "Lv.30"
+      },
+      {
+        "from": "サナギラス",
+        "to": "バンギラス",
+        "method": "レベルアップ",
+        "condition": "Lv.55"
+      }
+    ],
     "level_up_moves": [
       {
         "level": 1,
@@ -20848,7 +22512,7 @@
       "エスパー",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -20953,7 +22617,7 @@
       "ほのお",
       "ひこう"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,
@@ -21053,7 +22717,7 @@
       "エスパー",
       "くさ"
     ],
-    "evolutions": [],
+    "evolution_family": [],
     "level_up_moves": [
       {
         "level": 1,

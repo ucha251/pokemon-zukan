@@ -17,7 +17,6 @@
   .poke-title { font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { padding: 4px 10px; border-radius: 12px; color: white; font-size: 11px; font-weight: bold; display: inline-block; }
   
-  /* 全17タイプカラー（金銀仕様） */
   .type-ノーマル { background: #9e9e9e; }
   .type-ほのお { background: #f44336; }
   .type-みず { background: #2196f3; }
@@ -43,8 +42,10 @@
 
   .section-title { font-weight: bold; margin-top: 14px; margin-bottom: 6px; border-left: 4px solid #d32f2f; padding-left: 8px; font-size: 14px; }
   .evo-box { background: #fff8e1; padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; font-size: 14px; }
+  .poke-link { color: #1976d2; cursor: pointer; text-decoration: underline; font-weight: bold; }
+  .poke-link:hover { color: #d32f2f; }
   .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; min-width: 300px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; min-width: 320px; }
   th, td { border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left; }
   th { background: #fafafa; color: #666; font-size: 12px; }
   .tabs { display: flex; gap: 6px; margin-top: 14px; }
@@ -68,9 +69,7 @@
     <option value="ノーマル">ノーマル</option><option value="ほのお">ほのお</option><option value="みず">みず</option>
     <option value="でんき">でんき</option><option value="くさ">くさ</option><option value="こおり">こおり</option>
     <option value="かくとう">かくとう</option><option value="どく">どく</option><option value="じめん">じめん</option>
-    <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option>
-    <option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option>
-    <option value="あく">あく</option><option value="はがね">はがね</option>
+    <option value="ひこう">ひこう</option><option value="エスパー">エスパー</option><option value="むし">むし</option><option value="いわ">いわ</option><option value="ゴースト">ゴースト</option><option value="ドラゴン">ドラゴン</option><option value="あく">あく</option><option value="はがね">はがね</option>
   </select>
 </div>
 
@@ -81,7 +80,6 @@ let movesDB = {};
 let pokedex = [];
 let currentTabs = {};
 
-// 外部JSONファイルを読み込む
 async function init() {
   try {
     const [movesRes, pokeRes] = await Promise.all([
@@ -93,7 +91,7 @@ async function init() {
     render();
   } catch (e) {
     document.getElementById("list").innerHTML = 
-      `<div class="card" style="color:red;"><b>エラー：</b>JSONファイルが読み込めませんでした。<br>VS Codeの「Live Server」などで開いてください。</div>`;
+      `<div class="card" style="color:red;"><b>エラー：</b>JSONファイルが読み込めませんでした。</div>`;
   }
 }
 
@@ -102,14 +100,21 @@ function setTab(no, tabName) {
   render();
 }
 
+function searchPokemon(name) {
+  document.getElementById("search").value = name;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  render();
+}
+
 function renderMoveRow(moveName, badgeHtml = "", levelText = "-") {
-  const m = movesDB[moveName] || { type: "???", category: "変化", power: "?", pp: "?" };
+  const m = movesDB[moveName] || { type: "???", category: "変化", power: "?", accuracy: "?", pp: "?" };
   return `<tr>
     <td>${levelText}</td>
     <td><b>${moveName}</b>${badgeHtml}</td>
     <td><span class="badge type-${m.type}">${m.type}</span></td>
     <td><span class="badge cat-${m.category}">${m.category}</span></td>
     <td>${m.power}</td>
+    <td>${m.accuracy}</td>
     <td>${m.pp}</td>
   </tr>`;
 }
@@ -134,9 +139,14 @@ function render() {
   filtered.forEach(p => {
     const activeTab = currentTabs[p.no] || "level";
     const typesHtml = p.types.map(t => `<span class="badge type-${t}">${t}</span>`).join("");
-    const evoHtml = p.evolutions && p.evolutions.length
-      ? p.evolutions.map(e => `<div class="evo-box">➡ <b>${e.to}</b>（${e.method}：${e.condition}）</div>`).join("")
-      : `<div class="evo-box">進化なし</div>`;
+    
+    // 系統全体の進化ルートをすべて表示（クリックリンク付き）
+    let evoHtml = `<div class="evo-box">進化なし</div>`;
+    if (p.evolution_family && p.evolution_family.length > 0) {
+      evoHtml = p.evolution_family.map(e => {
+        return `<div class="evo-box">🔄 <span class="poke-link" onclick="searchPokemon('${e.from}')">${e.from}</span> (${e.method}：${e.condition}) ➡ <span class="poke-link" onclick="searchPokemon('${e.to}')">${e.to}</span></div>`;
+      }).join("");
+    }
 
     let movesHtml = "";
     if (activeTab === "level") {
@@ -159,7 +169,7 @@ function render() {
     list.innerHTML += `
       <div class="card">
         <div class="poke-title">No.${String(p.no).padStart(3, '0')} ${p.name} ${typesHtml}</div>
-        <div class="section-title">進化</div>
+        <div class="section-title">進化の流れ</div>
         ${evoHtml}
         <div class="tabs">
           <div class="tab ${activeTab==='level'?'active':''}" onclick="setTab(${p.no},'level')">レベルアップ</div>
@@ -168,8 +178,8 @@ function render() {
         </div>
         <div class="table-wrap">
           <table>
-            <tr><th>条件</th><th>技名</th><th>タイプ</th><th>分類</th><th>威力</th><th>PP</th></tr>
-            ${movesHtml || '<tr><td colspan="6">なし</td></tr>'}
+            <tr><th>条件</th><th>技名</th><th>タイプ</th><th>分類</th><th>威力</th><th>命中</th><th>PP</th></tr>
+            ${movesHtml || '<tr><td colspan="7">なし</td></tr>'}
           </table>
         </div>
         ${extraHtml}
