@@ -2,449 +2,1521 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ポケモン金銀クリスタル 完全図鑑＆攻略マップ</title>
+  <title>ポケモン金銀クリスタル 攻略図鑑 (完全網羅決定版)</title>
+
+  <script src="map_data_johto_towns.js"></script>
+　<script src="map_data_johto_gyms.js"></script>
+　<script src="map_data_johto_dungeons.js"></script>
+　<script src="map_data_johto_routes.js"></script>
+
+  <script src="map_data_kanto.js"></script>
+
   <style>
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      margin: 0; padding: 0; background-color: #f4f6f9; color: #333; padding-bottom: 80px;
+    :root {
+      --primary-gold: #c5a059;
+      --primary-dark: #b8860b;
+      --bg: #f8f9fa;
+      --card-bg: #fff;
+      --border: #e2e8f0;
+      --text: #2d3748;
     }
+    * { box-sizing: border-box; }
+    body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); }
+
     header {
-      background: linear-gradient(135deg, #d4af37, #b5952f);
-      color: #fff; text-align: center; padding: 14px 10px;
-      font-size: 18px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      position: sticky; top: 0; z-index: 100;
+      background: linear-gradient(135deg, #c9a236, #a88220);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
     }
+
     .tabs {
-      display: flex; background: #fff; border-bottom: 1px solid #ddd;
-      position: sticky; top: 50px; z-index: 99;
+      display: flex;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .tab-btn {
-      flex: 1; padding: 12px 5px; border: none; background: none;
-      font-size: 14px; font-weight: bold; color: #666; cursor: pointer;
-      border-bottom: 3px solid transparent; transition: 0.2s;
+      flex: 1;
+      background: #fff;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 14px 10px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #4a5568;
+      cursor: pointer;
+      transition: 0.2s;
     }
-    .tab-btn.active { color: #b5952f; border-bottom-color: #d4af37; background: #fffdf5; }
+    .tab-btn:hover { background: #fdfbf7; }
+    .tab-btn.active {
+      color: #b8860b;
+      background: #fdf8eb;
+      border-bottom: 3px solid #c5a059;
+    }
 
-    .container { max-width: 800px; margin: 0 auto; padding: 12px; }
+    .container { max-width: 1060px; margin: 24px auto; padding: 0 20px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
     .search-box {
-      width: 100%; padding: 10px 14px; font-size: 15px;
-      border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px;
-      background: #fff; outline: none;
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 24px;
+      display: block;
+      padding: 12px 16px;
+      font-size: 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      background: #fff;
+      outline: none;
     }
-    .search-box:focus { border-color: #d4af37; }
+    .search-box:focus { border-color: var(--primary-gold); }
 
-    /* ポケモン一覧カード */
     .poke-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 14px;
     }
     .poke-card {
-      background: #fff; border-radius: 10px; padding: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.06); cursor: pointer;
-      transition: transform 0.15s; border: 1px solid #eee;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
-    .poke-card:active { transform: scale(0.97); }
-    .poke-no { font-size: 11px; color: #888; font-weight: bold; }
-    .poke-name { font-size: 16px; font-weight: bold; margin: 4px 0 6px; }
+    .poke-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    }
+    .poke-no { font-size: 11px; color: #718096; margin-bottom: 4px; font-weight: bold; }
+    .poke-name { font-size: 16px; font-weight: bold; color: #1a202c; margin-bottom: 10px; }
+
+    .type-badges { display: flex; gap: 6px; flex-wrap: wrap; }
     .type-badge {
-      display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 4px;
-      color: #fff; font-weight: bold; margin-right: 4px; background: #777;
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .type-ノーマル { background: #a8a878; }
+    .type-ほのお   { background: #f08030; }
+    .type-みず     { background: #6890f0; }
+    .type-でんき   { background: #f8d030; color: #333; }
+    .type-くさ     { background: #78c850; }
+    .type-こおり   { background: #98d8d8; color: #333; }
+    .type-かくとう { background: #c03028; }
+    .type-どく     { background: #a040a0; }
+    .type-じめん   { background: #e0c068; color: #333; }
+    .type-ひこう   { background: #a890f0; }
+    .type-エスパー { background: #f85888; }
+    .type-むし     { background: #a8b820; }
+    .type-いわ     { background: #b8a038; }
+    .type-ゴースト { background: #705898; }
+    .type-ドラゴン { background: #7038f8; }
+    .type-あく     { background: #705848; }
+    .type-はがね   { background: #b8b8d0; color: #333; }
+
+    .detail-page {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #4a5568;
+      background: #f7fafc;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .back-btn:hover { background: #edf2f7; }
+
+    .detail-header-no { font-size: 13px; color: #718096; font-weight: bold; }
+    .detail-header-name { font-size: 26px; font-weight: bold; margin: 4px 0 10px 0; color: #1a202c; }
+
+    .sec-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1a202c;
+      border-left: 4px solid #c5a059;
+      padding-left: 10px;
+      margin: 26px 0 12px 0;
     }
 
-    /* タイプ別カラー */
-    .type-ノーマル { background: #a8a878; } .type-ほのお { background: #f08030; }
-    .type-みず { background: #6890f0; } .type-でんき { background: #f8d030; color: #333; }
-    .type-くさ { background: #78c850; } .type-こおり { background: #98d8d8; color: #333; }
-    .type-かくとう { background: #c03028; } .type-どく { background: #a040a0; }
-    .type-じめん { background: #e0c068; color: #333; } .type-ひこう { background: #a890f0; }
-    .type-エスパー { background: #f85888; } .type-むし { background: #a8b820; }
-    .type-いわ { background: #b8a038; } .type-ゴースト { background: #705898; }
-    .type-ドラゴン { background: #7038f8; } .type-あく { background: #705848; }
-    .type-はがね { background: #b8b8d0; color: #333; }
+    .evo-box {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .evo-node {
+      background: #fff;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #2d3748;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .evo-node:hover { border-color: #c5a059; color: #b8860b; background: #fdfbf7; }
+    .evo-arrow { font-size: 12px; color: #718096; }
 
-    /* 詳細ビュー */
-    .detail-box {
-      background: #fff; border-radius: 12px; padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
     }
-    .section-title {
-      font-size: 15px; font-weight: bold; border-left: 4px solid #d4af37;
-      padding-left: 8px; margin: 18px 0 10px; color: #222;
+    table.data-table th {
+      background: #f7fafc;
+      color: #4a5568;
+      font-weight: bold;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid #e2e8f0;
     }
-    .evo-chain {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
-      background: #f9f9f9; padding: 10px; border-radius: 8px; font-size: 13px;
+    table.data-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #edf2f7;
+      color: #2d3748;
     }
-    .evo-step { background: #fff; padding: 4px 8px; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-    .evo-arrow { color: #b5952f; font-size: 12px; }
+    table.data-table tr:hover td { background: #fafafa; }
 
-    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 10px; }
-    th, td { padding: 8px 6px; border-bottom: 1px solid #eee; text-align: left; }
-    th { background: #f8f8f8; color: #555; font-size: 12px; }
-    .move-link { color: #1a73e8; text-decoration: underline; cursor: pointer; font-weight: bold; }
+    .excel-table-wrap table,
+    table.excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: #fff;
+      margin-bottom: 14px;
+      border: 1px solid #cbd5e0;
+    }
+    .excel-table-wrap th,
+    table.excel-table th {
+      background: #edf2f7;
+      color: #2d3748;
+      font-weight: bold;
+      text-align: left;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e0;
+    }
+    .excel-table-wrap td,
+    table.excel-table td {
+      padding: 8px 12px;
+      border: 1px solid #cbd5e0;
+      color: #2d3748;
+      vertical-align: top;
+    }
+    .excel-table-wrap tr:nth-child(even) td,
+    table.excel-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
 
-    /* マップタブ */
-    .region-switch { display: flex; gap: 8px; margin-bottom: 12px; }
-    .region-btn {
-      flex: 1; padding: 10px; border: 1px solid #d4af37; background: #fff;
-      color: #b5952f; font-weight: bold; border-radius: 8px; cursor: pointer;
+    .step-badge {
+      display: inline-block;
+     background: #2b6cb0;
+     color: #ffffff;
+     font-size: 11px;
+     font-weight: bold;
+     line-height: 1.35;
+     padding: 1px 6px;
+     border-radius: 4px;
+     margin-right: 6px;
+     vertical-align: 1px;
     }
-    .region-btn.active { background: #d4af37; color: #fff; }
-    .map-image-container {
-      background: #fff; padding: 10px; border-radius: 10px; text-align: center;
-      margin-bottom: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    
+    .move-link {
+      color: #2b6cb0;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 500;
     }
-    .map-image { width: 100%; max-width: 650px; border-radius: 6px; display: block; margin: 0 auto; }
+    .move-link:hover { color: #1a4971; }
 
-    .spot-group-title {
-      font-size: 14px; font-weight: bold; color: #555; margin: 16px 0 8px;
-      padding-bottom: 4px; border-bottom: 2px solid #e0e0e0;
+    .map-sub-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 24px; }
+    .map-sub-btn {
+      background: #fff;
+      border: 1px solid #cbd5e0;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #4a5568;
     }
-    .spot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
-    .spot-item {
-      background: #fff; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e5e5;
-      font-size: 14px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-    }
-    .spot-item:active { background: #fffdf5; border-color: #d4af37; }
-    .spot-has-img { font-size: 11px; color: #d4af37; }
+    .map-sub-btn.active { background: #b8860b; color: white; border-color: #b8860b; }
 
-    /* モーダル */
+    .map-sub-content { display: none; }
+    .map-sub-content.active { display: block; }
+
+    .all-map-container {
+      text-align: center;
+      margin-bottom: 24px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .spot-map-img {
+      max-width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .spot-map-img {
+      max-width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    /* 👇 ここから .modal-overlay { の直前まで書き換え 👇 */
+    .johto-map-stage {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .map-hotspot-btn {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 5;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .map-hotspot-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: #ffd700;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.75);
+    }
+    .modal-top-map-wrap {
+      text-align: center;
+      margin: 12px 0 18px 0;
+      padding: 10px;
+      background: #f8f9fa;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+    .modal-top-map-img {
+      max-width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+      background: #fff;
+      display: inline-block;
+    }
+    /* 👆 ここまで書き換え 👆 */
+
     .modal-overlay {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.55); z-index: 999; justify-content: center; align-items: center; padding: 16px;
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
     }
-    .modal-card {
-      background: #fff; width: 100%; max-width: 480px; border-radius: 12px;
-      padding: 18px; max-height: 85vh; overflow-y: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    .modal {
+      background: white;
+      width: 92%;
+      max-width: 860px;
+      max-height: 88vh;
+      border-radius: 10px;
+      padding: 24px 28px;
+      overflow-y: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
     }
-    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .modal-title { font-size: 18px; font-weight: bold; color: #222; }
-    .modal-close {
-      background: #eee; border: none; width: 30px; height: 30px; border-radius: 50%;
-      font-size: 16px; font-weight: bold; cursor: pointer; color: #555;
+    .close-btn {
+      position: sticky;
+      top: 0;
+      float: right;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #718096;
+      background: #fff;
+      border: 1px solid #cbd5e0;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .spot-category {
-      display: inline-block; background: #f0e6c8; color: #7a6014;
-      font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px;
-    }
-
-    /* 戻るフローティングボタン */
-    .back-fab {
-      display: none; position: fixed; bottom: 20px; right: 20px;
-      background: #333; color: #fff; border: none; padding: 12px 18px;
-      border-radius: 30px; font-size: 14px; font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; z-index: 200;
-    }
+    .close-btn:hover { background: #edf2f7; color: #2d3748; }
+    .loading { text-align: center; padding: 50px; font-size: 16px; color: #718096; }
   </style>
 </head>
 <body>
 
-<header>ポケモン金銀クリスタル 攻略図鑑</header>
+  <header>ポケモン金銀クリスタル 攻略図鑑 (完全網羅決定版)</header>
 
-<div class="tabs">
-  <button class="tab-btn active" onclick="switchTab('pokedex', this)">ポケモン図鑑</button>
-  <button class="tab-btn" onclick="switchTab('tm', this)">わざ・ひでんマシン</button>
-  <button class="tab-btn" onclick="switchTab('map', this)">マップ攻略</button>
-</div>
+  <div id="loading" class="loading">データを読み込んでいます...</div>
 
-<div class="container">
-  <!-- 図鑑タブ -->
-  <div id="tab-pokedex">
-    <div id="pokedex-list-view">
-      <input type="text" id="pokeSearch" class="search-box" placeholder="ポケモン名・図鑑Noで検索（例: チコリータ, 152）" oninput="filterPokemon()">
-      <div id="pokeGrid" class="poke-grid">読み込み中...</div>
+  <div id="app" style="display: none;">
+    <div class="tabs">
+      <button class="tab-btn active" id="tabBtn-pokedex" onclick="switchTab('pokedex')">ポケモン図鑑</button>
+      <button class="tab-btn" id="tabBtn-tm" onclick="switchTab('tm')">わざ・ひでんマシン</button>
+      <button class="tab-btn" id="tabBtn-maps" onclick="switchTab('maps')">マップ攻略</button>
     </div>
-    <div id="pokedex-detail-view" style="display:none;"></div>
-  </div>
 
-  <!-- わざマシンタブ -->
-  <div id="tab-tm" style="display:none;">
-    <input type="text" id="tmSearch" class="search-box" placeholder="わざ名・マシン番号・入手場所で検索..." oninput="renderTMList()">
-    <div id="tmListContainer"></div>
-  </div>
-
-  <!-- マップタブ -->
-  <div id="tab-map" style="display:none;">
-    <div class="region-switch">
-      <button class="region-btn active" id="btn-johto" onclick="switchRegion('johto')">ジョウト地方</button>
-      <button class="region-btn" id="btn-kanto" onclick="switchRegion('kanto')">カントー地方</button>
-    </div>
-    <div id="mapContent"></div>
-  </div>
-</div>
-
-<button id="backFab" class="back-fab" onclick="closePokeDetail()">← 一覧へ戻る</button>
-
-<!-- 技詳細モーダル -->
-<div id="moveModal" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
-  <div class="modal-card">
-    <div class="modal-header">
-      <div class="modal-title" id="modalMoveName">技名</div>
-      <button class="modal-close" onclick="document.getElementById('moveModal').style.display='none'">×</button>
-    </div>
-    <div id="modalMoveBody"></div>
-  </div>
-</div>
-
-<!-- マップ詳細モーダル -->
-<div id="mapModal" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
-  <div class="modal-card">
-    <div class="modal-header">
-      <div class="modal-title" id="modalMapName">場所名</div>
-      <button class="modal-close" onclick="document.getElementById('mapModal').style.display='none'">×</button>
-    </div>
-    <div id="modalMapBody"></div>
-  </div>
-</div>
-
-<script>
-  let pokedexData = [];
-  let movesData = {};
-  let currentRegion = 'johto';
-
-  async function init() {
-    try {
-      const [pokeRes, movesRes] = await Promise.all([
-        fetch('pokedex.json'),
-        fetch('moves.json')
-      ]);
-      pokedexData = await pokeRes.json();
-      movesData = await movesRes.json();
-
-      renderPokemonGrid(pokedexData);
-      renderTMList();
-      renderMap('johto');
-    } catch (e) {
-      document.getElementById('pokeGrid').innerHTML = "<p>データの読み込みに失敗しました。moves.json と pokedex.json が同じフォルダにあるか確認してください。</p>";
-      console.error(e);
-    }
-  }
-
-  function switchTab(tabName, btn) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-pokedex').style.display = tabName === 'pokedex' ? 'block' : 'none';
-    document.getElementById('tab-tm').style.display = tabName === 'tm' ? 'block' : 'none';
-    document.getElementById('tab-map').style.display = tabName === 'map' ? 'block' : 'none';
-    document.getElementById('backFab').style.display = (tabName === 'pokedex' && document.getElementById('pokedex-detail-view').style.display === 'block') ? 'block' : 'none';
-  }
-
-  function renderPokemonGrid(list) {
-    const grid = document.getElementById('pokeGrid');
-    if (!list.length) {
-      grid.innerHTML = "<p>該当するポケモンが見つかりません。</p>";
-      return;
-    }
-    grid.innerHTML = list.map(p => `
-      <div class="poke-card" onclick="openPokeDetail(${p.no})">
-        <div class="poke-no">No.${String(p.no).padStart(3, '0')}</div>
-        <div class="poke-name">${p.name}</div>
-        <div>${p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}</div>
-      </div>
-    `).join('');
-  }
-
-  function filterPokemon() {
-    const q = document.getElementById('pokeSearch').value.trim();
-    if (!q) {
-      renderPokemonGrid(pokedexData);
-      return;
-    }
-    const filtered = pokedexData.filter(p => p.name.includes(q) || String(p.no) === q || String(p.no).padStart(3, '0').includes(q));
-    renderPokemonGrid(filtered);
-  }
-
-  function openPokeDetail(no) {
-    const p = pokedexData.find(x => x.no === no);
-    if (!p) return;
-
-    document.getElementById('pokedex-list-view').style.display = 'none';
-    const detailView = document.getElementById('pokedex-detail-view');
-    detailView.style.display = 'block';
-    document.getElementById('backFab').style.display = 'block';
-    window.scrollTo(0, 0);
-
-    let evoHtml = "<div style='font-size:13px; color:#666;'>進化なし</div>";
-    if (p.evolution_family && p.evolution_family.length > 0) {
-      evoHtml = `<div class="evo-chain">` + p.evolution_family.map(e =>
-        `<span class="evo-step">${e.from}</span> <span class="evo-arrow">→ (${e.method}: ${e.condition}) →</span> <span class="evo-step">${e.to}</span>`
-      ).join('<br>') + `</div>`;
-    }
-
-    const levelMovesHtml = p.level_up_moves.map(m => `
-      <tr>
-        <td>Lv.${m.level === 0 ? '基本' : m.level}</td>
-        <td><span class="move-link" onclick="showMoveModal('${m.move}')">${m.move}</span></td>
-        <td>${m.version}</td>
-      </tr>
-    `).join('');
-
-    const tmHtml = p.tm_moves.map(m => `
-      <tr>
-        <td><b>${m.code}</b></td>
-        <td><span class="move-link" onclick="showMoveModal('${m.name}')">${m.name}</span></td>
-      </tr>
-    `).join('');
-
-    const hmHtml = p.hm_moves.map(m => `
-      <tr>
-        <td><b>${m.code}</b></td>
-        <td><span class="move-link" onclick="showMoveModal('${m.name}')">${m.name}</span></td>
-      </tr>
-    `).join('');
-
-    detailView.innerHTML = `
-      <div class="detail-box">
-        <div class="poke-no">No.${String(p.no).padStart(3, '0')}</div>
-        <h2 style="margin:4px 0 8px;">${p.name}</h2>
-        <div>${p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}</div>
-
-        <div class="section-title">進化ルート</div>
-        ${evoHtml}
-
-        <div class="section-title">レベルアップで覚える技</div>
-        <table>
-          <thead><tr><th>Lv</th><th>技名</th><th>備考</th></tr></thead>
-          <tbody>${levelMovesHtml || '<tr><td colspan="3">なし</td></tr>'}</tbody>
-        </table>
-
-        <div class="section-title">わざマシン</div>
-        <table>
-          <thead><tr><th>番号</th><th>技名</th></tr></thead>
-          <tbody>${tmHtml || '<tr><td colspan="2">なし</td></tr>'}</tbody>
-        </table>
-
-        <div class="section-title">ひでんマシン</div>
-        <table>
-          <thead><tr><th>番号</th><th>技名</th></tr></thead>
-          <tbody>${hmHtml || '<tr><td colspan="2">なし</td></tr>'}</tbody>
-        </table>
-      </div>
-    `;
-  }
-
-  function closePokeDetail() {
-    document.getElementById('pokedex-detail-view').style.display = 'none';
-    document.getElementById('pokedex-list-view').style.display = 'block';
-    document.getElementById('backFab').style.display = 'none';
-  }
-
-  function showMoveModal(moveName) {
-    const info = movesData.moves ? movesData.moves[moveName] : null;
-    document.getElementById('modalMoveName').innerText = moveName;
-    if (info) {
-      document.getElementById('modalMoveBody').innerHTML = `
-        <div style="margin-bottom:10px;">
-          <span class="type-badge type-${info.type}">${info.type}</span>
-          <span style="font-size:12px; background:#eee; padding:2px 8px; border-radius:4px; font-weight:bold;">${info.category}</span>
+    <div class="container">
+      <div id="tab-pokedex" class="tab-content active">
+        <div id="pokedexListView">
+          <input type="text" id="pokeSearch" class="search-box" placeholder="ポケモン名・図鑑Noで検索（例: チコリータ, 152）" oninput="filterPokedex()">
+          <div class="poke-grid" id="pokedexGrid"></div>
         </div>
-        <table>
-          <tr><th>威力</th><td>${info.power}</td></tr>
-          <tr><th>命中</th><td>${info.accuracy}</td></tr>
-          <tr><th>PP</th><td>${info.pp}</td></tr>
-        </table>
+        <div id="pokedexDetailView" style="display: none;"></div>
+      </div>
+
+      <div id="tab-tm" class="tab-content">
+        <div class="detail-page">
+          <h2 class="sec-heading" style="margin-top:0;">ひでんマシン一覧</h2>
+          <div id="hmListContainer"></div>
+          <h2 class="sec-heading">わざマシン一覧 (TM01〜TM50)</h2>
+          <div id="tmListContainer"></div>
+        </div>
+      </div>
+
+      <div id="tab-maps" class="tab-content">
+        <div class="map-sub-tabs">
+          <button class="map-sub-btn active" onclick="switchMapRegion('johto', this)">ジョウト地方</button>
+          <button class="map-sub-btn" onclick="switchMapRegion('kanto', this)">カントー地方</button>
+        </div>
+
+       <div id="map-region-johto" class="map-sub-content active">
+  <div class="all-map-container" id="johtoAllMap">
+    <div class="johto-map-stage">
+      <img id="johtoOverallMapImg" src="johto-allmap.png" alt="ジョウト全体マップ" style="max-width: 100%; height: auto; border-radius: 4px; display: block;" onerror="this.style.display='none'; document.getElementById('johtoMapMsg').style.display='block';">
+      
+      <!-- 👇 ここから町 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 72.1%; top: 65.3%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'wakaba_town', 'ワカバタウン')"
+        title="ワカバタウンを開く"
+    ></button>
+    <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 52.0%; top: 65.3%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'yoshino_city', 'ヨシノシティ')"
+        title="ヨシノシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 44.2%; top: 33.5%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'kikyou_city', 'キキョウシティ')"
+        title="キキョウシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 32.9%; top: 84.9%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'hiwada_town', 'ヒワダタウン')"
+        title="ヒワダタウンを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 28.5%; top: 59.2%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'kogane_city', 'コガネシティ')"
+        title="コガネシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 36.2%; top: 20.6%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'enju_city', 'エンジュシティ')"
+        title="エンジュシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 16.0%; top: 33.1%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'asagi_city', 'アサギシティ')"
+        title="アサギシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 4.2%; top: 64.8%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'tanba_city', 'タンバシティ')"
+        title="タンバシティを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 54.2%; top: 20.6%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'chouji_town', 'チョウジタウン')"
+        title="チョウジタウンを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 68.5%; top: 26.9%; width: 4.0%; height: 6.7%;"
+        onclick="jumpToMapSpot('johto', 'fusube_city', 'フスベシティ')"
+        title="フスベシティを開く"
+      ></button>
+
+      <!-- 👇 ここからダンジョン・施設 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 60.5%; top: 33.0%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'kurayami_no_horaana', 'くらやみのほらあな')"
+        title="くらやみのほらあなを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 44.3%; top: 27.1%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'madatsubomi_no_tou', 'マダツボミのとう')"
+        title="マダツボミのとうを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 39.1%; top: 49.3%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'arufu_no_iseki', 'アルフのいせき')"
+        title="アルフのいせきを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 43.8%; top: 84.4%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'tsunagari_no_doukutsu', 'つながりのどうくつ')"
+        title="つながりのどうくつを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 33.0%; top: 78.7%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'yadon_no_ido', 'ヤドンのいど')"
+        title="ヤドンのいどを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 28.4%; top: 84.8%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'ubame_no_mori', 'ウバメのもり')"
+        title="ウバメのもりを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 28.5%; top: 33.4%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'shizen_kouen', 'しぜんこうえん')"
+        title="しぜんこうえんを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 33.4%; top: 14.1%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'yaketa_tou', 'やけたとう')"
+        title="やけたとうを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 38.5%; top: 14.1%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'suzu_no_tou', 'スズのとう')"
+        title="スズのとうを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 45.7%; top: 13.7%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'suribachi_yama', 'すりばちやま')"
+        title="スリバチやまを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 16.3%; top: 65.3%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'uzumaki_jima', 'うずまきじま')"
+        title="うずまきじまを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 54.3%; top: 3.3%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'ikari_no_mizuumi', 'いかりのみずうみ')"
+        title="いかりのみずうみを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 68.4%; top: 20.3%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'koori_no_nukemichi', 'こおりのぬけみち')"
+        title="こおりのぬけみちを開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 64.4%; top: 27.3%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('johto', 'ryu_no_ana', 'りゅうのあな')"
+        title="りゅうのあなを開く"
+      ></button>
+      <!-- 👇 ここから追加：トージョウのたき（カントー扱い・ジョウト全体マップ上） 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 81.4%; top: 59.4%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('kanto', 'tohjo_falls', 'トージョウのたき')"
+        title="トージョウのたきを開く"
+      ></button>
+      <!-- 👆 ここまで追加 👆 -->
+
+      <!-- 👇 ここから追加：チャンピオンロード（カントー扱い・ジョウト全体マップ上） 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 92.2%; top: 32.0%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('kanto', 'champion_road', 'チャンピオンロード')"
+        title="チャンピオンロードを開く"
+      ></button>
+      <!-- 👆 ここまで追加 👆 -->
+
+      <!-- 👇 ここから追加：シロガネやま（カントー扱い・ジョウト全体マップ上） 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 80.2%; top: 46.0%; width: 3.2%; height: 5.4%;"
+        onclick="jumpToMapSpot('kanto', 'mt_silver', 'シロガネやま')"
+        title="シロガネやまを開く"
+      ></button>
+
+      <!-- 👇 ここから道路・水道 👇 -->
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 61.5%; top: 65.5%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_29', '29番道路')"
+        title="29番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 52.1%; top: 50.0%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_30', '30番道路')"
+        title="30番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 50.0%; top: 33.4%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_31', '31番道路')"
+        title="31番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 44.1%; top: 59.1%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_32', '32番道路')"
+        title="32番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 38.6%; top: 85.1%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_33', '33番道路')"
+        title="33番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 28.4%; top: 72.8%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_34', '34番道路')"
+        title="34番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 28.4%; top: 46.5%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_35', '35番道路')"
+        title="35番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 36.0%; top: 33.4%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_36', '36番道路')"
+        title="36番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 36.2%; top: 27.5%; width: 4.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_37', '37番道路')"
+        title="37番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 25.6%; top: 20.5%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_38', '38番道路')"
+        title="38番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 16.2%; top: 23.7%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_39', '39番道路')"
+        title="39番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 12.4%; top: 51.0%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_40', '40番水道')"
+        title="40番水道を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 10.4%; top: 65.0%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_41', '41番水道')"
+        title="41番水道を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 45.8%; top: 20.3%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_42', '42番道路')"
+        title="42番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 54.2%; top: 11.9%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_43', '43番道路')"
+        title="43番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 61.0%; top: 20.3%; width: 6.0%; height: 6.0%;"
+        onclick="jumpToMapSpot('johto', 'route_44', '44番道路')"
+        title="44番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 68.5%; top: 40.8%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_45', '45番道路')"
+        title="45番道路を開く"
+      ></button>
+      <button
+        type="button"
+        class="map-hotspot-btn"
+        style="left: 64.2%; top: 53.6%; width: 4.0%; height: 10.0%;"
+        onclick="jumpToMapSpot('johto', 'route_46', '46番道路')"
+        title="46番道路を開く"
+      ></button>
+    <p id="johtoMapMsg" style="display: none; color: #718096; font-size: 14px; padding: 20px;">[ `johto-allmap.png` が見つからないよ！ ]</p>
+  </div>
+  <div id="johtoSpotsContainer"></div>
+</div>
+
+        <div id="map-region-kanto" class="map-sub-content">
+          <div class="all-map-container" id="kantoAllMap"></div>
+          <div id="kantoSpotsContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="detailModal" class="modal-overlay" onclick="closeModalOnBg(event)">
+    <div class="modal" id="modalContent"></div>
+  </div>
+
+
+  <script>
+  // 1. 戻り先を記憶する変数（※ファイル内で一番最初の1回だけ書く！重複させない）
+    let lastMapContext = null;
+
+    // 2. 図鑑詳細から元のマップモーダルへ戻る関数
+    function returnToMapModal() {
+      if (!lastMapContext) return;
+      const { regionKey, spotData } = lastMapContext;
+      lastMapContext = null; // 一度戻ったらクリア
+      
+      if (typeof switchMainTab === 'function') {
+        switchMainTab('map');
+      } else {
+        const mapTabBtn = document.querySelector('[data-tab="map"], .tab-btn[onclick*="map"]');
+        if (mapTabBtn) mapTabBtn.click();
+      }
+      
+      openSpotModal(regionKey, spotData);
+    }
+
+  
+    let globalData = { pokedex: [], moves: {}, tm: {}, hm: {}, maps: {} };
+
+    // ジョウトとカントーのマップデータを別ファイルから統合
+    const baseJohtoMap = typeof JOHTO_MAP_DATA !== 'undefined' ? JOHTO_MAP_DATA : { title: "ジョウト地方", spots: [] };
+    const extraJohtoSpots = [
+      ...(typeof JOHTO_DUNGEON_SPOTS !== 'undefined' ? JOHTO_DUNGEON_SPOTS : []),
+      ...(typeof JOHTO_ROUTE_SPOTS !== 'undefined' ? JOHTO_ROUTE_SPOTS : [])
+    ];
+
+    const baseKantoMap = typeof KANTO_MAP_DATA !== 'undefined' ? KANTO_MAP_DATA : { title: "カントー地方", spots: [] };
+    const extraKantoSpots = [
+      ...(typeof KANTO_TOWN_SPOTS !== 'undefined' ? KANTO_TOWN_SPOTS : []),
+      ...(typeof KANTO_GYM_SPOTS !== 'undefined' ? KANTO_GYM_SPOTS : []),
+      ...(typeof KANTO_DUNGEON_SPOTS !== 'undefined' ? KANTO_DUNGEON_SPOTS : []),
+      ...(typeof KANTO_ROUTE_SPOTS !== 'undefined' ? KANTO_ROUTE_SPOTS : [])
+    ];
+
+    globalData.maps = {
+      "johto": {
+        ...baseJohtoMap,
+        spots: [...(baseJohtoMap.spots || []), ...extraJohtoSpots]
+      },
+      "kanto": {
+        ...baseKantoMap,
+        spots: [...(baseKantoMap.spots || []), ...extraKantoSpots]
+      }
+    };
+
+    // 図鑑や技マシンなどの既存ロジック（そのまま維持）
+    // ... （もしお手元の図鑑・技マシンの初期化・描画コードがこの下にあればそのまま続きます）
+
+    async function init() {
+      try {
+        const [movesRes, pokeRes] = await Promise.all([
+          fetch('moves.json'),
+          fetch('pokedex.json')
+        ]);
+        const movesData = await movesRes.json();
+        globalData.pokedex = await pokeRes.json();
+
+       globalData.moves = movesData.moves || {};
+        globalData.tm = movesData.tm || {};
+        globalData.hm = movesData.hm || {};
+        // 分割ファイルのデータを最優先にし、各カテゴリ配列も結合する！
+        const initJohtoBase = typeof JOHTO_MAP_DATA !== 'undefined'
+          ? JOHTO_MAP_DATA
+          : (movesData.maps ? movesData.maps.johto : { title: "ジョウト地方", spots: [] });
+        const initExtraJohtoSpots = [
+          ...(typeof JOHTO_DUNGEON_SPOTS !== 'undefined' ? JOHTO_DUNGEON_SPOTS : []),
+          ...(typeof JOHTO_ROUTE_SPOTS !== 'undefined' ? JOHTO_ROUTE_SPOTS : [])
+        ];
+
+        const initKantoBase = typeof KANTO_MAP_DATA !== 'undefined'
+          ? KANTO_MAP_DATA
+          : (movesData.maps ? movesData.maps.kanto : { title: "カントー地方", spots: [] });
+        const initExtraKantoSpots = [
+          ...(typeof KANTO_TOWN_SPOTS !== 'undefined' ? KANTO_TOWN_SPOTS : []),
+          ...(typeof KANTO_GYM_SPOTS !== 'undefined' ? KANTO_GYM_SPOTS : []),
+          ...(typeof KANTO_DUNGEON_SPOTS !== 'undefined' ? KANTO_DUNGEON_SPOTS : []),
+          ...(typeof KANTO_ROUTE_SPOTS !== 'undefined' ? KANTO_ROUTE_SPOTS : [])
+        ];
+
+        globalData.maps = {
+          "johto": {
+            ...initJohtoBase,
+            spots: [...(initJohtoBase.spots || []), ...initExtraJohtoSpots]
+          },
+          "kanto": {
+            ...initKantoBase,
+            spots: [...(initKantoBase.spots || []), ...initExtraKantoSpots]
+          }
+        };
+
+        renderPokedex(globalData.pokedex);
+        renderTMHM();
+        renderMaps();
+
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+      } catch (e) {
+        document.getElementById('loading').innerHTML = `<p style="color: red;">データ読み込みエラー: ${e.message}</p>`;
+      }
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      document.getElementById('tabBtn-' + tabId).classList.add('active');
+      if (tabId === 'pokedex') backToPokedexList();
+    }
+
+    function switchMapRegion(region, btn) {
+      document.querySelectorAll('.map-sub-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.map-sub-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('map-region-' + region).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function renderTypeBadges(types) {
+      return `<div class="type-badges">${types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('')}</div>`;
+    }
+
+    function renderPokedex(list) {
+      const grid = document.getElementById('pokedexGrid');
+      grid.innerHTML = list.map(p => `
+        <div class="poke-card" onclick="openPokemonDetail(${p.no})">
+          <div class="poke-no">No.${String(p.no).padStart(3, '0')}</div>
+          <div class="poke-name">${p.name}</div>
+          ${renderTypeBadges(p.types)}
+        </div>
+      `).join('');
+    }
+
+    function filterPokedex() {
+      const keyword = document.getElementById('pokeSearch').value.toLowerCase();
+      const filtered = globalData.pokedex.filter(p =>
+        p.name.toLowerCase().includes(keyword) || p.no.toString().includes(keyword)
+      );
+      renderPokedex(filtered);
+    }
+
+    function backToPokedexList() {
+      document.getElementById('pokedexDetailView').style.display = 'none';
+      document.getElementById('pokedexListView').style.display = 'block';
+    }
+
+    function findTmCodeForMove(moveName) {
+      for (const [code, info] of Object.entries(globalData.tm)) {
+        if (info.name === moveName) return code.toUpperCase();
+      }
+      for (const [code, info] of Object.entries(globalData.hm)) {
+        if (info.name === moveName) return code.toUpperCase();
+      }
+      return null;
+    }
+
+ function openPokemonDetail(no) {
+      const p = globalData.pokedex.find(item => String(item.no) === String(no));
+      if (!p) return;
+
+      // 1. 進化ルートのHTML生成
+      let evoHtml = '<div class="evo-box"><span style="color:#718096; font-size:13px;">進化情報なし</span></div>';
+
+      function makeEvoNode(pokeName) {
+        const escapedName = String(pokeName || '').replace(/'/g, "\\'");
+        return `<span class="evo-node" onclick="jumpToPokemonByName('${escapedName}')">${pokeName}</span>`;
+      }
+
+      if (Array.isArray(p.evolution_family) && p.evolution_family.length > 0) {
+        const parts = [];
+        p.evolution_family.forEach((step, idx) => {
+          const fromName = step.from || '';
+          const toName = step.to || '';
+          const condText = [step.condition, step.method].filter(Boolean).join(' / ');
+
+          // 最初のステップだけ進化元（from）を先頭に出す
+          if (idx === 0 && fromName) {
+            parts.push(makeEvoNode(fromName));
+          }
+
+          // 条件（Lv.16 / レベルアップ など）と矢印
+          if (condText) {
+            parts.push(`<span class="evo-arrow">(${condText}) →</span>`);
+          } else {
+            parts.push('<span class="evo-arrow">→</span>');
+          }
+
+          // 進化先（to）のボタン
+          if (toName) {
+            parts.push(makeEvoNode(toName));
+          }
+        });
+        evoHtml = `<div class="evo-box">${parts.join('')}</div>`;
+      } else if (typeof p.evoHtml === 'string' && p.evoHtml.trim() !== '') {
+        evoHtml = p.evoHtml;
+      }
+
+      // 2. レベルアップで覚える技の行生成
+      let lvRows = '<tr><td colspan="3" style="color:#718096;">データなし</td></tr>';
+      const levelMoves = p.levelUpMoves || p.level_up_moves || p.movesByLevel || p.learnset || [];
+      if (Array.isArray(levelMoves) && levelMoves.length > 0) {
+        lvRows = levelMoves.map(m => {
+          const lv = m.lv ?? m.level ?? '-';
+          const moveName = m.move || m.name || '';
+          const note = m.note || m.method || '-';
+          const escapedMove = String(moveName).replace(/'/g, "\\'");
+          return `
+            <tr>
+              <td>${lv}</td>
+              <td><span class="move-link" onclick="openMoveModal('${escapedMove}')">${moveName}</span></td>
+              <td>${note}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // 3. わざマシン・ひでんマシンの行生成
+      let tmRows = '<tr><td colspan="2" style="color:#718096;">データなし</td></tr>';
+      const tmMoves = p.tmMoves || p.tm_moves || p.machines || [];
+      if (Array.isArray(tmMoves) && tmMoves.length > 0) {
+        tmRows = tmMoves.map(item => {
+          const moveName = typeof item === 'string' ? item : (item.move || item.name || '');
+          const code = (typeof item === 'object' && item.code) ? item.code : (findTmCodeForMove(moveName) || '-');
+          const escapedMove = String(moveName).replace(/'/g, "\\'");
+          return `
+            <tr>
+              <td><strong>${code}</strong></td>
+              <td><span class="move-link" onclick="openMoveModal('${escapedMove}')">${moveName}</span></td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // 4. マップから飛んできたとき用の戻るボタン
+      let mapBackBtnHtml = '';
+      if (typeof lastMapContext !== 'undefined' && lastMapContext && lastMapContext.spotData) {
+        const spotName = lastMapContext.spotData.name || 'マップ';
+        mapBackBtnHtml = `<button class="back-btn" style="background:#3182ce; color:#fff; border-color:#3182ce; margin-left:8px;" onclick="returnToMapModal()">← ${spotName}に戻る</button>`;
+      }
+
+      // 5. 詳細画面のHTML組み立て
+      const html = `
+        <div class="detail-page">
+          <div style="margin-bottom:12px;">
+            <button class="back-btn" onclick="backToPokedexList()">← 図鑑一覧に戻る</button>
+            ${mapBackBtnHtml}
+          </div>
+          <div class="detail-header-no">No.${String(p.no).padStart(3, '0')}</div>
+          <div class="detail-header-name">${p.name}</div>
+          ${renderTypeBadges(p.types || [])}
+
+          <h2 class="sec-heading">進化ルート</h2>
+          ${evoHtml}
+
+          <h2 class="sec-heading">レベルアップで覚える技</h2>
+          <table class="data-table">
+            <thead><tr><th>Lv</th><th>技名</th><th>備考</th></tr></thead>
+            <tbody>${lvRows}</tbody>
+          </table>
+
+          <h2 class="sec-heading">わざマシン・ひでんマシン</h2>
+          <table class="data-table">
+            <thead><tr><th>番号</th><th>技名</th></tr></thead>
+            <tbody>${tmRows}</tbody>
+          </table>
+        </div>
       `;
-    } else {
-      document.getElementById('modalMoveBody').innerHTML = `<p>詳細データが見つかりませんでした。</p>`;
+
+      // 6. 一覧を隠して詳細を表示
+      document.getElementById('pokedexListView').style.display = 'none';
+      const detailView = document.getElementById('pokedexDetailView');
+      detailView.innerHTML = html;
+      detailView.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    document.getElementById('moveModal').style.display = 'flex';
-  }
 
-  function renderTMList() {
-    const q = document.getElementById('tmSearch').value.trim();
-    const container = document.getElementById('tmListContainer');
-    if (!movesData.tm || !movesData.hm) return;
+  function jumpToPokemonByName(name) {
+      // 1. いま開いているマップ情報を記憶
+      if (window.currentOpenedSpot) {
+        lastMapContext = window.currentOpenedSpot;
+      }
+      // 2. マップのモーダルを閉じる
+      closeModal();
 
-    let html = `<div class="detail-box"><div class="section-title" style="margin-top:0;">ひでんマシン一覧</div><table><thead><tr><th>No</th><th>技名</th><th>入手場所</th></tr></thead><tbody>`;
-    for (const [code, info] of Object.entries(movesData.hm)) {
-      if (!q || code.includes(q.toUpperCase()) || info.name.includes(q) || info.place.includes(q)) {
-        html += `<tr><td><b>${code}</b></td><td><span class="move-link" onclick="showMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+      // 3. 図鑑タブに切り替える
+      const pokedexTabBtn = document.querySelector('[data-tab="pokedex"], .tab-btn[onclick*="pokedex"]');
+      if (pokedexTabBtn) pokedexTabBtn.click();
+
+      // 4. 図鑑詳細を開く
+      const target = globalData.pokedex.find(item => item.name === name);
+      if (target) {
+        openPokemonDetail(target.no);
+      } else {
+        alert(`「${name}」の図鑑データが見つかりませんでした。`);
       }
     }
-    html += `</tbody></table><div class="section-title">わざマシン一覧</div><table><thead><tr><th>No</th><th>技名</th><th>入手場所</th></tr></thead><tbody>`;
-    for (const [code, info] of Object.entries(movesData.tm)) {
-      if (!q || code.includes(q.toUpperCase()) || info.name.includes(q) || info.place.includes(q)) {
-        html += `<tr><td><b>${code}</b></td><td><span class="move-link" onclick="showMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+
+    function openMoveModal(moveName) {
+      const m = globalData.moves[moveName];
+      let tmInfo = null;
+      for (const [code, info] of Object.entries(globalData.tm)) {
+        if (info.name === moveName) tmInfo = { code, place: info.place };
       }
+      for (const [code, info] of Object.entries(globalData.hm)) {
+        if (info.name === moveName) tmInfo = { code, place: info.place };
+      }
+
+      let bodyHtml = `<button class="close-btn" onclick="closeModal()">×</button>`;
+      bodyHtml += `<h2 style="margin-top:0; color:#1a202c; font-size:20px;">${moveName}</h2>`;
+
+      if (m) {
+        bodyHtml += `
+          <div style="margin-bottom:12px;">${m.type ? renderTypeBadges([m.type]) : ''} <span style="font-size:12px; background:#edf2f7; padding:2px 8px; border-radius:4px; margin-left:6px; font-weight:bold;">${m.category || ''}</span></div>
+          <table class="data-table" style="margin-bottom:12px;">
+            <tr><th style="width:25%;">威力</th><td style="width:25%;">${m.power || '-'}</td><th style="width:25%;">命中</th><td style="width:25%;">${m.accuracy || '-'}</td></tr>
+            <tr><th>PP</th><td>${m.pp || '-'}</td><th colspan="2"></th></tr>
+          </table>
+          <p style="background:#f8f9fa; padding:10px 14px; border-radius:6px; font-size:13px; line-height:1.5; color:#4a5568;">${m.desc || ''}</p>
+        `;
+      } else {
+        bodyHtml += `<p style="color:#718096; font-size:13px; margin: 15px 0;">詳細ステータスデータは未登録です。</p>`;
+      }
+
+      if (tmInfo) {
+        bodyHtml += `
+          <div style="margin-top:14px; padding:10px 12px; background:#fdf8eb; border-left:4px solid #c5a059; border-radius:4px;">
+            <strong style="font-size:13px; color:#b8860b;">${tmInfo.code.toUpperCase()} 入手場所:</strong><br>
+            <span style="font-size:13px; color:#2d3748;">${tmInfo.place}</span>
+          </div>
+        `;
+      }
+
+      document.getElementById('modalContent').innerHTML = bodyHtml;
+      document.getElementById('detailModal').style.display = 'flex';
     }
-    html += `</tbody></table></div>`;
-    container.innerHTML = html;
-  }
 
-  function switchRegion(region) {
-    currentRegion = region;
-    document.getElementById('btn-johto').classList.toggle('active', region === 'johto');
-    document.getElementById('btn-kanto').classList.toggle('active', region === 'kanto');
-    renderMap(region);
-  }
+    function renderTMHM() {
+      let hmHtml = `<table class="data-table"><thead><tr><th style="width:15%;">No.</th><th style="width:25%;">技名</th><th style="width:60%;">入手場所</th></tr></thead><tbody>`;
+      for (const [code, info] of Object.entries(globalData.hm)) {
+        hmHtml += `<tr><td><strong>${code.toUpperCase()}</strong></td><td><span class="move-link" onclick="openMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+      }
+      hmHtml += `</tbody></table>`;
+      document.getElementById('hmListContainer').innerHTML = hmHtml;
 
-  function renderMap(region) {
-    const regionData = movesData.maps ? movesData.maps[region] : null;
-    const container = document.getElementById('mapContent');
-    if (!regionData) {
-      container.innerHTML = "<p>マップデータがありません。</p>";
-      return;
+      let tmHtml = `<table class="data-table"><thead><tr><th style="width:15%;">No.</th><th style="width:25%;">技名</th><th style="width:60%;">入手場所</th></tr></thead><tbody>`;
+      const sortedTmKeys = Object.keys(globalData.tm).sort((a, b) => {
+        return (parseInt(a.replace(/\D/g, '')) || 0) - (parseInt(b.replace(/\D/g, '')) || 0);
+      });
+
+      for (const key of sortedTmKeys) {
+        const info = globalData.tm[key];
+        tmHtml += `<tr><td><strong>${key.toUpperCase()}</strong></td><td><span class="move-link" onclick="openMoveModal('${info.name}')">${info.name}</span></td><td>${info.place}</td></tr>`;
+      }
+      tmHtml += `</tbody></table>`;
+      document.getElementById('tmListContainer').innerHTML = tmHtml;
     }
 
-    const defaultImg = region === 'johto' ? 'johto-allmap.jpg' : 'kanto-allmap.jpg';
-    const allMapSrc = regionData.allMapImg || defaultImg;
+    function renderMaps() {
+      renderRegionSpots('johto', 'johtoSpotsContainer');
+      renderRegionSpots('kanto', 'kantoSpotsContainer');
+    }
 
-    let html = `
-      <div class="map-image-container">
-        <img src="${allMapSrc}" alt="${regionData.title}" class="map-image"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div style="display:none; color:#999; font-size:12px; padding:18px;">
-          ※ 全体マップ画像（<b>${allMapSrc}</b>）をフォルダ直下に配置すると表示されます
-        </div>
-      </div>
-    `;
+    function renderRegionSpots(regionKey, containerId) {
+      const regionData = globalData.maps[regionKey];
+      if (!regionData || !regionData.spots) return;
 
-    const categories = ["町・都市", "ダンジョン・施設", "道路", "水道"];
-    categories.forEach(cat => {
-      const spots = regionData.spots.filter(s => s.category === cat);
-      if (spots.length > 0) {
-        html += `<div class="spot-group-title">${cat}</div><div class="spot-list">`;
-        spots.forEach(spot => {
-          const spotJson = encodeURIComponent(JSON.stringify(spot));
-          const hasImgBadge = spot.mapImg ? `<span class="spot-has-img">🗺️</span>` : '';
-          html += `<div class="spot-item" onclick="showMapDetail('${spotJson}')"><span>${spot.name}</span>${hasImgBadge}</div>`;
+      const categories = {};
+      regionData.spots.forEach(s => {
+        const cat = s.category || "その他";
+        if (!categories[cat]) categories[cat] = [];
+        categories[cat].push(s);
+      });
+
+      let html = "";
+      for (const [catName, spots] of Object.entries(categories)) {
+        html += `<h2 class="sec-heading">${catName}</h2><div class="poke-grid">`;
+        spots.forEach(s => {
+          const safeSpot = JSON.stringify(s).replace(/'/g, "&#39;");
+          html += `
+            <div class="poke-card" onclick='openSpotModal("${regionKey}", ${safeSpot})'>
+              <div class="poke-name" style="margin-bottom:6px;">${s.name}</div>
+              <div style="font-size:12px; color:#718096;">${s.desc || ''}</div>
+            </div>
+          `;
         });
         html += `</div>`;
       }
-    });
-
-    container.innerHTML = html;
-  }
-
-  function showMapDetail(spotEncoded) {
-    const spot = JSON.parse(decodeURIComponent(spotEncoded));
-    document.getElementById('modalMapName').innerText = spot.name;
-
-    let imgHtml = "";
-    if (spot.mapImg) {
-      imgHtml = `
-        <div style="text-align:center; background:#222; padding:8px; border-radius:8px; margin-bottom:12px;">
-          <img src="${spot.mapImg}" alt="${spot.name}マップ"
-               style="width:100%; max-height:260px; object-fit:contain; border-radius:6px;"
-               onerror="this.parentElement.style.display='none';">
-        </div>
-      `;
+      document.getElementById(containerId).innerHTML = html;
     }
 
-    document.getElementById('modalMapBody').innerHTML = `
-      ${imgHtml}
-      <div style="margin-bottom:8px;"><span class="spot-category">${spot.category}</span></div>
-      <div style="line-height:1.6; color:#444; margin-bottom:10px; font-size:14px;">${spot.desc}</div>
-      <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-      <div style="font-size:13px; margin-bottom:8px;">🏢 <b>主な施設：</b><br>${spot.facilities || "特になし"}</div>
-      <div style="font-size:13px;">🎁 <b>入手できるアイテム：</b><br>${spot.items || "特になし"}</div>
-    `;
-    document.getElementById('mapModal').style.display = 'flex';
+    // モーダル内のスポット遷移履歴スタック
+    window.spotModalHistory = [];
+
+    function goBackSpotModal() {
+      if (!Array.isArray(window.spotModalHistory) || window.spotModalHistory.length === 0) return;
+      const prevSpot = window.spotModalHistory.pop();
+      openSpotModal(prevSpot.regionKey, prevSpot.spotData, { skipHistoryPush: true });
+    }
+
+function autoLinkJohtoRoutes(html) {
+  if (!html) return html;
+
+  const routeIdMap = {
+    '29番道路': 'route_29',
+    '30番道路': 'route_30',
+    '31番道路': 'route_31',
+    '32番道路': 'route_32',
+    '33番道路': 'route_33',
+    '34番道路': 'route_34',
+    '35番道路': 'route_35',
+    '36番道路': 'route_36',
+    '37番道路': 'route_37',
+    '38番道路': 'route_38',
+    '39番道路': 'route_39',
+    '40番水道': 'route_40',
+    '41番水道': 'route_41',
+    '42番道路': 'route_42',
+    '43番道路': 'route_43',
+    '44番道路': 'route_44',
+    '45番道路': 'route_45',
+    '46番道路': 'route_46'
+  };
+
+  return html.replace(/(<a\b[^>]*>[\s\S]*?<\/a>|<[^>]+>)|((?:29|3[0-9]|4[2-6])番道路|4[01]番水道)/g, (match, tagOrLink, routeName) => {
+    if (tagOrLink) return tagOrLink;
+    const targetId = routeIdMap[routeName];
+    if (!targetId) return match;
+    return `<span class="move-link" style="font-weight:bold;" onclick="openJohtoRouteById('${targetId}', '${routeName}')">${routeName}</span>`;
+  });
+}
+
+function openJohtoRouteById(routeId, fallbackName) {
+  const johtoSpots = (globalData.maps && globalData.maps.johto && globalData.maps.johto.spots) || [];
+  const targetSpot = johtoSpots.find(item => item.id === routeId || item.name === fallbackName);
+  if (targetSpot) {
+    openSpotModal('johto', targetSpot);
+  } else {
+    alert(`「${fallbackName}」のデータはまだ追加されていません。`);
   }
+}
 
-  init();
-</script>
+    function openSpotModal(regionKey, s, options = {}) {
+      const { skipHistoryPush = false } = options;
 
+      // すでに別のスポットが開いている場合、直前のスポットを履歴に積む
+      if (
+        !skipHistoryPush &&
+        window.currentOpenedSpot &&
+        window.currentOpenedSpot.spotData &&
+        window.currentOpenedSpot.spotData !== s
+      ) {
+        window.spotModalHistory.push(window.currentOpenedSpot);
+      }
+
+      // いま開いているスポット情報を記憶しておく
+      window.currentOpenedSpot = { regionKey, spotData: s };
+
+      let tablesHtml = "";
+
+const spotCustomMapTable = {
+        // 町（johto-map/city/）
+        "ワカバタウン": "johto-map/city/map-wakaba-town.png",
+        "ヨシノシティ": "johto-map/city/map-yoshino-city.png",
+        "キキョウシティ": "johto-map/city/map-kikyou-city.png",
+        "ヒワダタウン": "johto-map/city/map-hiwada-town.png",
+        "コガネシティ": "johto-map/city/map-kogane-city.png",
+        "エンジュシティ": "johto-map/city/map-enju-city.png",
+        "アサギシティ": "johto-map/city/map-asagi-city.png",
+        "タンバシティ": "johto-map/city/map-tanba-city.png",
+        "チョウジタウン": "johto-map/city/map-chouji-town.png",
+        "フスベシティ": "johto-map/city/map-fusube-city.png",
+
+        // ジム（johto-map/gyms/）
+        "キキョウジム": "johto-map/gyms/map-gym-kikyou-city.png",
+        "ヒワダジム": "johto-map/gyms/map-gym-hiwada-town.png",
+        "コガネジム": "johto-map/gyms/map-gym-kogane-city.png",
+        "エンジュジム": "johto-map/gyms/map-gym-enju-city.png",
+        "アサギジム": "johto-map/gyms/map-gym-asagi-city.png",
+        "タンバジム": "johto-map/gyms/map-gym-tanba-city.png",
+        "チョウジジム": "johto-map/gyms/map-gym-chouji-town.png",
+        "フスベジム": "johto-map/gyms/map-gym-fusube-city.png",
+
+        // ダンジョン・施設（johto-map/dungeons/）
+        "アルフのいせき": "johto-map/dungeons/map-arufu-no-iseki.png",
+        "アサギのとうだい": "johto-map/dungeons/map-asagi-no-toudai.png",
+        "いかりのみずうみ": "johto-map/dungeons/map-ikari-no-mizuumi.png",
+        "地下通路": "johto-map/dungeons/map-kogane-chikatsuuro.png",
+        "ラジオ塔": "johto-map/dungeons/map-kogane-radio-tou.png",
+        "こおりのぬけみち": "johto-map/dungeons/map-koori-no-nukemichi.png",
+        "くらやみのほらあな": "johto-map/dungeons/map-kurayami-no-horaana.png",
+        "マダツボミのとう": "johto-map/dungeons/map-madatsubomi-no-tou.png",
+        "ロケットだんアジト": "johto-map/dungeons/map-rocketdan-ajito.png",
+        "りゅうのあな": "johto-map/dungeons/map-ryuu-no-ana.png",
+        "しぜんこうえん": "johto-map/dungeons/map-shizen-kouen.png",
+        "スリバチやま": "johto-map/dungeons/map-suribachi-yama.png",
+        "スズのとう": "johto-map/dungeons/map-suzu-no-tou.png",
+        "つながりのどうくつ": "johto-map/dungeons/map-tsunagari-no-doukutsu.png",
+        "ウバメのもり": "johto-map/dungeons/map-ubame-no-mori.png",
+        "うずまきじま": "johto-map/dungeons/map-uzumaki-jima.png",
+        "ヤドンのいど": "johto-map/dungeons/map-yadon-no-ido.png",
+        "やけたとう": "johto-map/dungeons/map-yaketa-tou.png",
+
+        // 道路・水道（johto-map/routes/）
+        "29番道路": "johto-map/routes/map-29ban-douro.png",
+        "30番道路": "johto-map/routes/map-30ban-douro.png",
+        "31番道路": "johto-map/routes/map-31ban-douro.png",
+        "32番道路": "johto-map/routes/map-32ban-douro.png",
+        "33番道路": "johto-map/routes/map-33ban-douro.png",
+        "34番道路": "johto-map/routes/map-34ban-douro.png",
+        "35番道路": "johto-map/routes/map-35ban-douro.png",
+        "36番道路": "johto-map/routes/map-36ban-douro.png",
+        "37番道路": "johto-map/routes/map-37ban-douro.png",
+        "38番道路": "johto-map/routes/map-38ban-douro.png",
+        "39番道路": "johto-map/routes/map-39ban-douro.png",
+        "40番水道": "johto-map/routes/map-40ban-suidou.png",
+        "41番水道": "johto-map/routes/map-41ban-suidou.png",
+        "42番道路": "johto-map/routes/map-42ban-douro.png",
+        "43番道路": "johto-map/routes/map-43ban-douro.png",
+        "44番道路": "johto-map/routes/map-44ban-douro.png",
+        "45番道路": "johto-map/routes/map-45ban-douro.png",
+        "46番道路": "johto-map/routes/map-46ban-douro.png"
+      };
+
+      const mappedImg =
+        s.mapImg ||
+        spotCustomMapTable[s.id] ||
+        spotCustomMapTable[s.name] ||
+        null;
+
+      const spotMapCandidates = [];
+      if (mappedImg) {
+        spotMapCandidates.push(mappedImg);
+      }
+      spotMapCandidates.push("johto-allmap.png");
+
+      const firstMapSrc = spotMapCandidates[0];
+      const fallbackListJson = JSON.stringify(spotMapCandidates.slice(1)).replace(/"/g, "&quot;");
+
+      tablesHtml += `
+        <div class="modal-top-map-wrap">
+          <img
+            src="${firstMapSrc}"
+            data-fallbacks="${fallbackListJson}"
+            alt="${s.name} マップ"
+            class="modal-top-map-img"
+            onerror="
+              const fallbacks = JSON.parse(this.getAttribute('data-fallbacks') || '[]');
+              if (fallbacks.length > 0) {
+                const nextSrc = fallbacks.shift();
+                this.setAttribute('data-fallbacks', JSON.stringify(fallbacks));
+                this.src = nextSrc;
+              } else {
+                this.parentElement.style.display = 'none';
+              }
+            "
+          >
+        </div>
+      `;
+
+      // 1. シナリオ攻略チャート（「◉」「1.」「1手順」などをセルごとに連番の角丸バッジへ変換）
+      if (s.chart) {
+        const formatStepCellHtml = (cellHtml) => {
+          let stepNum = 0;
+          return cellHtml
+            // 行頭または <br> 直後の「◉」を連番バッジに変換
+            .replace(/(^|<br\s*\/?>)\s*◉\s*/gi, (_, prefix) => {
+              stepNum += 1;
+              return `${prefix}<span class="step-badge">${stepNum}</span>`;
+            })
+            // 行頭または <br> 直後の「1. 」や「1手順」のような数字を連番バッジに変換
+            .replace(/(^|<br\s*\/?>)\s*(\d+)(?:\.\s*|\s+|(?=[亜-熙ぁ-んァ-ヶ★【（「]))/gi, (_, prefix, num) => {
+              stepNum = Number(num);
+              return `${prefix}<span class="step-badge">${stepNum}</span>`;
+            })
+            // バッジ直後の「★」をゴールドに強調
+            .replace(/(<span class="step-badge">\d+<\/span>)\s*★/g, '$1 <span style="color:#d69e2e;">★</span>');
+        };
+
+        // 攻略の流れ（2列目の <td>）ごとに番号をリセットして変換
+        const formattedChart = s.chart.replace(
+          /(<tr[^>]*>[\s\S]*?<td[^>]*>[\s\S]*?<\/td>\s*<td[^>]*>)([\s\S]*?)(<\/td>)/gi,
+          (_, openPart, bodyHtml, closePart) => `${openPart}${formatStepCellHtml(bodyHtml)}${closePart}`
+        );
+
+        tablesHtml += `<h4 class="sec-heading">シナリオ攻略チャート</h4><div class="excel-table-wrap">${formattedChart}</div>`;
+      }
+
+      const isGym = s.category === "ポケモンジム";
+
+      // 2. 施設（ポケモンジムのときは非表示）
+      if (!isGym && Array.isArray(s.facilitiesList) && s.facilitiesList.length > 0) {
+        const listItems = s.facilitiesList.map(item => `<li style="margin-bottom:6px; list-style:none;"><span style="color:#2b6cb0; font-weight:bold; margin-right:6px;">◉</span>${item}</li>`).join('');
+        tablesHtml += `<h4 class="sec-heading">施設</h4><div style="background:#fff; padding:12px 16px; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:14px; font-size:14px; line-height:1.6;"><ul style="margin:0; padding:0;">${listItems}</ul></div>`;
+      } else if (!isGym && s.facilities) {
+        tablesHtml += `<h4 class="sec-heading">施設</h4><table class="excel-table"><tbody><tr><th style="width:28%;">施設</th><td>${s.facilities}</td></tr></tbody></table>`;
+      }
+
+      // 3. ジム（ポケモンジムのときは非表示）
+      if (!isGym && s.gym) {
+        tablesHtml += `<h4 class="sec-heading">ジム</h4><table class="excel-table"><tbody><tr><th style="width:28%;">ジム</th><td>${s.gym}</td></tr></tbody></table>`;
+      }
+      if (!isGym && s.gymHtml) {
+        tablesHtml += `<h4 class="sec-heading">ジム</h4><div style="background:#fff; padding:12px; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:14px; font-size:13px; line-height:1.6;">${s.gymHtml}</div>`;
+      }
+
+      // 4. 出現ポケモン（ポケモンジムのときは非表示）
+      if (!isGym && s.wildTable) {
+        tablesHtml += `<h4 class="sec-heading">野生ポケモン・釣り・なみのり出現率</h4><div class="excel-table-wrap">${s.wildTable}</div>`;
+      }
+
+      // 5. 出現トレーナー
+      if (s.trainerTable) {
+        tablesHtml += `<h4 class="sec-heading">出現トレーナー</h4><div class="excel-table-wrap">${s.trainerTable}</div>`;
+      }
+
+      // 6. 入手アイテム
+      if (s.items) {
+        tablesHtml += `<h4 class="sec-heading">入手アイテム</h4><table class="excel-table"><tbody><tr><th style="width:28%;">入手アイテム</th><td>${s.items}</td></tr></tbody></table>`;
+      }
+      if (s.itemsTable) {
+        tablesHtml += `<h4 class="sec-heading">入手アイテム</h4><div class="excel-table-wrap">${s.itemsTable}</div>`;
+      }
+
+      // 7. 入手ポケモン（ポケモンジムのときは非表示）
+      if (!isGym && s.getPokemonTable) {
+        tablesHtml += `<h4 class="sec-heading">入手ポケモン</h4><div class="excel-table-wrap">${s.getPokemonTable}</div>`;
+      } else if (!isGym && s.getPokemon) {
+        tablesHtml += `<h4 class="sec-heading">入手ポケモン</h4><table class="excel-table"><tbody><tr><th style="width:28%;">入手ポケモン</th><td>${s.getPokemon}</td></tr></tbody></table>`;
+      }
+
+      // 8. サブイベント
+      if (s.subEvent) {
+        tablesHtml += `<h4 class="sec-heading">サブイベント</h4><table class="excel-table"><tbody><tr><th style="width:28%;">サブイベント</th><td>${s.subEvent}</td></tr></tbody></table>`;
+      }
+      if (s.subEventHtml) {
+        tablesHtml += `<h4 class="sec-heading">サブイベント</h4><div style="background:#fff; padding:12px; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:14px; font-size:13px; line-height:1.6;">${s.subEventHtml}</div>`;
+      }
+
+      // 9. 攻略メモ
+      if (s.memoHtml) {
+        tablesHtml += `<h4 class="sec-heading">攻略メモ・重要事項</h4><div style="background:#fff; padding:12px; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:14px; font-size:13px; line-height:1.6;">${s.memoHtml}</div>`;
+      }
+
+      const prevSpot = Array.isArray(window.spotModalHistory) && window.spotModalHistory.length > 0
+        ? window.spotModalHistory[window.spotModalHistory.length - 1]
+        : null;
+
+      const backButtonHtml = prevSpot
+        ? `<div style="margin-bottom:10px;"><button type="button" onclick="goBackSpotModal()" style="background:#edf2f7; color:#2b6cb0; border:1px solid #cbd5e0; border-radius:6px; padding:5px 12px; font-size:13px; font-weight:bold; cursor:pointer;">← ${prevSpot.spotData.name} に戻る</button></div>`
+        : '';
+
+      const content = `
+        <button class="close-btn" onclick="closeModal()">×</button>
+      ${backButtonHtml}
+      <h2 style="margin-top:0; color:#1a202c; font-size:22px;">${s.name}</h2>
+      <p style="color:#718096; font-size:14px; margin-bottom:14px;">${s.desc || ''}</p>
+      ${autoLinkJohtoRoutes(tablesHtml)}
+    `;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('detailModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      window.spotModalHistory = [];
+      window.currentOpenedSpot = null;
+      document.getElementById('detailModal').style.display = 'none';
+    }
+
+    function closeModalOnBg(event) {
+      if (event.target.id === 'detailModal') closeModal();
+    }
+
+// ==========================================
+    // マップから図鑑へのジャンプ・戻る機能用の仕組み
+    // ==========================================
+
+
+    // 図鑑詳細から元のマップモーダルへ戻る関数
+    function returnToMapModal() {
+      if (!lastMapContext) return;
+      const { regionKey, spotData } = lastMapContext;
+      lastMapContext = null; // 一度戻ったらクリア
+
+      // マップタブに切り替える
+      if (typeof switchTab === 'function') {
+        switchTab('maps');
+      } else {
+        const mapTabBtn = document.getElementById('tabBtn-maps');
+        if (mapTabBtn) mapTabBtn.click();
+      }
+
+      // 元のスポットモーダルを再表示
+      openSpotModal(regionKey, spotData);
+    }
+
+    // マップのポップアップから図鑑詳細へ一発で飛ぶ関数（決定版）
+    function jumpToPokemonByName(name) {
+      // 1. いま開いているマップの場所を記憶しておく
+      if (window.currentOpenedSpot) {
+        lastMapContext = window.currentOpenedSpot;
+      }
+
+      // 2. マップのポップアップを閉じる
+      closeModal();
+
+      // 3. 画面を図鑑タブに切り替える
+      if (typeof switchTab === 'function') {
+        switchTab('pokedex');
+      } else {
+        const pokedexTabBtn = document.getElementById('tabBtn-pokedex');
+        if (pokedexTabBtn) pokedexTabBtn.click();
+      }
+
+      // 4. 図鑑データ（globalData.pokedex）から名前を探して詳細画面を開く
+      if (typeof globalData !== 'undefined' && Array.isArray(globalData.pokedex)) {
+        const target = globalData.pokedex.find(item => item.name === name);
+        if (target) {
+          openPokemonDetail(target.no);
+        } else {
+          alert(`「${name}」の図鑑データが見つかりませんでした。`);
+        }
+      }
+    }
+
+    // （※もし古い記述で openPokedexModal という名前で呼んでいても動くように繋いでおくよ）
+    function openPokedexModal(pokemonName) {
+      jumpToPokemonByName(pokemonName);
+    }
+
+// マップ内の別スポット（町・ポケモンジム・ダンジョン・施設・道路・水道など）へ直接ジャンプする共通関数
+    function jumpToMapSpot(regionKey, spotId, fallbackName) {
+      const regionData = globalData.maps && globalData.maps[regionKey];
+      const targetSpot = regionData && Array.isArray(regionData.spots)
+        ? regionData.spots.find(item => item.id === spotId || item.name === fallbackName)
+        : null;
+
+      if (targetSpot) {
+        openSpotModal(regionKey, targetSpot);
+      } else {
+        alert(`「${fallbackName}」のマップ攻略データは準備中です。データ追加後にここから直接開けるようになります！`);
+      }
+    }
+
+    // 互換用（古い jumpToGymSpot で呼ばれても共通関数へ繋ぐ）
+    function jumpToGymSpot(regionKey, spotId, fallbackName) {
+      jumpToMapSpot(regionKey, spotId, fallbackName);
+    }
+
+    init();
+  </script>
 </body>
 </html>

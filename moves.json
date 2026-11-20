@@ -42,7 +42,7 @@
     },
     "TM11": {
       "name": "にほんばれ",
-      "place": "コガネシティのラジオ塔3Fの女性からもらう / デパートで購入"
+      "place": "コガネシティのラジオ塔3Fの女性からもらう"
     },
     "TM12": {
       "name": "あまいかおり",
@@ -66,11 +66,11 @@
     },
     "TM17": {
       "name": "まもる",
-      "place": "タマムシデパート (3F) で購入"
+      "place": "コガネ百貨店 (5F) で購入"
     },
     "TM18": {
       "name": "あまごい",
-      "place": "ヤドンのいど B2Fで拾う / デパートで購入"
+      "place": "ヤドンのいど奥で拾う"
     },
     "TM19": {
       "name": "ギガドレイン",
@@ -78,15 +78,15 @@
     },
     "TM20": {
       "name": "こらえる",
-      "place": "やけたとう 2Fで拾う"
+      "place": "ウバメの森で男性からイベントでもらう"
     },
     "TM21": {
       "name": "やつあたり",
-      "place": "コガネ百貨店 (5F) の女性から日曜日にもらう"
+      "place": "なつき度が低い状態で裏口の女性にもらう"
     },
     "TM22": {
       "name": "ソーラービーム",
-      "place": "27番道路南側で拾う"
+      "place": "ポケットの森や草むら等で入手"
     },
     "TM23": {
       "name": "アイアンテール",
@@ -94,27 +94,27 @@
     },
     "TM24": {
       "name": "りゅうのいぶき",
-      "place": "フスベシティジム後、りゅうのあなの長老の質問に答える"
+      "place": "フスベシティジムでイブキを倒す"
     },
     "TM25": {
       "name": "かみなり",
-      "place": "コガネシティのゲームコーナー景品 (コイン5500枚)"
+      "place": "スジマシティや通信等"
     },
     "TM26": {
       "name": "じしん",
-      "place": "チャンピオンロード 2Fで拾う"
+      "place": "チャンピオンロード等で拾う"
     },
     "TM27": {
       "name": "おんがえし",
-      "place": "コガネ百貨店 (5F) の女性から日曜日にもらう"
+      "place": "なつき度が高い状態で裏口の女性にもらう"
     },
     "TM28": {
       "name": "あなをほる",
-      "place": "しぜんこうえんで拾う"
+      "place": "コガネ百貨店 (5F) / コガネ地下通路"
     },
     "TM29": {
       "name": "サイコキネシス",
-      "place": "ヤマブキシティのエスパーおやじ / ヤマブキシティジム等"
+      "place": "ヤマブキシティや景品"
     },
     "TM30": {
       "name": "シャドーボール",
@@ -126,7 +126,7 @@
     },
     "TM32": {
       "name": "かげぶんしん",
-      "place": "タマムシシティのゲームコーナー景品 (コイン1500枚)"
+      "place": "コガネシティのゲームコーナー景品"
     },
     "TM33": {
       "name": "れいとうパンチ",
@@ -134,97 +134,97 @@
     },
     "TM34": {
       "name": "いばる",
-      "place": "アサギのとうだい 5Fで拾う"
+      "place": "アサギのとうだい最上階等"
     },
     "TM35": {
-      "name": "ねごと",
-      "place": "コガネ百貨店 B2Fで拾う"
+      "name": "ねっぷう",
+      "place": "イベントや購入など"
     },
     "TM36": {
       "name": "ヘドロばくだん",
-      "place": "43番道路ゲートの警備員からもらう"
+      "place": "34番道路などで拾う"
     },
     "TM37": {
       "name": "すなあらし",
-      "place": "27番道路の民家でおばあさんからもらう"
+      "place": "27番道路の民家でもらう"
     },
     "TM38": {
       "name": "だいもんじ",
-      "place": "コガネシティのゲームコーナー景品 (コイン5500枚)"
+      "place": "スリバチ山などで拾う"
     },
     "TM39": {
       "name": "スピードスター",
-      "place": "つながりのどうくつ B1F北で拾う"
+      "place": "パークやイベント"
     },
     "TM40": {
-      "name": "まるくなる",
-      "place": "スリバチやま 2F奥で拾う"
+      "name": "まがる",
+      "place": "スリバチやま等"
     },
     "TM41": {
-      "name": "かみなりパンチ",
-      "place": "コガネ百貨店 (5F) で購入"
+      "name": "いちゃもん",
+      "place": "イベント等"
     },
     "TM42": {
       "name": "ゆめくい",
-      "place": "トキワシティの男性からもらう"
+      "place": "トキワシティの民家でもらう"
     },
     "TM43": {
-      "name": "みきり",
-      "place": "いかりのみずうみで拾う"
+      "name": "ひみつのちから",
+      "place": "イベント等"
     },
     "TM44": {
       "name": "ねむる",
-      "place": "こおりのぬけみち B2F東で拾う"
+      "place": "氷の抜け道などで拾う"
     },
     "TM45": {
       "name": "メロメロ",
       "place": "コガネシティジムでアカネを倒す"
     },
     "TM46": {
-      "name": "どろぼう",
-      "place": "ロケットだんアジト B2Fで拾う"
+      "name": "ど泥棒",
+      "place": "ロケット団アジト等"
     },
     "TM47": {
-      "name": "はがねのつばさ",
-      "place": "28番道路の民家 / イワヤマトンネルで拾う"
+      "name": "はねる",
+      "place": "イベント等"
     },
     "TM48": {
-      "name": "ほのおのパンチ",
-      "place": "コガネ百貨店 (5F) で購入"
+      "name": "スキルスワップ",
+      "place": "イベント等"
     },
     "TM49": {
-      "name": "れんぞくぎり",
+      "name": "連続切り",
       "place": "ヒワダタウンジムでツクシを倒す"
     },
     "TM50": {
-      "name": "あくむ",
-      "place": "35番道路南ゲートで手紙を届ける"
+      "name": "オーバーヒート",
+      "place": "イベント等"
     }
   },
   "hm": {
     "HM01": {
       "name": "いあいぎり",
-      "place": "ウバメの森でカモネギを捕まえて職人からもらう"
+      "place": "ウバメの森でカモネギを捕まえて職人からもうらう"
     },
     "HM02": {
       "name": "そらをとぶ",
-      "place": "タンバシティジム後、ジム外の奥さんからもらう"
+      "place": "タンバシティジム後、ジム外の奥さんからもうらう"
     },
     "HM03": {
       "name": "なみのり",
-      "place": "エンジュシティの歌舞練場で舞子5人を倒した後の観客からもらう"
+      "place": "エンジュシティの歌舞練場で舞子5인을倒した後の観客からもうらう"
     },
     "HM04": {
       "name": "かいりき",
-      "place": "アサギシティ西の民家の船乗りからもらう"
+      "place": "アサギシティ西の民家の船乗りからもうらう"
     },
     "HM05": {
       "name": "フラッシュ",
-      "place": "マダツボミのとう 3Fで長老からもらう"
+      "place": "マダツボミのとう 3Fで長老からもうらう"
     },
     "HM06": {
       "name": "うずしお",
-      "place": "ロケットだんアジト B2Fでワタルからもらう"
+      "place": "ロケットだんアジト B2Fでワタルからもうらう"
     },
     "HM07": {
       "name": "たきのぼり",
@@ -232,2205 +232,185 @@
     }
   },
   "maps": {
-    "johto": {
-      "title": "ジョウト地方 完全マップ",
-      "allMapImg": "johto-allmap.jpg",
-      "spots": [
-        {
-          "category": "町・都市",
-          "name": "アサギシティ",
-          "desc": "アサギの灯台でデンリュウが病気になっている。ジムリーダー ミカン。",
-          "facilities": "アサギのとうだい、アサギジム、船乗り場、ポケモンセンター",
-          "items": "秘伝マシン04（かいりき）、いいつりざお",
-          "mapImg": "johto-map/city/map-asagi-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "チョウジタウン",
-          "desc": "いかりの湖の近くの寒い町。ロケット団のアジトが潜んでいる。ジムリーダー ヤナギ。",
-          "facilities": "チョウジタウンジム、おみやげや、ロケット団アジト",
-          "items": "わざマシン16（こごえるかぜ）",
-          "mapImg": "johto-map/city/map-chouji-town.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "エンジュシティ",
-          "desc": "歴史と伝統の町。焼けた塔、スズの塔、舞踏場がある。ジムリーダー マツバ。",
-          "facilities": "エンジュシティジム、焼けた塔、スズの塔、かぶれんじょう",
-          "items": "わざマシン30（シャドーボール）、ダウジングマシン",
-          "mapImg": "johto-map/city/map-enju-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "フスベシティ",
-          "desc": "山あいの竜の使いの里。わざおしえの家がある。ジムリーダー イブキ。",
-          "facilities": "フスベジム、りゅうのあな、わすれオヤジの家",
-          "items": "のろいのおふだ、わざマシン24（りゅうのいぶき）",
-          "mapImg": "johto-map/city/map-fusube-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "ヒワダタウン",
-          "desc": "ヤドンがたくさんいる職人の町。ガンテツの家がある。ジムリーダー ツクシ。",
-          "facilities": "ガンテツの家、ヒワダタウンジム、スミ職人の家、ヤドンのいど",
-          "items": "ルアーボール、しろぼんぐり、もくたん、わざマシン49（れんぞくぎり）",
-          "mapImg": "johto-map/city/map-hiwada-town.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "キキョウシティ",
-          "desc": "歴史ある寺院「マダツボミのとう」がある町。ジムリーダー ハヤト。",
-          "facilities": "キキョウシティジム、マダツボミのとう、ポケモン塾",
-          "items": "ポイントアップ、ふしぎなアメ、わざマシン31（どろかけ）",
-          "mapImg": "johto-map/city/map-kikyou-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "コガネシティ",
-          "desc": "大都会。コガネ百貨店、ラジオ塔、ゲームコーナーがある。ジムリーダー アカネ。",
-          "facilities": "コガネ百貨店、ラジオ塔、ゲームコーナー、自転車屋",
-          "items": "わざマシン45（メロメロ）、ゼニガメじょうろ",
-          "mapImg": "johto-map/city/map-kogane-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "ワカバタウン",
-          "desc": "主人公の家があるはじまりの町。ウツギ博士の研究所がある。",
-          "facilities": "ウツギ博士の研究所、主人公の自宅",
-          "items": "マスターボール、ふねのチケット、かわらずのいし、モンスターボール5個",
-          "mapImg": "johto-map/city/map-wakaba-town.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "ヨシノシティ",
-          "desc": "静かなたたずまいの小さな町。ポケモンじいさんの家へ続く。",
-          "facilities": "ポケモンセンター、フレンドリーショップ",
-          "items": "マップカード、しんぴのしずく",
-          "mapImg": "johto-map/city/map-yoshino-city.png"
-        },
-        {
-          "category": "町・都市",
-          "name": "タンバシティ",
-          "desc": "海に囲まれた町。薬局がある。ジムリーダー シジマ。",
-          "facilities": "薬局、タンバジム、写真館",
-          "items": "秘伝マシン02（そらをとぶ）"
-        },
-        {
-          "category": "町・都市",
-          "name": "セキエイこうげん",
-          "desc": "カントー・ジョウト共通のポケモンリーグ本部。",
-          "facilities": "ポケモンリーグ受付",
-          "items": "特になし"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "マダツボミのとう",
-          "desc": "マダツボミが揺れる塔。",
-          "facilities": "塔内3階建て",
-          "items": "フラッシュ"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "ウバメの森",
-          "desc": "木々が鬱蒼と茂る森。",
-          "facilities": "ほこら、炭焼き小屋",
-          "items": "TM02（ずつき）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "やけたとう",
-          "desc": "三犬が目覚めた場所。",
-          "facilities": "地下1階・地上2階",
-          "items": "TM20（こらえる）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "スズのとう",
-          "desc": "ホウオウが眠る伝説の塔。",
-          "facilities": "塔内通路",
-          "items": "虹色の羽"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "ラジオ塔",
-          "desc": "ロケット団占拠事件が発生する塔。",
-          "facilities": "1F〜5F",
-          "items": "ピンクのカード"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "ヤドンのいど",
-          "desc": "ロケット団の隠れ家になっていた井戸。",
-          "facilities": "B1F・B2F",
-          "items": "TM18（あまごい）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "つながりのどうくつ",
-          "desc": "キキョウとヒワダを結ぶ洞窟。",
-          "facilities": "B1F",
-          "items": "ピーアップ"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "しぜんこうえん",
-          "desc": "虫取り大会が開催される公園。",
-          "facilities": "虫取り広場",
-          "items": "TM28（あなをほる）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "アルフのいせき",
-          "desc": "アンノーンの謎の遺跡。",
-          "facilities": "研究室",
-          "items": "各種石"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "スリバチやま",
-          "desc": "複雑に入り組んだ山の中の洞窟。",
-          "facilities": "山内洞窟",
-          "items": "TM40（まるくなる）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "いかりのみずうみ",
-          "desc": "赤いギャラドスが出現する湖。",
-          "facilities": "湖畔の民家",
-          "items": "TM43（みきり）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "こおりのぬけみち",
-          "desc": "ツルツル滑る床がある難所。",
-          "facilities": "B1F〜B2F",
-          "items": "TM44（ねむる）、HM07"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "りゅうのあな",
-          "desc": "長老のテストを受ける洞窟。",
-          "facilities": "ほこら",
-          "items": "龍の牙"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "くらやみのほらあな",
-          "desc": "フラッシュが必須な暗い洞窟。",
-          "facilities": "通路",
-          "items": "すどやのいし等"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "アサギのとうだい",
-          "desc": "病気のデンリュウを照らす灯台。",
-          "facilities": "1F〜6F",
-          "items": "TM34（いばる）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "うずまきじま",
-          "desc": "ルギアが眠る島々。",
-          "facilities": "地下迷路",
-          "items": "ふしぎなアメ"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "チャンピオンロード",
-          "desc": "リーグ手前の険しい洞窟。",
-          "facilities": "1F〜2F",
-          "items": "TM26（じしん）"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "シロガネやま",
-          "desc": "レッドが待つ最難関エリア。",
-          "facilities": "山頂、洞窟",
-          "items": "マックスアップ"
-        },
-        {
-          "category": "ダンジョン・施設",
-          "name": "トージョウのたき",
-          "desc": "カントーとジョウトを分かつ滝の洞窟。",
-          "facilities": "滝つぼ",
-          "items": "特になし"
-        },
-        {
-          "category": "道路",
-          "name": "26番道路",
-          "desc": "チャンピオンロードへと続くジョウト東部の道路。",
-          "facilities": "民家",
-          "items": "フルセラピー等"
-        },
-        {
-          "category": "道路",
-          "name": "27番道路",
-          "desc": "トージョウのたきを挟む東西に長い道路。",
-          "facilities": "民家",
-          "items": "TM22（ソーラービーム）、TM37（すなあらし）"
-        },
-        {
-          "category": "道路",
-          "name": "28番道路",
-          "desc": "シロガネ山のふもとに広がる静かな道路。",
-          "facilities": "民家",
-          "items": "TM47（はがねのつばさ）"
-        },
-        {
-          "category": "道路",
-          "name": "29番道路",
-          "desc": "ワカバタウンとヨシノシティを結ぶ最初の道路。",
-          "facilities": "ゲート",
-          "items": "キズぐすり等"
-        },
-        {
-          "category": "道路",
-          "name": "30番道路",
-          "desc": "ヨシノシティから北へ伸びるポケモンじいさんの家への道。",
-          "facilities": "ポケモンじいさんの家",
-          "items": "きのみ"
-        },
-        {
-          "category": "道路",
-          "name": "31番道路",
-          "desc": "キキョウシティへと続く草木の多い道路。",
-          "facilities": "暗闇の洞窟入口",
-          "items": "わざマシン"
-        },
-        {
-          "category": "道路",
-          "name": "32番道路",
-          "desc": "キキョウシティから南方へ伸びる長い道路。",
-          "facilities": "つながりの洞窟入口",
-          "items": "TM05（ほえる）"
-        },
-        {
-          "category": "道路",
-          "name": "33番道路",
-          "desc": "つながりの洞窟を抜けてヒワダタウンへ向かう道路。",
-          "facilities": "特になし",
-          "items": "マックスアップ"
-        },
-        {
-          "category": "道路",
-          "name": "34番道路",
-          "desc": "コガネシティと自然公園を繋ぐ道路。",
-          "facilities": "育て屋、しぜんこうえん",
-          "items": "きのみ"
-        },
-        {
-          "category": "道路",
-          "name": "35番道路",
-          "desc": "自然公園の北側からタンバ方面へ抜ける道路。",
-          "facilities": "自然公園北ゲート",
-          "items": "TM04（ころがる）"
-        },
-        {
-          "category": "道路",
-          "name": "36番道路",
-          "desc": "キキョウシティ西側、ウソッキーがいる道路。",
-          "facilities": "ウソッキーの木",
-          "items": "TM08（いわくだき）"
-        },
-        {
-          "category": "道路",
-          "name": "37番道路",
-          "desc": "エンジュシティ南側の三色きのみの木がある道路。",
-          "facilities": "特になし",
-          "items": "各種きのみ"
-        },
-        {
-          "category": "道路",
-          "name": "38番道路",
-          "desc": "エンジュシティ西側のアサギシティへ向かう道路。",
-          "facilities": "牧場前",
-          "items": "きのみ"
-        },
-        {
-          "category": "道路",
-          "name": "39番道路",
-          "desc": "アサギシティ手前のモーモー牧場がある道路。",
-          "facilities": "モーモー牧場",
-          "items": "TM13（いびき）"
-        },
-        {
-          "category": "水道",
-          "name": "40番水道",
-          "desc": "アサギシティからタンバシティへ向かう水道。",
-          "facilities": "特になし",
-          "items": "特になし"
-        },
-        {
-          "category": "水道",
-          "name": "41番水道",
-          "desc": "うずまきじまが点在する神秘的な水道。",
-          "facilities": "うずまきじま入口",
-          "items": "特になし"
-        },
-        {
-          "category": "道路",
-          "name": "42番道路",
-          "desc": "エンジュシティ東側、スリバチ山を臨む道路。",
-          "facilities": "スリバチ山入口",
-          "items": "すごいキズぐすり"
-        },
-        {
-          "category": "道路",
-          "name": "43番道路",
-          "desc": "いかりの湖へと北上するロケット団ゲートがある道路。",
-          "facilities": "ゲート",
-          "items": "TM36（ヘドロばくだん）"
-        },
-        {
-          "category": "道路",
-          "name": "44番道路",
-          "desc": "チョウジタウン東側、氷の抜け道へ続く道路。",
-          "facilities": "氷の抜け道入口",
-          "items": "きれいなウイング"
-        },
-        {
-          "category": "道路",
-          "name": "45番道路",
-          "desc": "フスベシティから山を下る険しい坂道の道路。",
-          "facilities": "特になし",
-          "items": "ピーアップ等"
-        },
-        {
-          "category": "道路",
-          "name": "46番道路",
-          "desc": "31番道路や45番道路の上部にある行き止まりの山道。",
-          "facilities": "特になし",
-          "items": "キズぐすり"
-        }
-      ]
-    },
-    "kanto": {
-      "title": "カントー地方 完全マップ",
-      "allMapImg": "kanto-allmap.jpg",
-      "spots": [
-        {
-          "category": "町・都市",
-          "name": "マサラタウン",
-          "desc": "主人公の故郷。",
-          "facilities": "オーキッド研究所",
-          "items": "特になし"
-        },
-        {
-          "category": "町・都市",
-          "name": "トキワシティ",
-          "desc": "緑豊かな町。",
-          "facilities": "トレーナーハウス",
-          "items": "TM42（ゆめくい）"
-        },
-        {
-          "category": "町・都市",
-          "name": "ニビシティ",
-          "desc": "化石の科学の町。",
-          "facilities": "科学博物館",
-          "items": "きれいなウイング"
-        },
-        {
-          "category": "町・都市",
-          "name": "ハナダシティ",
-          "desc": "水辺の町。",
-          "facilities": "ハナダジム",
-          "items": "マシン部品"
-        },
-        {
-          "category": "町・都市",
-          "name": "クチバシティ",
-          "desc": "港町。",
-          "facilities": "クチバジム",
-          "items": "まんたんのくすり"
-        },
-        {
-          "category": "町・都市",
-          "name": "シオンタウン",
-          "desc": "ラジオ塔にリニューアルされた町。",
-          "facilities": "ラジオ塔",
-          "items": "特になし"
-        },
-        {
-          "category": "町・都市",
-          "name": "タマムシシティ",
-          "desc": "商業都市。",
-          "facilities": "デパート、ゲームセンター",
-          "items": "TM19等"
-        },
-        {
-          "category": "町・都市",
-          "name": "ヤマブキシティ",
-          "desc": "カントーの中心街。",
-          "facilities": "シルフカンパニー",
-          "items": "アップグレード"
-        },
-        {
-          "category": "町・都市",
-          "name": "セキチクシティ",
-          "desc": "サファリゾーンがある町。",
-          "facilities": "セキチクジム",
-          "items": "TM06（どくどく）"
-        },
-        {
-          "category": "町・都市",
-          "name": "グレンタウン",
-          "desc": "火山の噴火により失われた島。",
-          "facilities": "PC",
-          "items": "イベント関連"
-        }
-      ]
-    }
+    "johto": {},
+    "kanto": {}
   },
   "moves": {
-    "かまいたち": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "いあいぎり": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 95,
-      "pp": 30
-    },
-    "つるのムチ": {
-      "type": "くさ",
-      "category": "特殊",
-      "power": 45,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "ずつき": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 70,
-      "accuracy": 100,
-      "pp": 15
-    },
     "たいあたり": {
       "type": "ノーマル",
       "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 35
+      "power": 35,
+      "accuracy": 95,
+      "pp": 35,
+      "desc": "体をぶつけて攻撃する。"
     },
     "なきごえ": {
       "type": "ノーマル",
       "category": "変化",
       "power": "-",
       "accuracy": 100,
-      "pp": 40
+      "pp": 40,
+      "desc": "可愛い声で相手を油断させ、攻撃力を下げる。"
     },
     "やどりぎのタネ": {
       "type": "くさ",
       "category": "変化",
       "power": "-",
       "accuracy": 90,
-      "pp": 10
+      "pp": 10,
+      "desc": "相手にタネを植え付け、毎ターンHPを吸収する。"
     },
-    "せいちょう": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "はっぱカッター": {
+    "つるのムチ": {
       "type": "くさ",
-      "category": "特殊",
-      "power": 55,
-      "accuracy": 95,
-      "pp": 25
-    },
-    "ソーラービーム": {
-      "type": "くさ",
-      "category": "特殊",
-      "power": 120,
+      "category": "物理",
+      "power": 45,
       "accuracy": 100,
-      "pp": 10
+      "pp": 25,
+      "desc": "ツルを鞭のようにしならせて相手を叩く。"
     },
     "どくのこな": {
       "type": "どく",
       "category": "変化",
       "power": "-",
       "accuracy": 75,
-      "pp": 35
+      "pp": 35,
+      "desc": "毒の粉を浴びせ、相手を「どく」状態にする。"
     },
     "ねむりごな": {
       "type": "くさ",
       "category": "変化",
       "power": "-",
       "accuracy": 75,
-      "pp": 15
+      "pp": 15,
+      "desc": "催眠の粉を浴びせ、相手を「ねむり」状態にする。"
     },
-    "はなびらのまい": {
+    "はっぱカッター": {
       "type": "くさ",
-      "category": "特殊",
-      "power": 120,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "どくどく": {
-      "type": "どく",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 10
-    },
-    "かげぶんしん": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 15
-    },
-    "まるくなる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "ひかりのかべ": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "ロケットずつき": {
-      "type": "ノーマル",
       "category": "物理",
-      "power": 130,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "フラッシュ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ねむる": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "いびき": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "のろい": {
-      "type": "ゴースト",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "まもる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "どろかけ": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 20,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "ギガドレイン": {
-      "type": "くさ",
-      "category": "特殊",
-      "power": 75,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "こらえる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "あまえる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "いばる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 85,
-      "pp": 15
-    },
-    "れんぞくぎり": {
-      "type": "むし",
-      "category": "物理",
-      "power": 40,
+      "power": 55,
       "accuracy": 95,
-      "pp": 20
-    },
-    "メロメロ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "ねごと": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "おんがえし": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "やつあたり": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "しんぴのまもり": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 25
+      "pp": 25,
+      "desc": "葉っぱを飛ばして攻撃する。急所に当たりやすい。"
     },
     "あまいかおり": {
       "type": "ノーマル",
       "category": "変化",
       "power": "-",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "desc": "甘い香りで相手の気を引き、回避率を下げる。"
+    },
+    "せいちょう": {
+      "type": "ノーマル",
+      "category": "変化",
+      "power": "-",
+      "accuracy": "-",
+      "pp": 40,
+      "desc": "体全体を成長させて特攻と攻撃を上げる。"
     },
     "こうごうせい": {
       "type": "くさ",
       "category": "変化",
       "power": "-",
       "accuracy": "-",
-      "pp": 5
+      "pp": 5,
+      "desc": "光を浴びて自分のHPを回復する。"
     },
-    "めざめるパワー": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "にほんばれ": {
-      "type": "ほのお",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "ほえる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "はかいこうせん": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 150,
-      "accuracy": 90,
-      "pp": 5
-    },
-    "ほのおのパンチ": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 75,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "ひっかく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "かみつく": {
-      "type": "あく",
-      "category": "特殊",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "ひのこ": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "かえんほうしゃ": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 95,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "かいりき": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "りゅうのいかり": {
-      "type": "ドラゴン",
-      "category": "特殊",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 10
-    },
-    "ほのおのうず": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 35,
-      "accuracy": 85,
-      "pp": 15
-    },
-    "あなをほる": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "いかり": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 20,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "えんまく": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "だいもんじ": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 120,
-      "accuracy": 85,
-      "pp": 5
-    },
-    "スピードスター": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 60,
-      "accuracy": "-",
-      "pp": 20
-    },
-    "いわなだれ": {
-      "type": "いわ",
-      "category": "物理",
-      "power": 75,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "きりさく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 70,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "こわいかお": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 10
-    },
-    "はらだいこ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "げきりん": {
-      "type": "ドラゴン",
+    "ソーラービーム": {
+      "type": "くさ",
       "category": "特殊",
       "power": 120,
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "desc": "1ターン目に光を吸収し、2ターン目に攻撃する。"
     },
     "ばくれつパンチ": {
       "type": "かくとう",
       "category": "物理",
       "power": 100,
       "accuracy": 50,
-      "pp": 5
+      "pp": 5,
+      "desc": "強力なパンチ。必ず相手を「こんらん」させる。"
     },
-    "りゅうのいぶき": {
-      "type": "ドラゴン",
-      "category": "特殊",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "アイアンテール": {
-      "type": "はがね",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 75,
-      "pp": 15
-    },
-    "げんしのちから": {
-      "type": "いわ",
-      "category": "物理",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 5
-    },
-    "いわくだき": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "ふくろだたき": {
-      "type": "あく",
-      "category": "特殊",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 10
-    },
-    "つばさでうつ": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "そらをとぶ": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 90,
-      "accuracy": 95,
-      "pp": 15
-    },
-    "じしん": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "すなあらし": {
-      "type": "いわ",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "はがねのつばさ": {
-      "type": "はがね",
+    "ずつき": {
+      "type": "ノーマル",
       "category": "物理",
       "power": 70,
-      "accuracy": 90,
-      "pp": 25
-    },
-    "れいとうパンチ": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 75,
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "desc": "頭突きで攻撃する。相手をひるませることがある。"
     },
-    "しっぽをふる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 30
-    },
-    "しろいきり": {
-      "type": "こおり",
+    "のろい": {
+      "type": "ゴースト",
       "category": "変化",
       "power": "-",
       "accuracy": "-",
-      "pp": 30
-    },
-    "みずでっぽう": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "ハイドロポンプ": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 110,
-      "accuracy": 80,
-      "pp": 5
-    },
-    "なみのり": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 95,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "れいとうビーム": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 95,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "ふぶき": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 110,
-      "accuracy": 70,
-      "pp": 5
-    },
-    "ねんりき": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": 50,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "からにこもる": {
-      "type": "みず",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "くろいきり": {
-      "type": "こおり",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "たきのぼり": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "あわ": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "じたばた": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "みやぶる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "こごえるかぜ": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 55,
-      "accuracy": 95,
-      "pp": 15
+      "pp": 10,
+      "desc": "自分のHPを削る代わりに相手を呪う。"
     },
     "ころがる": {
       "type": "いわ",
       "category": "物理",
       "power": 30,
       "accuracy": 90,
-      "pp": 20
+      "pp": 20,
+      "desc": "5ターン連続で転がり続け、当たるたびに威力が上がる。"
     },
-    "こうそくスピン": {
+    "いあいぎり": {
       "type": "ノーマル",
       "category": "物理",
       "power": 50,
-      "accuracy": 100,
-      "pp": 40
+      "accuracy": 95,
+      "pp": 30,
+      "desc": "鋭いツルやハサミで相手を切りつけて攻撃する。フィールドで細い木を切れる。"
     },
-    "あまごい": {
+    "そらをとぶ": {
+      "type": "ひこう",
+      "category": "物理",
+      "power": 70,
+      "accuracy": 95,
+      "pp": 15,
+      "desc": "1ターン目に空へ飛び、2ターン目に攻撃する。フィールドで一度行った町へ飛べる。"
+    },
+    "なみのり": {
       "type": "みず",
+      "category": "特殊",
+      "power": 95,
+      "accuracy": 100,
+      "pp": 15,
+      "desc": "大波を起こして相手を飲み込む。フィールドで水面を移動できる。"
+    },
+    "かいりき": {
+      "type": "ノーマル",
+      "category": "物理",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "desc": "全身に力を込めて相手を叩きつける。フィールドで重い岩を押して動かせる。"
+    },
+    "フラッシュ": {
+      "type": "ノーマル",
       "category": "変化",
       "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "ミラーコート": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": "-",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "desc": "強い光で相手の目をくらまし、命中率を下げる。暗い洞窟を明るくする。"
     },
     "うずしお": {
       "type": "みず",
       "category": "特殊",
-      "power": 35,
-      "accuracy": 85,
-      "pp": 15
-    },
-    "いとをはく": {
-      "type": "むし",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 95,
-      "pp": 40
-    },
-    "かたくなる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "かぜおこし": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "ふきとばし": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "ちょうおんぱ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 55,
-      "pp": 20
-    },
-    "サイケこうせん": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "しびれごな": {
-      "type": "くさ",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 75,
-      "pp": 30
-    },
-    "サイコキネシス": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": 90,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "あくむ": {
-      "type": "ゴースト",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "どくばり": {
-      "type": "どく",
-      "category": "物理",
       "power": 15,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "みだれづき": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 15,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "ダブルニードル": {
-      "type": "むし",
-      "category": "物理",
-      "power": 25,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ミサイルばり": {
-      "type": "むし",
-      "category": "物理",
-      "power": 25,
-      "accuracy": 95,
-      "pp": 20
-    },
-    "こうそくいどう": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "きあいだめ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "ヘドロばくだん": {
-      "type": "どく",
-      "category": "物理",
-      "power": 90,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "おいうち": {
-      "type": "あく",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "すなかけ": {
-      "type": "じめん",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "でんこうせっか": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "オウムがえし": {
-      "type": "ひこう",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "どろぼう": {
-      "type": "あく",
-      "category": "特殊",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "だましうち": {
-      "type": "あく",
-      "category": "特殊",
-      "power": 60,
-      "accuracy": "-",
-      "pp": 20
-    },
-    "みきり": {
-      "type": "かくとう",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "カウンター": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "かみなり": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 110,
       "accuracy": 70,
-      "pp": 10
+      "pp": 15,
+      "desc": "激しい渦潮で2〜5ターンの間閉じ込めて攻撃する。"
     },
-    "いやなおと": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 85,
-      "pp": 40
-    },
-    "みだれひっかき": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 18,
-      "accuracy": 80,
-      "pp": 15
-    },
-    "ひっさつまえば": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 90,
-      "pp": 15
-    },
-    "いかりのまえば": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 10
-    },
-    "かえんぐるま": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 60,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "きしかいせい": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "シャドーボール": {
-      "type": "ゴースト",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "１０まんボルト": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 90,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "にらみつける": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 30
-    },
-    "つつく": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 35,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "ドリルくちばし": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "トライアタック": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "みねうち": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 40
-    },
-    "たたきつける": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 75,
-      "pp": 20
-    },
-    "まきつく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 15,
-      "accuracy": 90,
-      "pp": 20
-    },
-    "ようかいえき": {
-      "type": "どく",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "へびにらみ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 30
-    },
-    "うらみ": {
-      "type": "ゴースト",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 10
-    },
-    "かみくだく": {
-      "type": "あく",
-      "category": "特殊",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "かみなりパンチ": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 75,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "でんきショック": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "でんじは": {
-      "type": "でんき",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 20
-    },
-    "でんじほう": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 120,
-      "accuracy": 50,
-      "pp": 5
-    },
-    "メタルクロー": {
-      "type": "はがね",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 95,
-      "pp": 35
-    },
-    "にどげり": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 30,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "とっしん": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 90,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "かなしばり": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "のしかかり": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 85,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "つのでつく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "つのドリル": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 30,
-      "pp": 5
-    },
-    "ドわすれ": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "あばれる": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 120,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "はたく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "おうふくビンタ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 15,
-      "accuracy": 85,
-      "pp": 10
-    },
-    "うたう": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 55,
-      "pp": 15
-    },
-    "ちいさくなる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "ゆびをふる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "ゆめくい": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": 100,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "アンコール": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 5
-    },
-    "つきのひかり": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "じこあんじ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "さいみんじゅつ": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 60,
-      "pp": 20
-    },
-    "あやしいひかり": {
-      "type": "ゴースト",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 10
-    },
-    "すてみタックル": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 120,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "きゅうけつ": {
-      "type": "むし",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "くろいまなざし": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "つるぎのまい": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "すいとる": {
-      "type": "くさ",
-      "category": "特殊",
-      "power": 20,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "キノコのほうし": {
-      "type": "くさ",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "バトンタッチ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "じわれ": {
-      "type": "じめん",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 30,
-      "pp": 5
-    },
-    "マグニチュード": {
-      "type": "じめん",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 30
-    },
-    "ネコにこばん": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "クロスチョップ": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 80,
-      "pp": 5
-    },
-    "みらいよち": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": 120,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "からてチョップ": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "けたぐり": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ちきゅうなげ": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ヨガのポーズ": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "しんそく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 100,
-      "pp": 5
-    },
-    "バブルこうせん": {
+    "たきのぼり": {
       "type": "みず",
-      "category": "特殊",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "はねる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 40
-    },
-    "こころのめ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "じごくぐるま": {
-      "type": "かくとう",
       "category": "物理",
       "power": 80,
-      "accuracy": 80,
-      "pp": 20
-    },
-    "テレポート": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "バリアー": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "じこさいせい": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "リフレクター": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "スプーンまげ": {
-      "type": "エスパー",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 80,
-      "pp": 15
-    },
-    "まわしげり": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 60,
-      "accuracy": 85,
-      "pp": 15
-    },
-    "あてみなげ": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 70,
-      "accuracy": "-",
-      "pp": 10
-    },
-    "オーロラビーム": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 65,
       "accuracy": 100,
-      "pp": 20
-    },
-    "からみつく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 10,
-      "accuracy": 100,
-      "pp": 35
-    },
-    "メガトンパンチ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 80,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "いわおとし": {
-      "type": "いわ",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 90,
-      "pp": 15
-    },
-    "じばく": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 200,
-      "accuracy": 100,
-      "pp": 5
-    },
-    "だいばくはつ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 250,
-      "accuracy": 100,
-      "pp": 5
-    },
-    "ふみつけ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ソニックブーム": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 20
-    },
-    "ロックオン": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "したでなめる": {
-      "type": "ゴースト",
-      "category": "物理",
-      "power": 30,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "ほろびのうた": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "ヘドロこうげき": {
-      "type": "どく",
-      "category": "物理",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "どくガス": {
-      "type": "どく",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 40
-    },
-    "とける": {
-      "type": "どく",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "からではさむ": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 35,
-      "accuracy": 85,
-      "pp": 15
-    },
-    "とげキャノン": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 20,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "まきびし": {
-      "type": "じめん",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "ナイトヘッド": {
-      "type": "ゴースト",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "サイコウェーブ": {
-      "type": "エスパー",
-      "category": "特殊",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 15
-    },
-    "みちづれ": {
-      "type": "ゴースト",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "しめつける": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 15,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "はさむ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 55,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "ハサミギロチン": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 30,
-      "pp": 5
-    },
-    "クラブハンマー": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 100,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "メガドレイン": {
-      "type": "くさ",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 15
-    },
-    "たまなげ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 15,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "タマゴばくだん": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 75,
-      "pp": 10
-    },
-    "ホネこんぼう": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 65,
-      "accuracy": 85,
-      "pp": 20
-    },
-    "ホネブーメラン": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 50,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "ボーンラッシュ": {
-      "type": "じめん",
-      "category": "物理",
-      "power": 25,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "メガトンキック": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 120,
-      "accuracy": 75,
-      "pp": 5
-    },
-    "とびげり": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 95,
-      "pp": 10
-    },
-    "とびひざげり": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 130,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "れんぞくパンチ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 18,
-      "accuracy": 85,
-      "pp": 15
-    },
-    "マッハパンチ": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 30
-    },
-    "スモッグ": {
-      "type": "どく",
-      "category": "物理",
-      "power": 30,
-      "accuracy": 70,
-      "pp": 20
-    },
-    "いたみわけ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 20
-    },
-    "タマゴうみ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "いやしのすず": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "プレゼント": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": 90,
-      "pp": 15
-    },
-    "ピヨピヨパンチ": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": 70,
-      "accuracy": 100,
-      "pp": 10
-    },
-    "オクタンほう": {
-      "type": "みず",
-      "category": "特殊",
-      "power": 65,
-      "accuracy": 85,
-      "pp": 10
-    },
-    "たつまき": {
-      "type": "ドラゴン",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "ものまね": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "みがわり": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "あくまのキッス": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 75,
-      "pp": 10
-    },
-    "こなゆき": {
-      "type": "こおり",
-      "category": "特殊",
-      "power": 40,
-      "accuracy": 100,
-      "pp": 25
-    },
-    "へんしん": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "かくばる": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "テクスチャー": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "テクスチャー２": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 30
-    },
-    "ゴッドバード": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 140,
-      "accuracy": 90,
-      "pp": 5
-    },
-    "がまん": {
-      "type": "ノーマル",
-      "category": "物理",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "クモのす": {
-      "type": "むし",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 10
-    },
-    "スパーク": {
-      "type": "でんき",
-      "category": "特殊",
-      "power": 65,
-      "accuracy": 100,
-      "pp": 20
-    },
-    "てんしのキッス": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 75,
-      "pp": 10
-    },
-    "わたほうし": {
-      "type": "くさ",
-      "category": "変化",
-      "power": "-",
-      "accuracy": 100,
-      "pp": 40
-    },
-    "あさのひざし": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "メガホーン": {
-      "type": "むし",
-      "category": "物理",
-      "power": 120,
-      "accuracy": 85,
-      "pp": 10
-    },
-    "スケッチ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 1
-    },
-    "トリプルキック": {
-      "type": "かくとう",
-      "category": "物理",
-      "power": 10,
-      "accuracy": 90,
-      "pp": 10
-    },
-    "ミルクのみ": {
-      "type": "ノーマル",
-      "category": "変化",
-      "power": "-",
-      "accuracy": "-",
-      "pp": 5
-    },
-    "エアロブラスト": {
-      "type": "ひこう",
-      "category": "物理",
-      "power": 100,
-      "accuracy": 95,
-      "pp": 5
-    },
-    "せいなるほのお": {
-      "type": "ほのお",
-      "category": "特殊",
-      "power": 100,
-      "accuracy": 95,
-      "pp": 5
+      "pp": 15,
+      "desc": "勢いよく滝を登るように突撃する。ひるませることがある。"
     }
   }
 }
